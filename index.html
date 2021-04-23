@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<head>
+
+<title>Mark West - Home </title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+
+/* 
+COLOUR SCHEME
+(Primose Yellow)	#E4DE8E 		rgb(228,222,142) 
+(Gray)		#808080		rgb(128,128,128) 
+(Teal Blue)	#347B98		rgb(52,  123,152)
+(White)		#FFFFFF		rgb(255,255,255)
+(Black)		#000000		rgb(0,    0,    0)
+*/
+/* Extra small devices (phones, 600px and down) media only screen and (max-width: 600px) {...} */
+/* Small devices (portrait tablets and large phones, 600px and up) media only screen and (min-width: 600px) {...} */
+/* Medium devices (landscape tablets, 768px and up) media only screen and (min-width: 768px) {...} */
+/* Large devices (laptops/desktops, 992px and up) media only screen and (min-width: 992px) {...} */
+/* Extra large devices (large laptops and desktops, 1200px and up) media only screen and (min-width: 1200px) {...} */
+
+body {color:#347B98;font-family: Spectral, serif;}
+h1 h2 h3 h4 h5 h6 {font-family: Rubik, sans-serif;}
+.mw-bg-1 {background-color:rgb(228,222,142,0.8);}
+.mw-bg-2 {background-color:rgb(128,128,128,0.8);}
+.mw-bg-3 {background-color:rgb(52,  123,152,0.8);}
+
+/* Home tab */
+
+.mw-home-title {margin: 40px;font-size:64px;}
+
+.mw-home-img {max-height:500px;max-width:440px;margin:25px;}
+.mw-home-img-cont {margin-left:10%;height:700px; position:absolute; width:100%;}
+.mw-home-img-caption {transform: rotate(90deg); transform-origin:top left; font-size:26px; white-space:nowrap; letter-spacing:3px;text-transform:uppercase;font-weight:800;}
+
+.mw-home-text {margin-right:15%;position: absolute; bottom: 60px; right:10%; max-width:310px;text-align:center;color:black;}
+.mw-home-text-cont {z-index:-1;min-height: 500px; position:absolute; width:90%; margin-left:-15%; margin-top:250px;}
+.mw-home-text-style {min-height: 500px; position:absolute; width:90%; margin-left:-15%; margin-top:250px;}
+
+@media only screen and (max-width: 767px) {
+
+.mw-home-img-cont {margin-left: 0px;}
+.mw-home-img-caption {transform: rotate(0deg); font-size: 20px;letter-spacing:0px;text-transform:capitalize;font-weight:normal;text-indent:6em;}
+
+}
+@media only screen and (max-width: 1007px) {
+
+.mw-home-title {margin: 40px;font-size:48px;}
+.mw-home-text {margin-right:-10%;z-index:2;}
+
+}
+/* Home tab ends */
+
+/*CV tab */
+.mw-cv-title{text-align:center;background-color:rgb(52,  123,152);color:rgb(228,222,142);}
+.mw-cv-button-style{border-radius:8px;border:2px solid gray;background-color:inherit;color:black;font-weight:600;}
+.mw-cv-attribute-style{margin:auto;text-align:center; font-size:16px;letter-spacing:3px;color:black;}
+
+/*CV tab timeline*/
+.mw-cv-timeline{position:relative;max-width:1200px;margin: 0 auto;background-color:rgb(228,222,142);} 
+.mw-cv-timeline::after{content: '';position:absolute;width:6px;background-color:grey;top:0;bottom:0;left:50%;margin-left:3px;}
+.mw-cv-container{padding:10px 40px;position:relative;background-color:inherit;width:50%;}
+.mw-cv-container::after{content:'';position:absolute;width:25px;height:25px;right:-18px;background-color:white;border:5px solid black;top:25px;border-radius:50%;z-index:1;}
+.mw-cv-left{left:0;}
+.mw-cv-right{left:50%;}
+.mw-cv-left::before{content:" ";height:0;position:absolute;top:27px;width:0;z-index:1;right:30px;border:medium solid white;border-width:10px 0 10px 10px;border-color: transparent transparent transparent white;}
+.mw-cv-right::before{content:" ";height:0;position:absolute;top:27px;width:0;z-index:1;left:30px;border:medium solid white;border-width:10px 10px 10px 0;border-color:transparent white transparent transparent;}
+.mw-cv-right::after{left:-7px;}
+.mw-cv-experience{padding:20px 30px;background-color:white;position:relative;border-radius:6px;text-align:center;box-shadow:5px 5px 5px grey;}
+
+@media screen and (max-width: 600px){
+.mw-cv-timeline::after{left:17px;}
+.mw-cv-container{width:100%;padding-left:70px;padding-right:25px;}
+.mw-cv-container::before{left:60px;border:medium solid white;border-width: 10px 10px 10px 0;border-color:transparent white transparent transparent;}
+.mw-cv-left::after, .mw-cv-right::after{left:11px;}
+.mw-cv-right{left:0%;}
+}
+/*CV tab timeline ends*/
+/*CV tab ends*/
+
+/*Skills tab*/
+.mw-skills-title{font-size:42px;text-align:center;}
+.mw-skills-progressbar-button{float:left;color:black;border:2px double;background-color:rgb(228,222,142);color:rgb(52,  123,152);width:25px;}
+
+@media only screen and (max-width: 600px){
+.mw-skills-title{font-size:24px;text-align:left;}
+}
+/*Skills tab ends*/
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<!-- WHOLE SCREEN -->
+<div class="container">
+
+<!-- NAVIGATION -->
+<!-- COLLAPSED NAV BAR (SMALL SCREEN) -->
+	<div class="navbar-header" style="color:#E4DE8E;">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="glyphicon glyphicon-option-horizontal"></span>
+		</button>
+<!-- COLLAPSED NAV BAR ICONS -->
+		<p class="mx-auto">
+			<button type="button" class="navbar-toggle" data-toggle="tab" href="#contact">	<span class="glyphicon glyphicon-phone"> </span>	</button>
+			<button type="button" class="navbar-toggle" data-toggle="tab" href="#skills">		<span class="glyphicon glyphicon-stats"> </span>	</button>
+			<button type="button" class="navbar-toggle" data-toggle="tab" href="#home">	<span class="glyphicon glyphicon-user"> </span>	</button>
+			<button type="button" class="navbar-toggle" data-toggle="tab" href="#portfolio">	<span class="glyphicon glyphicon-book"> </span>	</button>
+			<button type="button" class="navbar-toggle" data-toggle="tab" href="#CV">		<span class="glyphicon glyphicon-file"> </span>		</button>
+		</p>
+	</div>
+
+<!-- FULL SIZE NAV BAR -->
+	<div class="collapse navbar-collapse" id="myNavbar">
+		<ul class="nav nav-tabs nav-justified" style="color:#E4DE8E;">
+  			<li ><a data-toggle="tab" href="#CV">CV</a></li>
+ 			<li ><a data-toggle="tab" href="#portfolio">Portfolio</a></li>
+ 			<li ><a data-toggle="tab" href="#home">Home</a></li>
+  			<li class="active"><a data-toggle="tab" href="#skills">Skills</a></li>
+  			<li><a data-toggle="tab" href="#contact">Contact</a></li>
+		</ul>
+	</div>
+<!-- NAVIGATION END -->
+
+	<div class="tab-content">
+
+
+<!-- HOME TAB -->
+		<div id="home" class="tab-pane fade container" style="height:860px;">
+<!-- HOME TAB TITLE -->
+			<div class="container">
+ 				<h1 class="col-sm-12 mw-home-title">Mark West</h1>
+			</div>
+<!-- HOME TAB CONTENT -->
+<!-- HOME TAB CONTENT - IMAGE -->
+			<div class="mw-bg-1 mw-home-img-cont">
+				 <figure class="row">
+  					<img src="M.jpg" class="mw-home-img col-sm-8">
+  					<figcaption class="mw-home-img-caption col-sm-4">Web Developer </figcaption>
+ 				</figure>
+			</div>
+<!-- HOME TAB CONTENT - TEXT -->
+			<div class="mw-bg-2 mw-home-text-cont"> </div>
+ 			<article class="mw-home-text-style">
+  				<p class="mw-home-text">I'm a self taught Web Developer with over a years experience in developing my own skills, I'm now hoping to translate these into a career, check out my recent work <u>here</u>.</p>
+ 			</article>
+		</div>
+<!-- HOME TAB END -->
+
+
+<!-- CV TAB -->
+		<div id="CV" class="tab-pane fade">
+
+<!-- CV TITLE -->
+			<h1 style="text-align:center;"> Curriculum Vitae </h1>
+			<h2 style="text-align:center;"> Mark West </h2>
+
+<!-- CV PERSONAL PROFILE -->
+			<article> 
+				<h3 class="mw-cv-title">Personal Profile</h3>
+				<p style="text-align:center;padding:10px;line-height:2;width:70%;margin-left:auto;margin-right:auto;"> 
+					Confident, hard-working and direct accurately encompass my work ethic, 
+					I as a person demonstrate understanding, patience, a positive influence, impartiality and efficiency. <br> <br>
+					I have a strong administrative background from a variety of positions with each role focusing on the many elements
+					that form a capable administrator, my versatility makes me a suitable option for roles both supporting and building teams. 
+				</p> 
+			</article>
+
+<!-- CV EDUCATION -->
+			<article>
+				<h3 class="mw-cv-title"> Education </h3>
+
+				<div class="container">
+
+					<p class="col-sm-3" style="text-align:center;font-weight:600;font-size:25px;"> My achievements;</p>
+
+					<div class="card-columns">
+
+						<div class="col-sm-9">
+  							<div class="card mw-bg-1" style="border-radius: 30px;box-shadow:5px 5px 5px grey;">
+    								<div class="card-body text-center" style="color:black;">
+      									<p class="card-text"><b>BA Hons in Politics and Law</b></p>
+           									<p class="card-text">University of Bradford <br> [Years 2010 – 2014]</p>
+           									<p class="card-text">2:1 [Second Class Honours, Upper Division] </p>
+         								</div>
+ 							</div>
+
+  							<div class="card mw-bg-1" style="border-radius: 30px;box-shadow:5px 5px 5px grey;">
+   								<div class="card-body text-center" style="color:black;">
+            									<p class="card-text"><b>A Level Qualification</b></p>
+            									<p class="card-text">Huddersfield New College <br> [Years 2008 – 2010]</p>
+            									<p class="card-text">3 passes in Law, English and Psychology </p>
+    								</div>
+  							</div>
+
+ 							<div class="card mw-bg-1" style="border-radius: 30px;box-shadow:5px 5px 5px grey;">
+    								<div class="card-body text-center" style="color:black;">
+            									<p class="card-text"><b>GCSE</b></p>
+            									<p class="card-text">Wyke Manor School, Bradford <br>[Years 2003 – 2008]</p>
+            									<p class="card-text">8 passes in English, Maths, Sciences, Art, Geography and I.T.</p>
+    								</div>
+  							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</article>
+
+<!-- CV EXPERIENCE -->
+			<h3 class="mw-cv-title"> Experience </h3>
+
+			<div class="mw-cv-timeline">
+
+ 				<div class="mw-cv-container mw-cv-left">
+ 					<div class="mw-cv-experience">
+    						<h4> <strong>Yorkshire Building Society [YBS] </strong></h4>
+    						<h5 title="3 years +"> [Mar 2018 – To date]  </h5> 
+    						<button data-toggle="collapse" data-target="#YBS-role" class="mw-cv-button-style"> Customer Service Representative </button>
+   						<p id="YBS-role" class="collapse"> <i>  Working within a regulated financial environment, my responsibilities are to ensure potential customers met YBS criteria when looking to begin their mortgage journey or to adjust their mortgage with ourselves. </i> </p>
+  					</div>
+ 				</div>
+
+ 				<div class="mw-cv-container mw-cv-right">
+  					<div class="mw-cv-experience">
+    						<h4> <strong>Asda </strong> </h4>
+    						<h5 title="3 months"> [Dec 2017 – Feb 2018] </h5> 
+    						<button data-toggle="collapse" data-target="#Asda-role-2" class="mw-cv-button-style"> HR Administrator </button>
+    						<p id="Asda-role-2" class="collapse"> <i> (Temporary contract)  The key elements of this role were administrative. </i> </p>
+  					</div>
+ 				</div>
+
+ 				<div class="mw-cv-container mw-cv-left">
+  					<div class="mw-cv-experience">
+    						<h4> <strong>Marble4Life </strong> </h4>
+						<h5 title="10 months"> [Jan 2017 – Oct 2017] </h5> 
+   						<button data-toggle="collapse" data-target="#M4L-role" class="mw-cv-button-style"> Administrator </button>
+   	 					<p id="M4L-role" class="collapse">  <i>  My role comprised primarily of creating monthly reports, managing inbound calls, working directly with three directors in the successful operation of the company, reputation management and recording all HR concerns.In order to meet these goals, I was also responsible for personally managing each directors' diaries, calculating staff wages, tracking the sales teams' activity, monitoring public interest in the company and to fulfil any additional tasks as and when necessary. </i> </p>
+ 					</div>
+ 				</div>
+
+ 				<div class="mw-cv-container mw-cv-right">
+  					<div class="mw-cv-experience">
+   	 					<h4> <strong>Plexus Law </strong> </h4>
+    						<h5 title="3 months"> [Sep 2016 – Dec 2016] </h5> 
+   	 					<button data-toggle="collapse" data-target="#Plexus-role" class="mw-cv-button-style"> Administrator </button>
+   	 					<p id="Plexus-role" class="collapse">  <i> As part of the industrial disease team, my specific duties were to set up claims and to deal with non co-ordinated arrangements between firms, I further developed my ability to handle multiple claims simultaneously and to be able to provide suitable tailored feedback to corporate clientele. </i> </p>
+ 	 				</div>
+ 				</div>
+
+ 				<div class="mw-cv-container mw-cv-left">
+ 	 				<div class="mw-cv-experience">
+   	 					<h4> <strong>CallCredit Information Group </strong> </h4>
+    						<h5 title="1 month"> [Aug 2016 – Sep 2016] </h5> 
+   	 					<button data-toggle="collapse" data-target="#CCIG-role" class="mw-cv-button-style"> Customer Advisor </button>
+    						<p id="CCIG-role" class="collapse">  <i> (Temporary contract) My duties here were primarily administrative. </i> </p> 
+  					</div>
+ 				</div>
+
+				<div class="mw-cv-container mw-cv-right">
+  					<div class="mw-cv-experience">
+    						<h4> <strong>Capita </strong> </h4>
+   	 					<h5 title="10 months"> [Sep 2015 – June 2016] </h5> 
+   	 					<button data-toggle="collapse" data-target="#Capita-role" class="mw-cv-button-style"> Case Handler </button>
+    						<p id="Capita-role" class="collapse">  <i> Duties included administrative work, data gathering and reviewing of cases on their individual merits, the extent to which is highlighted below through my case worker skills description. This was based in the financial sector, my interpersonal skills were developed further through the telephony side of engagements and my ability to micromanage many cases simultaneously under time restrained conditions had improved significantly during my time at Capita.</i> </p> 
+  					</div>
+ 				</div>
+
+ 				<div class="mw-cv-container mw-cv-left">
+ 		 			<div class="mw-cv-experience">
+   	 					<h4> <strong>Asda </strong></h4>
+   	 					<h5 title="3 years, 10 months"> [Oct 2011 – August 2015] </h5> 
+   	 					<button data-toggle="collapse" data-target="#Asda-role" class="mw-cv-button-style"> Store Assistant </button>
+    						<p id="Asda-role" class="collapse"> <i>  I was trained to use an electronic stock management system and became proficient at recording details and changing values accordingly with the relevant checks, along with this I have developed excellent time keeping skills with regards to the increased workload and shortened timescales that working within a fast paced customer oriented role demands. Nominated for Colleague of the Month three times </i> </p>
+  					</div>
+ 				</div>
+
+			</div>
+
+<!-- CV ATTRIBUTES -->
+			<article> 
+			<h3 class="mw-cv-title"> Attributes/Traits</h3>
+				<div class="row mw-cv-attribute-style">
+					<div class="panel panel-default col-sm-4">
+						<div class="panel-body">Methodical</div>
+					</div>
+					<div class="panel panel-default col-sm-4">
+						<div class="panel-body">Organised</div>
+					</div>
+					<div class="panel panel-default col-sm-4">
+						<div class="panel-body">Transparent</div>
+					</div>
+				</div>
+				<div class="row mw-cv-attribute-style">
+					<div class="panel panel-default col-sm-4">
+						<div class="panel-body">Collaborative</div>
+					</div>
+					<div class="panel panel-default col-sm-4">
+						<div class="panel-body">Honest</div>
+					</div>
+					<div class="panel panel-default col-sm-4">
+						<div class="panel-body">Confident</div>
+					</div>
+				</div>
+				<div class="row mw-cv-attribute-style">
+					<div class="panel panel-default col-sm-4">
+						<div class="panel-body">Ethical</div>
+					</div>
+					<div class="panel panel-default col-sm-4">
+						<div class="panel-body">Punctual</div>
+					</div>
+					<div class="panel panel-default col-sm-4">
+						<div class="panel-body">Compulsive</div>
+					</div>
+				</div>
+				
+			</article>
+
+<!-- CV REFERENCES -->
+			<article> 
+				<h3 class="mw-cv-title"> References </h3>
+				<p style="font-size:40px;text-align:center;height:250px;"> 
+					Available upon request.
+				</p>
+			</article>
+
+		</div>
+<!-- CV TAB END -->
+
+<!-- PORTFOLIO TAB -->
+		<div id="portfolio" class="tab-pane fade">
+			<h2>Portfolio </h2>
+			<ul>
+				<li> Strongest Project </li>
+				<li> Demonstrate Variety </li>
+				<li> Personal Favourite </li>
+				<li> Simple design, not cluttered </li>
+			</ul>
+		</div>
+<!-- PORTFOLIO TAB END -->
+
+
+
+
+<!-- SKILLS TAB -->
+<div id="skills" class="tab-pane fade in active" style="color:black;">
+
+<!-- RELEVANT SKILLS -->
+<h3 class="mw-skills-title"> General Skills </h3>
+
+<div class="progress "> 
+ <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%;">
+   <button data-toggle="collapse" data-target="#skill1" class="mw-skills-progressbar-button">60</button> Responsive Web Design
+ </div>
+</div>
+<div id="skill1" class="collapse" style="margin-bottom:20px;color:grey;">
+A good understanding of the core concept with the ability to implement the design idea with my technical skills
+</div>
+
+<div class="progress"> 
+ <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+   <button data-toggle="collapse" data-target="#skill2" class="mw-skills-progressbar-button">30</button> GitHub
+ </div>
+</div>
+<div id="skill2" class="collapse" style="margin-bottom:20px;color:grey;">
+A decent understanding of the foundations
+</div>
+
+<div class="progress"> 
+ <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%;">
+   <button data-toggle="collapse" data-target="#skill3" class="mw-skills-progressbar-button">25</button> WordPress
+ </div>
+</div>
+<div id="skill3" class="collapse" style="margin-bottom:20px;color:grey;">
+A basic understanding of how WordPress sites operate
+</div>
+
+<div class="progress"> 
+ <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%;color:black;">
+   <button data-toggle="collapse" data-target="#skill4" class="mw-skills-progressbar-button">10</button> 
+ </div><p style="margin-left:20%;">Search Engine Optimization</p>
+</div>
+<div id="skill4" class="collapse" style="margin-bottom:20px;color:grey;">
+A basic understanding of the core concept
+</div>
+
+<div class="progress"> 
+ <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+   <button data-toggle="collapse" data-target="#skill5" class="mw-skills-progressbar-button">50</button> Microsoft Office Applications
+ </div>
+</div>
+<div id="skill5" class="collapse" style="margin-bottom:20px;color:grey;">
+Relatively good understanding of basic concepts in popular MSOffice applications [Word, Excel, Powerpoint]
+</div>
+
+<!-- RELEVANT SKILLS END -->
+
+<!-- TECHNICAL/LANGUAGE SKILLS -->
+
+<h3 class="mw-skills-title"> Technical Skills </h3>
+<h4>Front end </h4>
+
+<div class="progress"> 
+ <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+   <button data-toggle="collapse" data-target="#skill6" class="mw-skills-progressbar-button">90</button> HTML
+ </div>
+</div>
+<div id="skill6" class="collapse" style="margin-bottom:20px;color:grey;">
+Very familiar with standard/common concepts in HTML
+</div>
+
+<div class="progress" style="margin-left:50px;"> 
+ <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+   <button data-toggle="collapse" data-target="#skill7" class="mw-skills-progressbar-button">70</button> Bootstrap
+ </div>
+</div>
+<div id="skill7" class="collapse" style="margin-bottom:20px;color:grey;margin-left:50px;">
+Familiar with large parts of Bootstrap3 and Bootstrap4's ability [good knowledge of BS4 spacing shorthand, and BS3/BS4 grid system]
+</div>
+
+<div class="progress"> 
+ <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+   <button data-toggle="collapse" data-target="#skill8" class="mw-skills-progressbar-button">75</button> CSS
+ </div>
+</div>
+<div id="skill8" class="collapse" style="margin-bottom:20px;color:grey;">
+Completed a SoloLearn fundamentals course, good understanding of popular concepts in CSS [CSS grid, positioning, inheritance, media queries, naming conventions]
+</div>
+
+<div class="progress" style="margin-left:50px;"> 
+ <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+    <button data-toggle="collapse" data-target="#skill9" class="mw-skills-progressbar-button">50</button> W3
+ </div>
+</div>
+<div id="skill9" class="collapse" style="margin-bottom:20px;color:grey;margin-left:50px;">
+I feel familiar with most of the common concepts in W3.css
+</div>
+
+<div class="progress"> 
+ <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:65%">
+   <button data-toggle="collapse" data-target="#skill10" class="mw-skills-progressbar-button">65</button> Javascript
+ </div>
+</div>
+<div id="skill10" class="collapse" style="margin-bottom:20px;color:grey;">
+Completed a SoloLearn fundamentals course, I have read more about advanced concepts in JS [Recursion, Prototyping, Class inheritance etc.] but wouldn't feel comfortable working with these concepts without support
+</div>
+
+<div class="progress" style="margin-left:50px;"> 
+ <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+   <button data-toggle="collapse" data-target="#skill11" class="mw-skills-progressbar-button">60</button> JQuery
+ </div>
+</div>
+<div id="skill11" class="collapse" style="margin-bottom:20px;color:grey;margin-left:50px;">
+Completed a SoloLearn fundamentals course, I am familiar with the syntax and have a good appreciation for what can be achieved with JQuery
+</div>
+
+<div class="progress" style="margin-left:50px;"> 
+ <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+   <button data-toggle="collapse" data-target="#skill12" class="mw-skills-progressbar-button">20</button> React
+ </div>
+</div>
+<div id="skill12" class="collapse" style="margin-bottom:20px;color:grey;margin-left:50px;">
+Completed a React tutorial, I have a basic understanding of the fundamentals
+</div>
+
+<h4>Back end </h4>
+<div class="progress"> 
+ <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+   <button data-toggle="collapse" data-target="#skill13" class="mw-skills-progressbar-button">30</button> PHP
+ </div>
+</div>
+<div id="skill13" class="collapse" style="margin-bottom:20px;color:grey;">
+Completed a SoloLearn fundamentals course, understand core concepts
+</div>
+
+<div class="progress"> 
+ <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+   <button data-toggle="collapse" data-target="#skill14" class="mw-skills-progressbar-button">30</button> C
+ </div>
+</div>
+<div id="skill14" class="collapse" style="margin-bottom:20px;color:grey;">
+Completed a SoloLearn fundamentals course, understand core concepts
+</div>
+
+<div class="progress"> 
+ <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+   <button data-toggle="collapse" data-target="#skill15" class="mw-skills-progressbar-button">30</button> C#
+ </div>
+</div>
+<div id="skill15" class="collapse" style="margin-bottom:20px;color:grey;">
+Completed a SoloLearn fundamentals course, understand core concepts
+</div>
+
+<!-- TECHNICAL/LANGUAGE SKILLS END -->
+
+
+		</div>
+<!-- SKILLS TAB END -->
+
+
+
+
+<!-- CONTACT TAB -->
+		<div id="contact" class="tab-pane fade">
+			<h2>Contact </h2>
+			<ul>
+				<li> Mobile, Email, github </li>
+				<li> HTML Form to submit emails to markw2992@gmail.co.uk </li>
+				<li> Interesting colour usage </li>
+				<li> Simple design, not cluttered </li>
+			</ul>
+		</div>
+<!-- CONTACT TAB END -->
+
+
+		<footer style="display:none;"> 
+			<p> Mark West </p>
+			<a href="mailto:mark-west@hotmail.co.uk">mark-west@hotmail.co.uk</a> 
+		</footer>
+
+	</div>
+
+<div>
+
+</body>
