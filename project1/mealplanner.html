@@ -30,12 +30,16 @@ $(document).ready(function(){
 	var displayday = day[d.getDay()];
 	var time = d.getHours();
 	
-	time < 11 ? $("h1").text("It is " + displayday + " morning")
+	time < 11 ? $("h1").text("It is " + displayday + " morning") 
 		: time < 13 ? $("h1").text("It is " + displayday + " noon" )
 		: time < 16 ? $("h1").text("It is " + displayday + " afternoon")
 		: time < 20 ? $("h1").text("It is " + displayday + " evening")
 		: $("h1").text("It is " + displayday + " night")
-
+	time < 6 ? $(".jumbotron").css({"background-image":"url(images/nightsky.jpg)","background-repeat":"no-repeat", "background-attachment":"fixed","background-position":"top left","color":"grey"})
+		: time < 10 ? $(".jumbotron").css({"background-image":"url(images/morningsky.jpeg)","background-repeat":"no-repeat", "background-attachment":"fixed","background-position":"center"})
+		: time < 17 ? $(".jumbotron").css({"background-image":"url(images/daysky.jpeg)","background-repeat":"no-repeat", "background-attachment":"fixed","background-position":"center bottom","color":"black"})
+		: time < 20 ? $(".jumbotron").css({"background-image":"url(images/dusksky.jpg)","background-repeat":"no-repeat", "background-attachment":"fixed","background-position":"center right","color":"grey"})
+		: $(".jumbotron").css({"background-image":"url(images/nightsky.jpg)","background-repeat":"no-repeat", "background-attachment":"fixed","background-position":"center top","color":"grey"})
 	var TEMPLATE = {
 		title: "Insert Title",
 		image: "template.jpeg",
@@ -351,21 +355,25 @@ $(document).ready(function(){
 </div>
 
 <!-- ADDITIONAL INFORMATION CARDS -->
+<div class="jumbotron" style="background-image: url(sky/morning2sky.jpeg);background-attachment:fixed;padding:40px;position:absolute;left:0;width:100%;">
 
-<h3 style="text-align:center;"> Todays meals will be... </h3>
-<div id="breakfast-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;">
+<h3 style="text-align:center;padding:5px;border-radius:20px;"> Todays meals will be... </h3>
+
+<div id="breakfast-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;opacity:0.85;">
  <div id="breakfast-title" class="card-header" style="font-size:25px;"> Breakfast Option 1 </div>
  <div id="breakfast-info" class="card-body"> A fairly generic description of some standard items consumed at breakfast time, this can include, but is not limited to the following: Eggs, Milk, Sugar, Coffee, Cereal and Bread. </div>
 </div>
 
-<div id="dinner-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;">
+<div id="dinner-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;opacity:0.85;">
  <div id="dinner-title" class="card-header" style="font-size:25px;"> Dinner Option 1 </div>
  <div id="dinner-info" class="card-body"> A fairly generic description of some standard items consumed at dinner time, this can include, but is not limited to the following: Bread, Meats, Fruit, Yogurts and Crisps. </div>
 </div>
 
-<div id="tea-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;">
+<div id="tea-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;opacity:0.85;">
  <div id="tea-title" class="card-header" style="font-size:25px;"> Tea Option 1 </div>
  <div id="tea-info" class="card-body"> A fairly generic description of some standard items consumed at tea time, this can include, but is not limited to the following: Rice, Vegetables, Meats, Potatoes and Desserts. </div>
+</div>
+
 </div>
 
 <!-- ADDITIONAL INFORMATION CARDS END-->
