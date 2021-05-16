@@ -1,10 +1,11 @@
 
 mealplanner is a html file
+
 It's primary purpose is for personal usage, it will show the next meal to be had along with basic details of the other meals to be had in the same day
 The whole project is developed using a basic notepad
 
 Installation;
-Simply visit TheGreatWesty.github.io/mealplanner to see the end product, nothing needs to be installed, although bear in mind the file uses bootstrap 4 so it may not work on older browsers
+Simply visit TheGreatWesty.github.io/project1/mealplanner to see the end product, nothing needs to be installed, although bear in mind the file uses bootstrap 4 so it may not work on older browsers
 
 Development;
 This is an ongoing project which will likely see updates to reflect best practices which I have learned over time
