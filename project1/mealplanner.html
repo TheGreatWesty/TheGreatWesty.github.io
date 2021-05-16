@@ -72,6 +72,7 @@ $(document).ready(function(){
 	var cottagePie = {	title: "Cottage Pie", 	preptime: "60 minutes", 	image: "cottagepie.jpg", 		describe: "A dish of minced meat topped with browned mashed potato", ing1: "Mash/Potato", ing2: "Mince", ing3: "Peas", ing4: "Carrots", ing5: "Sweetcorn", ing6: "Gravy", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
 	var meatballs = {	title: "Meatballs", 		preptime: "40 minutes", 	image: "meatballs.jpg", 		describe: "This springtime pasta dish requires just four ingredients", ing1: "Meatballs", ing2: "Tomato Sauce", ing3: "Pasta", ing4: "-OPTIONAL-", ing5: "Cheese", ing6: "", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
 	var curry = {	title: "Curry", 		preptime: "45 minutes", 	image: "curry.jpg", 			describe: "Curry is a variety of dishes originating in the Indian subcontinent", ing1: "Spice blend", ing2: "Meat/Chicken", ing3: "Rice", ing4: "Naan", ing5: "Bhajis", ing6: "Samosas", ing7: "", ing8: "", isBreakfast: false, isDinner: false, isTea: true,}
+	var takeaway = {	title: "Takeaway", 		preptime: "0 minutes", 	image: "takeaway.jpg", 			describe: "A takeaway is a shop or restaurant which sells hot food to be eaten elsewhere", ing1: "Mobile Phone", ing2: "", ing3: "", ing4: "", ing5: "", ing6: "", ing7: "", ing8: "", isBreakfast: false, isDinner: false, isTea: true,}
 	
 
 	//key is used in the for loop to pass variables to the next object
@@ -91,16 +92,16 @@ $(document).ready(function(){
 	var meal3b = {};	for (let key in stirFry) {	meal3b[key] = stirFry[key];	};
 	var meal4b = {};	for (let key in burrito) {	meal4b[key] = burrito[key];	};
 	var meal5b = {};	for (let key in chknDinner) {	meal5b[key] = chknDinner[key];	};
-	var meal6b = {};	for (let key in curry) {	meal6b[key] = curry[key];	};
+	var meal6b = {};	for (let key in jacketPotato) {	meal6b[key] = jacketPotato[key];	};
 
 	//Teas - Sun/Mon/Tue/Wed/Thu/Fri/Sat
-	var meal0c = {};	for (let key in curry) {	meal0c[key] = curry[key];	};
+	var meal0c = {};	for (let key in takeaway) {	meal0c[key] = takeaway[key];	};
 	var meal1c = {};	for (let key in chknDinner) {	meal1c[key] = chknDinner[key];	};
-	var meal2c = {};	for (let key in chknDinner) {	meal2c[key] = chknDinner[key];	};
-	var meal3c = {};	for (let key in toastie) {	meal3c[key] = toastie[key];	};
-	var meal4c = {};	for (let key in chknDinner) {	meal4c[key] = chknDinner[key];	};
-	var meal5c = {};	for (let key in chknDinner) {	meal5c[key] = chknDinner[key];	};
-	var meal6c = {};	for (let key in chknDinner) {	meal6c[key] = chknDinner[key];	};
+	var meal2c = {};	for (let key in lasagne) {	meal2c[key] = lasagne[key];	};
+	var meal3c = {};	for (let key in meatballs) {	meal3c[key] = meatballs[key];	};
+	var meal4c = {};	for (let key in stirFry) {	meal4c[key] = stirFry[key];	};
+	var meal5c = {};	for (let key in jacketPotato) {	meal5c[key] = jacketPotato[key];	};
+	var meal6c = {};	for (let key in curry) {	meal6c[key] = curry[key];	};
 
 	switch(d.getDay()) {
 	case 0:
