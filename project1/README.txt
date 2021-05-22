@@ -2,6 +2,7 @@
 mealplanner is a html file
 
 It's primary purpose is for personal usage, it will show the next meal to be had along with basic details of the other meals to be had in the same day
+=This will now include a menu to show all available options for either breakfast, dinner or tea
 The whole project is developed using a basic notepad
 
 Installation;
