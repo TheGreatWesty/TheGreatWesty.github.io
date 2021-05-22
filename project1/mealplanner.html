@@ -10,23 +10,132 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-
-
-<body>
 
 <script>
+
+	function openNav() {	
+		$("#sideNav").css("width","100%");	
+	}
+	function closeNav() {	
+		$("#sideNav").css("width","0");	
+		$(".carousel-indicators").empty();
+	}
+	function openBreakfast() {
+		let a = 0;	
+		let b = 1;
+		$(".carousel-inner").empty();
+		$(".carousel-inner").append(
+			"<div class='carousel-item active breakfastMenu' style='text-align:center;padding-bottom:100px;'>"
+			+ "<h1 style='padding:50px;'> BREAKFAST </h1>"
+			+ "</div>"
+		);
+		$(".carousel-indicators").append(
+			"<li data-target='#carousel-main' data-slide-to='0' class='active' style='padding-top:25px;'> </li>"
+		);
+		while (a < allFood.length) {
+			if (allFood[a].isBreakfast == true) {
+				$(".carousel-inner").append(
+					"<div class='carousel-item' style='text-align:center;'> <h1>" + allFood[a].title  +"</h1> <img src=https://thegreatwesty.github.io/project1/images/" + allFood[a].image + " class='rounded-circle' style='height:400px;max-width:80%;margin-top:15%;padding-bottom:75px'>" +"</div>"
+				);
+				$(".breakfastMenu").append(
+					"<h3 class='menu-item' data-target='#carousel-main' data-slide-to='" + b + "'>" + allFood[a].title + "</h3>"
+				);
+				$(".carousel-indicators").append(
+					"<li data-target='#carousel-main' data-slide-to='" + b + "' style='padding-top:25px;'> </li>"
+				);
+				b++
+			}
+			a++
+		}
+	}
+	function openDinner() {
+		let a = 0;
+		let b = 1;	
+		$(".carousel-inner").empty();
+		$(".carousel-inner").append(
+			"<div class='carousel-item active dinnerMenu' style='text-align:center;padding-bottom:100px;'>"
+			+ "<h1 style='padding:50px;'> Dinner </h1>"
+			+ "</div>"
+		);
+		$(".carousel-indicators").append(
+			"<li data-target='#carousel-main' data-slide-to='0' class='active' style='padding-top:25px;'> </li>"
+		);
+		while (a < allFood.length) {
+			if (allFood[a].isDinner == true) {
+				$(".carousel-inner").append(
+					"<div class='carousel-item' style='text-align:center;'> <h1>" + allFood[a].title  +"</h1> <img src=https://thegreatwesty.github.io/project1/images/" + allFood[a].image + " class='rounded-circle' style='height:400px;max-width:80%;margin-top:15%;padding-bottom:75px'>" +"</div>"
+				);
+				$(".dinnerMenu").append(
+					"<h3 class='menu-item' data-target='#carousel-main' data-slide-to='" + b + "'>" + allFood[a].title + "</h3>"
+				);
+				$(".carousel-indicators").append(
+					"<li data-target='#carousel-main' data-slide-to='" + b + "' style='padding-top:25px;'> </li>"
+				);
+				b++
+			}
+			a++
+		}
+	}
+	function openTea() {
+		let a = 0;
+		let b = 1;	
+		$(".carousel-inner").empty();
+		$(".carousel-inner").append(
+			"<div class='carousel-item active teaMenu' style='text-align:center;padding-bottom:100px;'>"
+			+ "<h1 style='padding:50px;'> Tea </h1>"
+			+ "</div>"
+		);
+		$(".carousel-indicators").append(
+			"<li data-target='#carousel-main' data-slide-to='0' class='active' style='padding-top:25px;'> </li>"
+		);
+		while (a < allFood.length) {
+			if (allFood[a].isTea == true) {
+				$(".carousel-inner").append(
+					"<div class='carousel-item' style='text-align:center;'> <h1>" + allFood[a].title  +"</h1> <img src=https://thegreatwesty.github.io/project1/images/" + allFood[a].image + " class='rounded-circle' style='height:400px;max-width:80%;margin-top:15%;padding-bottom:75px'>" +"</div>"
+				);
+				$(".teaMenu").append(
+					"<h3 class='menu-item' data-target='#carousel-main' data-slide-to='" + b + "'>" + allFood[a].title + "</h3>"
+				);
+				$(".carousel-indicators").append(
+					"<li data-target='#carousel-main' data-slide-to='" + b + "' style='padding-top:25px;'> </li>"
+				);
+				b++
+			}
+			a++
+		}
+	}	
+
+	//breakfasts
+	var toast = {		title: "Toast", 		preptime: "2 minutes",		image: "toast.jpg",		describe: "Nothing quite beats it", ing1: "Bread",	ing2: "Butter",	ing3: "Spread/Jam", ing4: "",	ing5: "",	ing6: "",	ing7: "",	ing8: "", 		isBreakfast: true, isDinner: false, isTea: false, }
+	var cereal = {		title: "Cereal",		preptime: "5 minutes",		image: "cereal.jpg",		describe: "A bowl of the good stuff, usually honey nut cornflakes/cheerios", ing1: "Cereal",	ing2: "Milk", ing3: "",	ing4: "", ing5: "", ing6: "", ing7: "",	ing8: "", isBreakfast: true, isDinner: false, isTea: false,}
+	var granola = {		title: "Granola",		preptime: "10/12 minutes",	image: "granola.jpg",		describe: "A bowl of the good stuff, with yoghurt and fruit usually", ing1: "Granola", ing2: "Yoghurt", ing3: "Banana",	ing4: "Blueberries", ing5: "Mango", ing6: "Strawberries", ing7: "",	ing8: "", isBreakfast: true, isDinner: false, isTea: false,}
+	var pancakes = {	title: "Pancakes",		preptime: "10 minutes/ Premade",image: "pancakes.jpg", 		describe: "Best had with fruit and cream, although syrups are still good", ing1: "Pancake [Egg/Flour/Sugar]", ing2: "Whipped Cream", ing3: "Banana",	ing4: "Blueberries", ing5: "Strawberries", ing6: "Syrup [Maple/Golden]", ing7: "",	ing8: "", isBreakfast: true, isDinner: false, isTea: false,}
+	var fullEnglish = {	title: "Full English Breakfast",preptime: "45 minutes",		image: "fullenglish.jpg",	describe: "A classic combination of Eggs, Beans, Sausages, Bacon, Toast and Hash Browns, can sometimes be accompanied by tomatoes",	ing1: "Bread", ing2: "Butter",	ing3: "Eggs", ing4: "Beans", ing5: "Sausages", ing6: "Bacon", ing7: "Hash browns", ing8: "Tomatoes", isBreakfast: true, isDinner: true, isTea: false,}
+	
+
+	//dinners
+	var jacketPotato = {	title: "Jacket Potatoes", 	preptime: "15 minutes", 	image: "potato.jpeg", 		describe: "Cooking a great jacket potato is more art than science", ing1: "Potato", ing2: "Butter", ing3: "-TOPPINGS-", ing4: "Cheese", ing5: "Tuna", ing6: "Sandwich Filler", ing7: "Beans", ing8: "Chilli", isBreakfast: false, isDinner: true, isTea: true,}
+	var chknDinner = {	title: "Chicken Dinner", 	preptime: "2 hours", 		image: "ChickenDinner.png", 	describe: "A roast chicken served with a variety of vegetables, usually brocolli, carrots, peas, potatoes (either mashed/roasted or both) and parsnips, this is usually accompanied by stuffing and gravy, with Yorkshire puddings making the occasional appearance", ing1: "Chicken", ing2: "Potatoes", ing3: "Brocolli", ing4: "Carrots", ing5: "Peas", ing6: "Parsnips", ing7: "Stuffing", ing8: "Gravy", isBreakfast: false, isDinner: true, isTea: true,}
+	var soup = {		title: "Soup", 			preptime: "5 minutes", 		image: "soup.jpg", 		describe: "Soup is a primarily liquid food, generally served warm or hot that is made by combining ingredients of meat or vegetables with stock, milk, or water", ing1: "-VARIES-", ing2: "Tomato", ing3: "Chicken", ing4: "Butternut Squash", ing5: "Pea and Ham", ing6: "", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
+	var toastie = {		title: "Cheese Toasties", 	preptime: "10-15 minutes", 	image: "cheesetoastie.jpeg", 	describe: "Nice and simple, works well with a variety of ingredients", ing1: "Bread", ing2: "Cheese", ing3: "-OPTIONAL-", ing4: "Spicy chicken", ing5: "Beef chilli", ing6: "Peppers", ing7: "Red onion", ing8: "", isBreakfast: true, isDinner: true, isTea: true,}
+	
+	//teas
+	var stirFry = {		title: "Stir Fry", 		preptime: "25 minutes", 	image: "stirfry.jpeg", 		describe: "Nice and simple, can be assembled before work and is nice hot or cold", ing1: "Rice/Noodles", ing2: "Egg/Chicken/Beef", ing3: "Peppers/Capsicum", ing4: "Carrots", ing5: "Ginger", ing6: "Garlic", ing7: "Chillies", ing8: "Sesame Oil", isBreakfast: false, isDinner: true, isTea: true,}
+	var spagBol = {		title: "Spaghetti Bolognese", 	preptime: "50 minutes", 	image: "spaghettibolognese.jpeg",	describe: "A classic dish, satisfying and simple", ing1: "Spaghetti", ing2: "Mince", ing3: "Tomatoes", ing4: "Onion", ing5: "Garlic", ing6: "Stock", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
+	var lasagne = {		title: "Lasagne", 		preptime: "60-75 minutes", 	image: "lasagne.jpg", 		describe: "A delicious option with plenty of preparation needed", ing1: "Pasta sheets", ing2: "Lasagne sauce", ing3: "Mince", ing4: "Tomatoes", ing5: "Garlic", ing6: "Onion", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
+	var burrito = {		title: "Burritos", 		preptime: "50 minutes",  	image: "burrito.jpg", 		describe: "A flour tortilla rolled or folded around a filling (as of meat, beans, and cheese", ing1: "Tortillas/wraps", ing2: "Mince", ing3: "Cheese", ing4: "Tomatoes", ing5: "Salsa/Cream", ing6: "Rice", ing7: "Black beans", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
+	var cottagePie = {	title: "Cottage Pie", 		preptime: "60 minutes", 	image: "cottagepie.jpg", 	describe: "A dish of minced meat topped with browned mashed potato", ing1: "Mash/Potato", ing2: "Mince", ing3: "Peas", ing4: "Carrots", ing5: "Sweetcorn", ing6: "Gravy", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
+	var meatballs = {	title: "Meatballs", 		preptime: "40 minutes", 	image: "meatballs.jpg", 	describe: "This springtime pasta dish requires just four ingredients", ing1: "Meatballs", ing2: "Tomato Sauce", ing3: "Pasta", ing4: "-OPTIONAL-", ing5: "Cheese", ing6: "", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
+	var curry = {		title: "Curry", 		preptime: "45 minutes", 	image: "curry.jpg", 		describe: "Curry is a variety of dishes originating in the Indian subcontinent", ing1: "Spice blend", ing2: "Meat/Chicken", ing3: "Rice", ing4: "Naan", ing5: "Bhajis", ing6: "Samosas", ing7: "", ing8: "", isBreakfast: false, isDinner: false, isTea: true,}
+	var takeaway = {	title: "Takeaway", 		preptime: "0 minutes", 		image: "takeaway.jpg", 		describe: "A takeaway is a shop or restaurant which sells hot food to be eaten elsewhere", ing1: "Mobile Phone", ing2: "", ing3: "", ing4: "", ing5: "", ing6: "", ing7: "", ing8: "", isBreakfast: false, isDinner: false, isTea: true,}
+	
+	var allFood = [toast, cereal, granola, pancakes, fullEnglish, jacketPotato, chknDinner, soup, toastie, stirFry, 
+			spagBol, lasagne, burrito, cottagePie, meatballs, curry, takeaway];
 
 $(document).ready(function(){
 	var d = new Date();
 	var day = new Array(7);
-	day[0] = "Sunday";
-	day[1] = "Monday";
-	day[2] = "Tuesday";
-	day[3] = "Wednesday";
-	day[4] = "Thursday";
-	day[5] = "Friday";
-	day[6] = "Saturday";
+	day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	var displayday = day[d.getDay()];
 	var time = d.getHours();
 	
@@ -57,27 +166,6 @@ $(document).ready(function(){
 		isDinner: false,
 		isTea: false,
 	}
-//breakfasts
-	var toast = {	title: "Toast", 	preptime: "2 minutes",	image: "toast.jpg",		describe: "Nothing quite beats it", ing1: "Bread",	ing2: "Butter",	ing3: "Spread/Jam", ing4: "",	ing5: "",	ing6: "",	ing7: "",	ing8: "", 		isBreakfast: true, isDinner: false, isTea: false, }
-	var cereal = {	title: "Cereal",	preptime: "5 minutes",	image: "cereal.jpg",	describe: "A bowl of the good stuff, usually honey nut cornflakes/cheerios", ing1: "Cereal",	ing2: "Milk", ing3: "",	ing4: "", ing5: "", ing6: "", ing7: "",	ing8: "", isBreakfast: true, isDinner: false, isTea: false,}
-	var granola = {	title: "Granola",	preptime: "10/12 minutes",	image: "granola.jpg",	describe: "A bowl of the good stuff, with yoghurt and fruit usually", ing1: "Granola", ing2: "Yoghurt", ing3: "Banana",	ing4: "Blueberries", ing5: "Mango", ing6: "Strawberries", ing7: "",	ing8: "", isBreakfast: true, isDinner: false, isTea: false,}
-	var pancakes = {	title: "Pancakes",	preptime: "varies [Home made, might be 15 minutes, shop bought is instant]",	image: "pancakes.jpg", describe: "Best had with fruit and cream, although syrups are still good", ing1: "Pancake [Egg/Flour/Sugar]", ing2: "Whipped Cream", ing3: "Banana",	ing4: "Blueberries", ing5: "Strawberries", ing6: "Syrup [Maple/Golden]", ing7: "",	ing8: "", isBreakfast: true, isDinner: false, isTea: false,}
-	var fullEnglish = {	title: "Full English Breakfast", 	preptime: "45 minutes",	image: "fullenglish.jpg",	describe: "A classic combination of Eggs, Beans, Sausages, Bacon, Toast and Hash Browns, can sometimes be accompanied by tomatoes",	ing1: "Bread", ing2: "Butter",	ing3: "Eggs", ing4: "Beans", ing5: "Sausages", ing6: "Bacon", ing7: "Hash browns", ing8: "Tomatoes", isBreakfast: true, isDinner: true, isTea: false,}
-//dinners
-	var jacketPotato = {	title: "Jacket Potatoes", 	preptime: "15 minutes", 	image: "potato.jpeg", 		describe: "Cooking a great jacket potato is more art than science", ing1: "Potato", ing2: "Butter", ing3: "-TOPPINGS-", ing4: "Cheese", ing5: "Tuna", ing6: "Sandwich Filler", ing7: "Beans", ing8: "Chilli", isBreakfast: false, isDinner: true, isTea: true,}
-	var chknDinner = {	title: "Chicken Dinner", 	preptime: "2 hours", 	image: "ChickenDinner.png", describe: "A roast chicken served with a variety of vegetables, usually brocolli, carrots, peas, potatoes (either mashed/roasted or both) and parsnips, this is usually accompanied by stuffing and gravy, with Yorkshire puddings making the occasional appearance", ing1: "Chicken", ing2: "Potatoes", ing3: "Brocolli", ing4: "Carrots", ing5: "Peas", ing6: "Parsnips", ing7: "Stuffing", ing8: "Gravy", isBreakfast: false, isDinner: true, isTea: true,}
-	var soup = {	title: "Soup", 		preptime: "5 minutes", 	image: "soup.jpg", 			describe: "Soup is a primarily liquid food, generally served warm or hot that is made by combining ingredients of meat or vegetables with stock, milk, or water", ing1: "-VARIES-", ing2: "Tomato", ing3: "Chicken", ing4: "Butternut Squash", ing5: "Pea and Ham", ing6: "", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
-	var toastie = {	title: "Cheese Toasties", 	preptime: "10-15 minutes", 	image: "cheesetoastie.jpeg", 	describe: "Nice and simple, works well with a variety of ingredients", ing1: "Bread", ing2: "Cheese", ing3: "-OPTIONAL-", ing4: "Spicy chicken", ing5: "Beef chilli", ing6: "Peppers", ing7: "Red onion", ing8: "", isBreakfast: true, isDinner: true, isTea: true,}
-//teas
-	var stirFry = {	title: "Stir Fry", 		preptime: "25 minutes", 	image: "stirfry.jpeg", 		describe: "Nice and simple, can be assembled before work and is nice hot or cold", ing1: "Rice/Noodles", ing2: "Egg/Chicken/Beef", ing3: "Peppers/Capsicum", ing4: "Carrots", ing5: "Ginger", ing6: "Garlic", ing7: "Chillies", ing8: "Sesame Oil", isBreakfast: false, isDinner: true, isTea: true,}
-	var spagBol = {	title: "Spaghetti Bolognese", 	preptime: "50 minutes", 	image: "spaghettibolognese.jpeg",	describe: "A classic dish, satisfying and simple", ing1: "Spaghetti", ing2: "Mince", ing3: "Tomatoes", ing4: "Onion", ing5: "Garlic", ing6: "Stock", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
-	var lasagne = {	title: "Lasagne", 		preptime: "60-75 minutes", 	image: "lasagne.jpg", 		describe: "A delicious option with plenty of preparation needed", ing1: "Pasta sheets", ing2: "Lasagne sauce", ing3: "Mince", ing4: "Tomatoes", ing5: "Garlic", ing6: "Onion", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
-	var burrito = {	title: "Burritos", 		preptime: "50 minutes",  	image: "burrito.jpg", 		describe: "A flour tortilla rolled or folded around a filling (as of meat, beans, and cheese", ing1: "Tortillas/wraps", ing2: "Mince", ing3: "Cheese", ing4: "Tomatoes", ing5: "Salsa/Cream", ing6: "Rice", ing7: "Black beans", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
-	var cottagePie = {	title: "Cottage Pie", 	preptime: "60 minutes", 	image: "cottagepie.jpg", 		describe: "A dish of minced meat topped with browned mashed potato", ing1: "Mash/Potato", ing2: "Mince", ing3: "Peas", ing4: "Carrots", ing5: "Sweetcorn", ing6: "Gravy", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
-	var meatballs = {	title: "Meatballs", 		preptime: "40 minutes", 	image: "meatballs.jpg", 		describe: "This springtime pasta dish requires just four ingredients", ing1: "Meatballs", ing2: "Tomato Sauce", ing3: "Pasta", ing4: "-OPTIONAL-", ing5: "Cheese", ing6: "", ing7: "", ing8: "", isBreakfast: false, isDinner: true, isTea: true,}
-	var curry = {	title: "Curry", 		preptime: "45 minutes", 	image: "curry.jpg", 			describe: "Curry is a variety of dishes originating in the Indian subcontinent", ing1: "Spice blend", ing2: "Meat/Chicken", ing3: "Rice", ing4: "Naan", ing5: "Bhajis", ing6: "Samosas", ing7: "", ing8: "", isBreakfast: false, isDinner: false, isTea: true,}
-	var takeaway = {	title: "Takeaway", 		preptime: "0 minutes", 	image: "takeaway.jpg", 			describe: "A takeaway is a shop or restaurant which sells hot food to be eaten elsewhere", ing1: "Mobile Phone", ing2: "", ing3: "", ing4: "", ing5: "", ing6: "", ing7: "", ing8: "", isBreakfast: false, isDinner: false, isTea: true,}
-	
 
 	//key is used in the for loop to pass variables to the next object
 	//Breakfasts - Sun/Mon/Tue/Wed/Thu/Fri/Sat
@@ -91,7 +179,7 @@ $(document).ready(function(){
 
 	//Dinners - Sun/Mon/Tue/Wed/Thu/Fri/Sat
 	var meal0b = {};	for (let key in curry) {	meal0b[key] = curry[key];	};
-	var meal1b = {};	for (let key in soup) {	meal1b[key] = soup[key];	};
+	var meal1b = {};	for (let key in soup) {		meal1b[key] = soup[key];	};
 	var meal2b = {};	for (let key in toastie) {	meal2b[key] = toastie[key];	};
 	var meal3b = {};	for (let key in stirFry) {	meal3b[key] = stirFry[key];	};
 	var meal4b = {};	for (let key in burrito) {	meal4b[key] = burrito[key];	};
@@ -312,29 +400,94 @@ $(document).ready(function(){
 
 <style>
 .main-panel-infobox{margin:5%; border: 10px double black;}
+.sidenav {  height: 100%;  width: 0;  position: fixed;  z-index: 1;  top: 0;  left: 0;  background-color: #111;  overflow-x: hidden;
+  transition: 0.5s;  padding-top: 60px;}
+.sidenav .closebtn {  position: absolute;  top: 0;  right: 25px;  font-size: 36px;  margin-left: 50px;}
+.carousel-inner > .item > img {
+  margin: 0 auto;
+}
+#openBreakfast{transition:all 0.5s ease-in-out;}
+#openBreakfast:hover{transform:scale(1.3) translate(0px);}
+#openDinner{transition:all 0.5s ease-in-out;}
+#openDinner:hover{transform:scale(1.3) translate(0px);}
+#openTea{transition:all 0.5s ease-in-out;}
+#openTea:hover{transform:scale(1.3) translate(0px);}
+
+.mealMenuBottom{display:none;}
+.mealMenuSide{}
+
+.menu-item:hover{
+text-shadow:3px 3px 4px grey;
+}
+
+@media only screen and (max-width: 768px) {
+.mealMenuBottom{display:block;}
+.mealMenuSide{display:none;}
+} 
 </style>
+
+</head>
+
+
+<body>
 
 <nav class="jumbotron" style="background-color:rgb(1,1,1,0.5);text-align:center;">
 <h1> </h1>
 <h5> The next meal will be... </h5>
 </nav>
 
+<div id="sideNav" class="sidenav" style="opacity:0.95;">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> Close </a>
+
+<!-- CAROUSEL -->
+<div id="carousel-main" class="carousel slide" data-ride="carousel" >
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="text-align:center;">
+	<h3> Granola </h3>
+      <img src="granola.jpg" class="rounded-circle" style="height:400px;max-width:80%;">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#carousel-main" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-main" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+<!-- CAROUSEL ENDS -->
+</div>
+
+<div class="mealMenuSide" style="width:100px;position:absolute;top:48%;">
+<div onclick="openBreakfast(),openNav()"> <img src="breakfast.jpg" id="openBreakfast"  style="height:60px; width:90px;position:relative;border-radius:0px 20px 20px 0px;"> </div>
+<div onclick="openDinner(),openNav()">  <img src="dinner.jpg" id="openDinner" style="height:60px; width:90px;position:relative;top:10px;border-radius:0px 20px 20px 0px;">  </div>
+<div onclick="openTea(),openNav()"> <img src="tea.jpg"  id="openTea" style="height:60px; width:90px;position:relative;top:20px;border-radius:0px 20px 20px 0px;"> </div>
+</div>
+
 
 <div class="container" style="background-color:none;padding-bottom:50px;"> 
 
+<!-- MAIN PANEL CARD -->
 <div class="main-panel-infobox">
 
-<!-- MAIN PANEL CARD -->
 <div class="card" style="max-height:750px;background-color:rgb(0,0,0,0.4);">
- 	<div id="main-panel-title" class="card-header" style="text-align:center;font-size:40px;letter-spacing:2px;background-color:rgb(1,1,1,0.6)"> Default Title</div>
+ 	<div id="main-panel-title" class="card-header" style="text-align:center;font-size:4vw;letter-spacing:2px;background-color:rgb(1,1,1,0.6)"> Default Title</div>
  	<div id="main-panel-picture" class="card-body"> 
 		<img src="default.png"> 
  	</div>
- 	<div id="main-panel-info" class="card-footer" style="background-color:rgb(1,1,1,0.6)"> 
+ 	<div id="main-panel-info" class="card-footer" style="background-color:rgb(1,1,1,0.6);font-size:2.5vw;"> 
   		Time to prepare: <span id="main-panel-prepTime"> X minutes </span>
   
 		<div class="dropdown" style="float:right;">
-  		  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="background-color:grey;border:2px solid black;">
+  		  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="background-color:grey;border:2px solid black;font-size:3vw;">
     		  Ingredients
   		  </button>
   		  <p class="dropdown-menu">
@@ -350,27 +503,35 @@ $(document).ready(function(){
 		</div>
 	</div>
 </div>
-<!-- MAIN PANEL CARD END -->
 
 </div>
+<!-- MAIN PANEL CARD END -->
+
+
+<div class="mealMenuBottom" style="width:100%;text-align:center;padding-bottom:5%;">
+<span onclick="openBreakfast(),openNav()"> <img src="breakfast.jpg" id="openBreakfast"  style="max-height:100px; width:25%;border-radius:20px;"> </span>
+<span onclick="openDinner(),openNav()"> <img src="dinner.jpg" id="openDinner" style="max-height:100px; width:25%;border-radius:20px;margin-left:5%;margin-right:5%;">  </span>
+<span onclick="openTea(),openNav()"> <img src="tea.jpg"  id="openTea" style="max-height:100px; width:25%;border-radius:20px;"> </span>
+</div>
+
 
 <!-- ADDITIONAL INFORMATION CARDS -->
-<div class="jumbotron" style="background-color:rgb(1,1,1,0.5);;background-attachment:fixed;padding:40px;position:absolute;left:0;width:100%;">
+<div class="jumbotron" style="background-color:rgb(1,1,1,0.35);;background-attachment:fixed;padding:40px;position:absolute;left:0;width:100%;">
 
 <h3 style="text-align:center;padding:5px;border-radius:20px;"> Todays meals will be... </h3>
 
-<div id="breakfast-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;opacity:0.85;background-color:rgb(1,1,1,0.7)">
- <div id="breakfast-title" class="card-header" style="font-size:25px;background-color:rgb(1,1,1,0.9)"> Breakfast Option 1 </div>
+<div id="breakfast-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;opacity:1;background-color:rgb(1,1,1,0.5)">
+ <div id="breakfast-title" class="card-header" style="font-size:25px;background-color:rgb(1,1,1,0.3)"> Breakfast Option 1 </div>
  <div id="breakfast-info" class="card-body"> A fairly generic description of some standard items consumed at breakfast time, this can include, but is not limited to the following: Eggs, Milk, Sugar, Coffee, Cereal and Bread. </div>
 </div>
 
-<div id="dinner-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;opacity:0.85;background-color:rgb(1,1,1,0.7)">
- <div id="dinner-title" class="card-header" style="font-size:25px;background-color:rgb(1,1,1,0.9)"> Dinner Option 1 </div>
+<div id="dinner-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;opacity:1;background-color:rgb(1,1,1,0.5)">
+ <div id="dinner-title" class="card-header" style="font-size:25px;background-color:rgb(1,1,1,0.3)"> Dinner Option 1 </div>
  <div id="dinner-info" class="card-body"> A fairly generic description of some standard items consumed at dinner time, this can include, but is not limited to the following: Bread, Meats, Fruit, Yogurts and Crisps. </div>
 </div>
 
-<div id="tea-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;opacity:0.85;background-color:rgb(1,1,1,0.7)">
- <div id="tea-title" class="card-header" style="font-size:25px;background-color:rgb(1,1,1,0.9)"> Tea Option 1 </div>
+<div id="tea-card" class="card" style="margin-top:20px;border:6px double grey;text-align:center;opacity:1;background-color:rgb(1,1,1,0.5)">
+ <div id="tea-title" class="card-header" style="font-size:25px;background-color:rgb(1,1,1,0.3)"> Tea Option 1 </div>
  <div id="tea-info" class="card-body"> A fairly generic description of some standard items consumed at tea time, this can include, but is not limited to the following: Rice, Vegetables, Meats, Potatoes and Desserts. </div>
 </div>
 
