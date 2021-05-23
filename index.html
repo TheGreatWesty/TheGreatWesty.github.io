@@ -35,28 +35,23 @@ h1 h2 h3 h4 h5 h6 {font-family: Rubik, sans-serif;}
 .mw-bg-3 {background-color:rgb(52,  123,152,0.8);}
 
 /* Home tab */
+.mw-home-describe{padding-top:0px;line-height:1.5;font-size:1.5em;}
+.mw-home-image-caption{width:300px;letter-spacing:-1px;padding-bottom:5px;padding-left:30px;font-size:22px;text-transform:capitalize;float:left;font-weight:600;}
 
-.mw-home-bg1{background-color:rgb(228,222,142);width:100%;position:absolute;left:10%;margin-top:0%;margin-bottom:0%;}
-.mw-home-title{margin-left:-25px;padding:10px;font-weight:600;font-size:38px;}
-.mw-home-image{max-height:500px;max-width:80%;}
-.mw-home-image-caption{letter-spacing:-1px;padding-top:20px;padding-bottom:5px;padding-left:30px;font-size:22px;text-transform:capitalize;}
-.mw-home-text{text-align:center;font-size:15px;padding-top:30px;padding-bottom:30px;padding-right:15%;}
-
-@media only screen and (min-width:767px){
-.mw-home-bg1{background-color:rgb(228,222,142);width:100%;position:absolute;left:10%;margin-top:5%;padding-bottom:10%;}
-.mw-home-title{margin-left:-45px;padding:10px;font-weight:600;font-size:58px;}
-.mw-home-image{max-height:600px;max-width:50%;}
-.mw-home-image-caption{letter-spacing:-1px;padding-top:2px;padding-bottom:5px;padding-left:15px;font-size:26px;text-transform:uppercase;transform:translate(1.5em, 0px) rotate(90deg);transform-origin:top left;white-space:nowrap;letter-spacing:5px;}
-.mw-home-text{text-align:center;font-size:20px;padding-top:50px;padding-bottom:0px;padding-right:20%;}
+@media only screen and (min-width:600px){
+.mw-home-image-caption{width:1px;letter-spacing:-1px;padding-bottom:-15px;padding-left:15px;font-size:26px;text-transform:uppercase;transform:translate(1.5em, 0px) rotate(90deg);transform-origin:top left;white-space:nowrap;letter-spacing:5px;float:left;}
 }
 
-@media only screen and (min-width:1023px){
-.mw-home-bg1{background-color:rgb(228,222,142);width:100%;position:absolute;left:10%;margin-top:5%;}
-.mw-home-title{margin-left:-45px;padding:10px;font-weight:600;font-size:58px;}
-.mw-home-image{max-height:650px;max-width:450px;float:left;}
-.mw-home-image-caption{letter-spacing:-1px;padding-top:2px;padding-bottom:5px;padding-left:15px;font-size:26px;text-transform:uppercase;transform:translate(1.5em, 0px) rotate(90deg);transform-origin:top left;white-space:nowrap;}
-.mw-home-text{text-align:center;font-size:25px;padding-top:50px;padding-top:100px;padding-right:10%;line-height:2;}
+@media only screen and (min-width:768px){
+.mw-home-describe{padding-top:120px;line-height:1.8;font-size:1.8em;}
+.mw-home-image-caption{width:1px;letter-spacing:-1px;padding-bottom:5px;padding-left:10px;font-size:26px;text-transform:uppercase;transform:translate(1.5em, 0px) rotate(90deg);transform-origin:top left;white-space:nowrap;letter-spacing:5px;float:left;}
 }
+
+@media only screen and (min-width:1200px){
+.mw-home-describe{padding-top:140px;line-height:2;font-size:2em;}
+.mw-home-image-caption{width:1px;letter-spacing:-1px;padding-bottom:5px;padding-left:15px;font-size:26px;text-transform:uppercase;transform:translate(1.5em, 0px) rotate(90deg);transform-origin:top left;white-space:nowrap;letter-spacing:5px;float:left;}
+}
+
 /* Home tab ends */
 
 /*CV tab */
@@ -74,7 +69,7 @@ h1 h2 h3 h4 h5 h6 {font-family: Rubik, sans-serif;}
 }
 
 /*CV tab timeline*/
-.mw-cv-timeline{position:relative;max-width:1200px;margin: 0 auto;background-image: linear-gradient(rgb(228,222,142), rgb(52,  123,152));} 
+.mw-cv-timeline{position:relative;max-width:1200px;margin: 0 auto;background-image: linear-gradient(rgb(228,222,142,0.4), rgb(52,  123,152,0.4));} 
 .mw-cv-timeline::after{content: '';position:absolute;width:6px;background-color:grey;top:0;bottom:0;left:50%;margin-left:3px;}
 .mw-cv-container{padding:10px 40px;position:relative;background-color:inherit;width:50%;}
 .mw-cv-container::after{content:'';position:absolute;width:25px;height:25px;right:-18px;background-color:white;border:5px solid black;top:25px;border-radius:50%;z-index:1;}
@@ -100,14 +95,13 @@ h1 h2 h3 h4 h5 h6 {font-family: Rubik, sans-serif;}
 
 .mw-skills-container{max-width:100%;margin-bottom:3%;}
 
-.mw-skills-bg1{position:absolute;height:50px;top:75px;left:0;width:100%;background-color: rgb(128,128,128,0.1);z-index:-1;}
 .mw-skills-introtext{font-size:22px;padding:10px;text-align:center;}
 
-.mw-skills-bar{width:90%;background-color:rgb(228,222,142,0.4);margin-left:auto;margin-right:auto;padding:2px;border-radius:25px 10px 25px 10px;}
+.mw-skills-bar{max-width:800px;background-color:rgb(228,222,142,0.4);margin-left:auto;margin-right:auto;padding:2px;border-radius:25px 10px 25px 10px;}
 .mw-skills-bar-title{text-align:center;margin-bottom:3px;}
 .mw-skills-bar-text{text-align:center;padding-top:1px;padding-bottom:1px;color:white;font-size:10px;}
 .mw-skills-bar-description{margin-bottom:20px;color:grey;width:90%;margin-left:auto;margin-right:0px;}
-.mw-skills-bar-button{border:none;background-color:rgb(126,126,126,0.05);border-radius:3px;box-shadow: 2px 2px 2px;}
+.mw-skills-bar-button{border:none;background-color:inherit;text-shadow:1px 1px 5px rgb(228,222,142,1);margin-bottom:6px;margin-top:12px;}
 .mw-skills-10{width:10%;background-color:#EA4335;border-radius:25px 10px 25px 10px;}
 .mw-skills-20{width:20%;background-color:#EA4335;border-radius:25px 10px 25px 10px;}
 .mw-skills-30{width:30%;background-color:#FBBC05;border-radius:25px 10px 25px 10px;}
@@ -187,18 +181,20 @@ input[type=submit]:hover {  background-color: black;}
 <!-- HOME TAB -->
 <div id="home" class="tab-pane fade container in active">
 
-<div class="mw-home-bg1">
-
-<h1 class="mw-home-title"> Mark West </h1>
-
-<div class="container row" >
-   <picture class=" col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
-      <img src="M.jpg" class=" mw-home-image">
-      <figcaption class="mw-home-image-caption col-sm-1"> Web Developer </figcaption>
-   </picture>
-   <p class="col-12 col-sm-12 col-md-4 col-lg-6 col-xl-6 mw-home-text">Hi! <br> I'm a self taught Web Developer based in Bradford, I hope to translate my developing skills into a career, check out my recent work <a data-toggle="tab" href="#portfolio" style="color:black;font-weight:600;">here</a> </p>
-</div>
-
+<div class="container-fluid" style="background-color:rgb(228,222,142) ;width:100%;min-height:600px;">
+	<div class="row">
+		<h1 style="margin-left:-20px;font-weight:600;"> Mark West </h1>
+		<picture class="col-12 col-xs-12 col-sm-7 col-md-6 col-lg-6 col-xl-6">
+			<img src="M.jpg" style="max-width:97%;max-height:500px;padding:20px;float:left;">
+			<figcaption class="mw-home-image-caption"> Web Developer </figcaption>
+		</picture>
+		<div class="col-12 col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xl-6" style="text-align:center;padding-top:auto;padding-bottom:auto;">
+			<p class="mw-home-describe">
+			Hi! <br>
+			I'm a self taught developer based in Bradford, check out my recent work <a data-toggle="tab" href="#portfolio" style="color:black;font-weight:600;">here</a>
+			</p>
+		</div>
+	</div>
 </div>
 
 </div>
@@ -435,16 +431,16 @@ input[type=submit]:hover {  background-color: black;}
 
 <!-- First Application Card -->
 
-<div class="row" style="border:5px groove lightgrey;margin:15px;padding:10px;background-color: rgb(228,222,142,0.25);">
+<div class="row" style="margin:15px;padding:10px;background-color: rgb(228,222,142,0.45);">
 
 <picture class="col-xs-12 col-sm-6 col-md-4 col-xl-1" style="float:left;">
-<a href="https://github.com/TheGreatWesty/TheGreatWesty">
+<a href="https://thegreatwesty.github.io/project2/ybsgkit">
 <img src="https://thegreatwesty.github.io/demoImageYBSGKit.jpg" class="img-responsive thumbnail" style="max-height:250px;box-shadow:5px 5px 5px grey;margin-right:auto;margin-left:auto;">
 </a>
 </picture>
 
 <p class="col-xs-12 col-sm-6 col-md-8 col-xl-1" style="text-align:center;"> 
-<span style="font-size:4vw;">YBSG Qualifier Kit </span> <br>
+<h1>YBSG Qualifier Kit </h1>
 This is an application developed to support my current job, I can now record conversation details electronically, this allows me to reduce post call activity from an average of around 20 minutes to roughly 4 or 5 minutes
 </p>
 
@@ -452,7 +448,7 @@ This is an application developed to support my current job, I can now record con
 
 <!-- Second Application Card -->
 
-<div class="row" style="border:5px groove lightgrey;margin:15px;padding:10px;background-color: rgb(228,222,142,0.25);">
+<div class="row" style="margin:15px;padding:10px;background-color: rgb(228,222,142,0.35);">
 
 <picture class="col-xs-12 col-sm-6 col-md-4 col-xl-1" style="float:left;">
 <a href="https://thegreatwesty.github.io/project1/mealplanner">
@@ -461,30 +457,32 @@ This is an application developed to support my current job, I can now record con
 </picture>
 
 <p class="col-xs-12 col-sm-6 col-md-8 col-xl-1" style="text-align:center;"> 
-<span style="font-size:4vw;">Meal Planner </span> <br>
+<h1>Meal Planner </h1>
 An application developed for my personal benefit, I can now view a visual representation of my expected meals and view a small library of options to help make deciding meals simpler
 </p>
 
 </div>
 
-<!-- Next Application Card -->
-<div style="background-color:red;color:white;">
-YOU NEED TO WORK ON THIS SECTION<br> - Include a new section now to link to meal planner <br> - Consider a new section as well for the budgeting manager<br> - Complete the YBSG Kit
-</div>
+<!-- Third Application Card -->
+
+<div class="row" style="margin:15px;padding:10px;background-color: rgb(228,222,142,0.25);">
+
+<picture class="col-xs-12 col-sm-6 col-md-4 col-xl-1" style="float:left;">
+<a href="https://thegreatwesty.github.io/project3/budgetmanager">
+<img src="https://thegreatwesty.github.io/demoImageBudgetManager.jpg" class="img-responsive thumbnail" style="max-height:250px;box-shadow:5px 5px 5px grey;margin-right:auto;margin-left:auto;">
+</a>
+</picture>
+
+<p class="col-xs-12 col-sm-6 col-md-8 col-xl-1" style="text-align:center;"> 
+<h1>Budget Manager </h1>
+<i>- NOTE: Only basic functionality established at this point, once further options are included, this will be listed on my github. </i>
+<hr> An application again developed for my personal benefit, I can quickly use a basic form to enter values and get a visualisation of my spending
+</p>
 
 </div>
 
-
-
-<div style="display:none;">
-			<h2>Portfolio </h2>
-			<ul >
-				<li> Strongest Project </li>
-				<li> Demonstrate Variety </li>
-				<li> Personal Favourite </li>
-				<li> Simple design, not cluttered </li>
-			</ul>
 </div>
+
 		</div>
 <!-- PORTFOLIO TAB END -->
 
@@ -498,49 +496,28 @@ YOU NEED TO WORK ON THIS SECTION<br> - Include a new section now to link to meal
 
 <!-- RELEVANT SKILLS -->
 
-<div class="container mw-skills-container">
+<div class="container">
 
 <h3 class="mw-skills-title"> General Skills </h3>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill1" class="mw-skills-bar-button"> Responsive Web Design  </button> 
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-70"> 70% </div> </div>
-</p>
-<div id="skill1" class="collapse mw-skills-bar-description">
-A good understanding of the core concept with the ability to implement the design idea with my technical skills
-</div>
+<table style="width:100%;">
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill2" class="mw-skills-bar-button" > GitHub </button>  
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-40"> 40% </div> </div>
-</p>
-<div id="skill2" class="collapse mw-skills-bar-description">
-A decent understanding of the foundations
-</div>
+<tr> <td style="width:200px;"> <button data-toggle="collapse" data-target="#skill1" class="mw-skills-bar-button"> Responsive Web Design  </button> </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-70"> 70% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <p id="skill1" class="collapse mw-skills-bar-description">A good understanding of the core concept with the ability to implement the design idea with my technical skills</p> </td> </tr>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill3" class="mw-skills-bar-button"> Word Press</button>   
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div>
-</p>
-<div id="skill3" class="collapse mw-skills-bar-description">
-A basic understanding of how WordPress sites operate
-</div>
+<tr> <td> <button data-toggle="collapse" data-target="#skill2" class="mw-skills-bar-button" > GitHub </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-40"> 40% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <div id="skill2" class="collapse mw-skills-bar-description">A decent understanding of the foundations</div></td> </tr>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill4" class="mw-skills-bar-button">  Search Engine Optimization</button> 
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-10"> 10% </div> </div>
-</p>
-<div id="skill4" class="collapse mw-skills-bar-description">
-A basic understanding of the core concept
-</div>
+<tr> <td> <button data-toggle="collapse" data-target="#skill3" class="mw-skills-bar-button"> Word Press</button>    </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <div id="skill3" class="collapse mw-skills-bar-description">A basic understanding of how WordPress sites operate</div> </td> </tr>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill5" class="mw-skills-bar-button">  Microsoft Office Applications </button>  
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-50"> 50% </div> </div>
-</p>
-<div id="skill5" class="collapse mw-skills-bar-description">
-Relatively good understanding of basic concepts in popular MSOffice applications [Word, Excel, Powerpoint]
-</div>
+<tr> <td> <button data-toggle="collapse" data-target="#skill4" class="mw-skills-bar-button">  Search Engine Optimization</button> </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-10"> 10% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <div id="skill4" class="collapse mw-skills-bar-description">A basic understanding of the core concept</div> </td> </tr>
+
+<tr> <td> <button data-toggle="collapse" data-target="#skill5" class="mw-skills-bar-button">  Microsoft Office Applications </button>  </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-50"> 50% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <div id="skill5" class="collapse mw-skills-bar-description">Relatively good understanding of basic concepts in popular MSOffice applications [Word, Excel, Powerpoint]</div> </td> </tr>
+
+</table>
 
 </div>
 
@@ -553,88 +530,45 @@ Relatively good understanding of basic concepts in popular MSOffice applications
 <h3 class="mw-skills-title"> Technical Skills </h3>
 <h4> <b> Front end </b> </h4>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill6" class="mw-skills-bar-button">  HTML </button>  
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-90"> 90% </div> </div>
-</p>
-<div id="skill6" class="collapse mw-skills-bar-description">
-Very familiar with standard/common concepts in HTML
-</div>
+<table style="width:100%;">
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill7" class="mw-skills-bar-button"> Bootstrap </button>  
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-70"> 70% </div> </div>
-</p>
-<div id="skill7" class="collapse mw-skills-bar-description">
-Familiar with large parts of Bootstrap3 and Bootstrap4's ability [good knowledge of BS4 spacing shorthand, and BS3/BS4 grid system]
-</div>
+<tr> <td style="width:200px;"> <button data-toggle="collapse" data-target="#skill6" class="mw-skills-bar-button">  HTML </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-90"> 90% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <div id="skill6" class="collapse mw-skills-bar-description">Very familiar with standard/common concepts in HTML</div></td> </tr>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill8" class="mw-skills-bar-button"> CSS </button>  
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-70"> 70% </div> </div>
-</p>
-<div id="skill8" class="collapse mw-skills-bar-description">
-Completed a SoloLearn fundamentals course, good understanding of popular concepts in CSS [CSS grid, positioning, inheritance, media queries, naming conventions]
-</div>
+<tr> <td> <button data-toggle="collapse" data-target="#skill7" class="mw-skills-bar-button"> Bootstrap </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-70"> 70% </div> </div> </td> </tr>
+<tr> <td colspan="2"><div id="skill7" class="collapse mw-skills-bar-description">Familiar with large parts of Bootstrap3 and Bootstrap4's ability [good knowledge of BS4 spacing shorthand, and BS3/BS4 grid system]</div> </td> </tr>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill9" class="mw-skills-bar-button">  w3.CSS </button>  
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-50"> 50% </div> </div>
-</p>
-<div id="skill9" class="collapse mw-skills-bar-description">
-I feel familiar with most of the common concepts in W3.css
-</div>
+<tr> <td> <button data-toggle="collapse" data-target="#skill8" class="mw-skills-bar-button"> CSS </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-70"> 70% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <div id="skill8" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, good understanding of popular concepts in CSS [CSS grid, positioning, inheritance, media queries, naming conventions]</div></td> </tr>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill10" class="mw-skills-bar-button"> Javascript </button>   
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-60"> 60% </div> </div>
-</p>
-<div id="skill10" class="collapse mw-skills-bar-description">
-Completed a SoloLearn fundamentals course, I have read more about advanced concepts in JS [Recursion, Prototyping, Class inheritance etc.] but wouldn't feel comfortable working with these concepts without support
-</div>
+<tr> <td> <button data-toggle="collapse" data-target="#skill9" class="mw-skills-bar-button">  w3.CSS </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-50"> 50% </div> </div> </td> </tr>
+<tr> <td colspan="2"><div id="skill9" class="collapse mw-skills-bar-description">I feel familiar with most of the common concepts in W3.css</div> </td> </tr>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill11" class="mw-skills-bar-button"> JQuery </button>  
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-60"> 60% </div> </div>
-</p>
-<div id="skill11" class="collapse mw-skills-bar-description">
-Completed a SoloLearn fundamentals course, I am familiar with the syntax and have a good appreciation for what can be achieved with JQuery
-</div>
+<tr> <td> <button data-toggle="collapse" data-target="#skill10" class="mw-skills-bar-button"> Javascript </button>    </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-60"> 60% </div> </div> </td> </tr>
+<tr> <td colspan="2"><div id="skill10" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, I have read more about advanced concepts in JS [Recursion, Prototyping, Class inheritance etc.] but wouldn't feel comfortable working with these concepts without support</div> </td> </tr>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill12" class="mw-skills-bar-button"> React </button>  
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-20"> 20% </div> </div>
-</p>
-<div id="skill12" class="collapse mw-skills-bar-description">
-Completed a React tutorial, I have a basic understanding of the fundamentals
-</div>
+<tr> <td> <button data-toggle="collapse" data-target="#skill11" class="mw-skills-bar-button"> JQuery </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-60"> 60% </div> </div> </td> </tr>
+<tr> <td colspan="2"><div id="skill11" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, I am familiar with the syntax and have a good appreciation for what can be achieved with JQuery</div></td> </tr>
+
+<tr> <td> <button data-toggle="collapse" data-target="#skill12" class="mw-skills-bar-button"> React </button>  </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-20"> 20% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <div id="skill12" class="collapse mw-skills-bar-description">Completed a React tutorial, I have a basic understanding of the fundamentals</div> </td> </tr>
+
+</table>
 
 <h4><b>Back end </b></h4>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill13" class="mw-skills-bar-button">  PHP </button>  
+<table style="width:100%;">
 
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div>
-</p>
-<div id="skill13" class="collapse mw-skills-bar-description">
-Completed a SoloLearn fundamentals course, understand core concepts
-</div>
+<tr> <td style="width:200px;"> <button data-toggle="collapse" data-target="#skill13" class="mw-skills-bar-button">  PHP </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <div id="skill13" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, understand core concepts</div> </td> </tr>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill14" class="mw-skills-bar-button"> C </button>  
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div>
-</p>
-<div id="skill14" class="collapse mw-skills-bar-description">
-Completed a SoloLearn fundamentals course, understand core concepts
-</div>
+<tr> <td> <button data-toggle="collapse" data-target="#skill14" class="mw-skills-bar-button"> C </button>  </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <div id="skill14" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, understand core concepts</div></td> </tr>
 
-<p class="mw-skills-bar-title">
-<button data-toggle="collapse" data-target="#skill15" class="mw-skills-bar-button"> C# </button>  
-<div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div>
-</p>
-<div id="skill15" class="collapse mw-skills-bar-description">
-Completed a SoloLearn fundamentals course, understand core concepts
-</div>
+<tr> <td> <button data-toggle="collapse" data-target="#skill15" class="mw-skills-bar-button"> C# </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div> </td> </tr>
+<tr> <td colspan="2"> <div id="skill15" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, understand core concepts</div></td> </tr>
+
+</table>
 
 </div>
 
@@ -686,13 +620,26 @@ Completed a SoloLearn fundamentals course, understand core concepts
 <!-- CONTACT TAB END -->
 
 
-		<footer style="display:none;"> 
-			<p> Mark West </p>
-			<a href="mailto:mark-west@hotmail.co.uk">mark-west@hotmail.co.uk</a> 
-		</footer>
 
 	</div>
 
-<div>
-
+</div>
+	<footer style=""> 
+		<div style="padding:15px;"> 
+			<div class="row" style="width:250px;margin-left:20%;">
+				<p class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"> 
+					<a data-toggle="tab" href="#home" style="color:black;font-weight:300;display:block;">Home</a>
+					<a data-toggle="tab" href="#contact" style="color:black;font-weight:300;display:block;">Contact</a> 
+					<a data-toggle="tab" href="#CV" style="color:black;font-weight:300;display:block;">CV</a> 
+					<a data-toggle="tab" href="#portfolio" style="color:black;font-weight:300;display:block;">Portfolio</a> 
+					<a data-toggle="tab" href="#skills" style="color:black;font-weight:300;display:block;">Skills</a> 
+				</p>
+				<p class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+					<a href="https://github.com/TheGreatWesty" style="color:black;font-weight:300;display:block;"> GitHub </a>
+					<a href="https://www.linkedin.com/in/mark-west-b4058b103/" style="color:black;font-weight:300;display:block;"> LinkedIn </a>
+				</p>
+			</div>
+		</div>
+		<a href="mailto:mark-west@hotmail.co.uk" style="padding:15px;">mark-west@hotmail.co.uk</a> 
+	</footer>
 </body>
