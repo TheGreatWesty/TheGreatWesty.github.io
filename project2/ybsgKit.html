@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<head>
+  <title>YBSG - Qualifier Tool [Reworked] </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+<script>
+$(document).ready(function(){
+	var ybsActive = false;
+	var cbsActive = false;
+	var accActive = false;
+   $("#ybs-main-button").click(function(){
+	$(".ybs-menu-1").hover(function(){  $(this).css("background-color", "green");  	}, function(){ 	$(this).css("background-color", "white"); });
+	ybsActive = !ybsActive;
+	if(ybsActive == true){
+		if(cbsActive == true){	cbsActive = !cbsActive;	}
+		if(accActive == true){	accActive = !accActive;	}	
+		$(".broker-info").hide();
+		$(".main-banner").css("background-color", "rgb(0,136,57,0.8)");
+		$("#YBS-new-title, #YBS-customer-title, #YBS-recap-title, #YBS-eli-title, #YBS-aff-title, #YBS-aip-title, #YBS-end-title, #YBS-notes-title").css("background-color", "rgb(0,136,57,0.3)");
+	}
+   });
+   $("#cbs-main-button").click(function(){
+	$(".ybs-menu-1").hover(function(){  $(this).css("background-color", "red");  }, function(){  	$(this).css("background-color", "white"); });
+	cbsActive = !cbsActive;
+	if(cbsActive == true){
+		if(ybsActive == true){	ybsActive = !ybsActive;	}
+		if(accActive == true){	accActive = !accActive;	}
+		$(".broker-info").hide();
+		$(".main-banner").css("background-color", "rgb(210, 8, 39,0.8)");
+		$("#YBS-new-title, #YBS-customer-title, #YBS-recap-title, #YBS-eli-title, #YBS-aff-title, #YBS-aip-title, #YBS-end-title, #YBS-notes-title").css("background-color", "rgb(210, 8, 39,0.3)");
+	}
+   });
+   $("#acc-main-button").click(function(){
+	$(".ybs-menu-1").hover(function(){  $(this).css("background-color", "orange");  }, function(){  $(this).css("background-color", "white"); });
+	accActive = !accActive;
+	if(accActive == true){
+		if(ybsActive == true){	ybsActive = !ybsActive;	}
+		if(cbsActive == true){	cbsActive = !cbsActive;	}
+		$(".broker-info").show();
+		$(".main-banner").css("background-color", "rgb(226, 90, 16,0.8)");
+		$("#YBS-new-title, #YBS-customer-title, #YBS-recap-title, #YBS-eli-title, #YBS-aff-title, #YBS-aip-title, #YBS-end-title, #YBS-notes-title").css("background-color", "rgb(226, 90, 16,0.3)");
+	}
+   });
+
+
+    $(".ybs-hp-btn").click(function(){
+	$(".main-banner").append("<p>House Purchase</p>");
+	$(".ybs-hp").show();
+	$("#YBS-notes-extract").append("<span> House purchase </span>");
+	ybsActive == true ? $(".main-banner").css("background-color", "rgb(0,136,57,0.8)")
+		: cbsActive == true ? $(".main-banner").css("background-color", "rgb(210, 8, 39,0.8)")
+		: accActive == true ? $(".main-banner").css("background-color", "rgb(226, 90, 16,0.8)")
+		: $(".main-banner").css("background-color", "none") ;
+    });
+    $(".ybs-rem-btn").click(function(){
+	$(".main-banner").append("<p>Remortgage</p>");
+	$(".ybs-rem").show();
+	$("#YBS-notes-extract").append("<span> Remortgage </span>");
+	ybsActive == true ? $(".main-banner").css("background-color", "rgb(0,136,57,0.8)")
+		: cbsActive == true ? $(".main-banner").css("background-color", "rgb(210, 8, 39,0.8)")
+		: accActive == true ? $(".main-banner").css("background-color", "rgb(226, 90, 16,0.8)")
+		: $(".main-banner").css("background-color", "none") ;
+    });
+    $(".ybs-port-btn").click(function(){
+	$(".main-banner").append("<p>Portability</p>");
+	$(".ybs-port").show();
+	$("#YBS-notes-extract").append("<span> Portability </span>");
+	ybsActive == true ? $(".main-banner").css("background-color", "rgb(0,136,57,0.8)")
+		: cbsActive == true ? $(".main-banner").css("background-color", "rgb(210, 8, 39,0.8)")
+		: accActive == true ? $(".main-banner").css("background-color", "rgb(226, 90, 16,0.8)")
+		: $(".main-banner").css("background-color", "none") ;
+    });
+    $(".ybs-al-btn").click(function(){
+	$(".main-banner").append("<p>Additional Lending</p>");
+	$(".ybs-al").show();
+	$("#YBS-notes-extract").append("<span> Additional Lending </span>");
+	ybsActive == true ? $(".main-banner").css("background-color", "rgb(0,136,57,0.8)")
+		: cbsActive == true ? $(".main-banner").css("background-color", "rgb(210, 8, 39,0.8)")
+		: accActive == true ? $(".main-banner").css("background-color", "rgb(226, 90, 16,0.8)")
+		: $(".main-banner").css("background-color", "none") ;
+    });
+    $(".ybs-pt-btn").click(function(){
+	$(".main-banner").append("<p>Product Transfer</p>");
+	$(".ybs-pt").show();
+	$("#YBS-notes-extract").append("<span> Product Transfer </span>");
+	ybsActive == true ? $(".main-banner").css("background-color", "rgb(0,136,57,0.8)")
+		: cbsActive == true ? $(".main-banner").css("background-color", "rgb(210, 8, 39,0.8)")
+		: accActive == true ? $(".main-banner").css("background-color", "rgb(226, 90, 16,0.8)")
+		: $(".main-banner").css("background-color", "none") ;
+    });
+    $(".ybs-toe-btn").click(function(){
+	$(".main-banner").append("<p>Transfer of Equity</p>");
+	$(".ybs-toe").show();
+	$("#YBS-notes-extract").append("<span> Transfer of Equity </span>");
+	ybsActive == true ? $(".main-banner").css("background-color", "rgb(0,136,57,0.8)")
+		: cbsActive == true ? $(".main-banner").css("background-color", "rgb(210, 8, 39,0.8)")
+		: accActive == true ? $(".main-banner").css("background-color", "rgb(226, 90, 16,0.8)")
+		: $(".main-banner").css("background-color", "none") ;
+    });
+    $(".ybs-t-t-btn").click(function(){
+	$(".main-banner").append("<p>Type/Term amendment</p>");
+	$(".ybs-t-t").show();
+	$("#YBS-notes-extract").append("<span> Type/Term amendment </span>");
+	ybsActive == true ? $(".main-banner").css("background-color", "rgb(0,136,57,0.8)")
+		: cbsActive == true ? $(".main-banner").css("background-color", "rgb(210, 8, 39,0.8)")
+		: accActive == true ? $(".main-banner").css("background-color", "rgb(226, 90, 16,0.8)")
+		: $(".main-banner").css("background-color", "none") ;
+    });
+
+    $(".broker-button").click(function(){
+	let info = $(".broker-comment").val();
+	$("#YBS-notes-extract").append("<span> Broker relationship: " + info + "</span>");
+    });
+
+    $("#acNumUpdate").click(function(){
+	var str = $("#accountNumber").val();
+	var str2 = $("#portingNumber").val();
+	$("#YBS-new-title").text("Account Number: " + str );		
+	$("#YBS-notes-extract").append("<span> Mandatories done </span>");
+	$("#YBS-notes-extract").append("<span> Porting REF:" + str2 + "</span>");
+	if($("#paperless").is(":checked")){		$("#YBS-notes-extract").append("<span> Paperless process explained - Happy to do verbal acceptance </span>");}
+	if($("#offer-accepted").is(":checked")){	$("#YBS-notes-extract").append("<span> Offer accepted </span>");}
+	if($("#paperless-auth1").is(":checked")){	$("#YBS-notes-extract").append("<p> App1 paperless acceptance received </p>");}
+	if($("#paperless-auth2").is(":checked")){	$("#YBS-notes-extract").append("<p> App2 paperless acceptance received </p>");}
+	if($("#paperless-auth3").is(":checked")){	$("#YBS-notes-extract").append("<p> App3 paperless acceptance received </p>");}
+	if($("#paperless-auth4").is(":checked")){	$("#YBS-notes-extract").append("<p> App4 paperless acceptance received </p>");}
+	ybsActive == true ? $("#YBS-new-title").css("background-color", "rgb(0,136,57,0.8)")
+		: cbsActive == true ? $("#YBS-new-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		: accActive == true ? $("#YBS-new-title").css("background-color", "rgb(226, 90, 16,0.8)") 
+		: $("#YBS-new-title").css("background-color", "none") ;
+    });
+
+    $("#customerVerif1").click(function(){
+	var name = $("#customerName1").val();
+	if($(this).is(":checked")){
+		$("#YBS-customer-title").text("Customer Information: " + name );
+		$("#YBS-notes-extract").append("<p>" + name + " called to set up; </p>");
+		$("#YBS-notes-extract2").append("<span> Verified </span>");
+		ybsActive == true ? $("#YBS-customer-title").css("background-color", "rgb(0,136,57,0.8)")
+		     : cbsActive == true ? $("#YBS-customer-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		     : accActive == true ? $("#YBS-customer-title").css("background-color", "rgb(226, 90, 16,0.8)") 
+		     : $("#YBS-customer-title").css("background-color", "none") ;
+	}
+	else if($(this).is(":not(:checked)")){
+		$("#YBS-customer-title").text("Customer Information" );
+		$("#YBS-customer-title").css("background-color","lightgrey");
+		$("#YBS-notes-extract").append("<p>" + name + " called to set up; </p>");
+	}
+   });
+
+    $("#customerVerif2").click(function(){
+	var name = $("#customerName2").val();
+	if($(this).is(":checked")){
+		$("#YBS-customer-title").text("Customer Information: " + name );
+		$("#YBS-notes-extract").append("<p>" + name + " called to set up; </p>");
+		$("#YBS-notes-extract").append("<span> Verified </span>");
+		ybsActive == true ? $("#YBS-customer-title").css("background-color", "rgb(0,136,57,0.8)")
+		     : cbsActive == true ? $("#YBS-customer-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		     : accActive == true ? $("#YBS-customer-title").css("background-color", "rgb(226, 90, 16,0.8)") 
+		     : $("#YBS-customer-title").css("background-color", "none") ;
+	}
+	else if($(this).is(":not(:checked)")){
+		$("#YBS-customer-title").text("Customer Information" );
+		$("#YBS-customer-title").css("background-color","lightgrey");
+	}
+   });
+
+    $("#customerVerif3").click(function(){
+	var name = $("#customerName3").val();
+	if($(this).is(":checked")){
+		$("#YBS-customer-title").text("Customer Information: " + name );
+		$("#YBS-notes-extract").append("<p>" + name + " called to set up; </p>");
+		$("#YBS-notes-extract").append("<span> Verified </span>");
+		ybsActive == true ? $("#YBS-customer-title").css("background-color", "rgb(0,136,57,0.8)")
+		     : cbsActive == true ? $("#YBS-customer-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		     : accActive == true ? $("#YBS-customer-title").css("background-color", "rgb(226, 90, 16,0.8)") 
+		     : $("#YBS-customer-title").css("background-color", "none") ;
+	}
+	else if($(this).is(":not(:checked)")){
+		$("#YBS-customer-title").text("Customer Information" );
+		$("#YBS-customer-title").css("background-color","lightgrey");
+	}
+   });
+
+    $("#customerVerif4").click(function(){
+	var name = $("#customerName4").val();
+	if($(this).is(":checked")){
+		$("#YBS-customer-title").text("Customer Information: " + name );
+		$("#YBS-notes-extract").append("<p>" + name + " called to set up; </p>");
+		$("#YBS-notes-extract").append("<span> Verified </span>");
+		ybsActive == true ? $("#YBS-customer-title").css("background-color", "rgb(0,136,57,0.8)")
+		     : cbsActive == true ? $("#YBS-customer-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		     : accActive == true ? $("#YBS-customer-title").css("background-color", "rgb(226, 90, 16,0.8)") 
+		     : $("#YBS-customer-title").css("background-color", "none") ;
+	}
+	else if($(this).is(":not(:checked)")){
+		$("#YBS-customer-title").text("Customer Information" );
+		$("#YBS-customer-title").css("background-color","lightgrey");
+	}
+   });
+
+   $("#YBS-recap-check").click(function(){
+	if($(this).is(":checked")){
+		$("#YBS-notes-extract").append("<span> Account recapped </span>");
+		ybsActive == true ? $("#YBS-recap-title").css("background-color", "rgb(0,136,57,0.8)")
+		     : cbsActive == true ? $("#YBS-recap-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		     : accActive == true ? $("#YBS-recap-title").css("background-color", "rgb(226, 90, 16,0.8)") 
+		     : $("#YBS-recap-title").css("background-color", "none") ;
+	}
+   });
+
+   $("#YBS-eli-check").click(function(){
+	var ba = $("#borrowing-amount").val();
+	var bp = $("#borrowing-purpose").val();
+	if($(".ybs-al").show()) {$("#YBS-notes-extract").append("<p>Borrowing Purpose: " + ba + "-" + bp + "</p>");}
+		$("#YBS-notes-extract").append("<span> Eligibility done </span>");		
+		ybsActive == true ? $("#YBS-eli-title").css("background-color", "rgb(0,136,57,0.8)")
+		     : cbsActive == true ? $("#YBS-eli-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		     : accActive == true ? $("#YBS-eli-title").css("background-color", "rgb(226, 90, 16,0.8)") 
+		     : $("#YBS-eli-title").css("background-color", "none") ;
+   });
+   
+   $("#YBS-aff-check").click(function(){
+	var app1 = $("#app1aff-info").val();
+	var app2 = $("#app2aff-info").val();
+	var app3 = $("#app3aff-info").val();
+	var app4 = $("#app4aff-info").val();
+	var maxbor = $("#max-borrow").val();
+	if($(this).is(":checked")){
+		$("#YBS-notes-extract").append("<span> Affordability done</span>");
+		$("#YBS-notes-extract").append("<p> Income/Expenditure; <br> App 1 <br>" + app1 + " <br> App2 <br>" + app2 + " <br> App3 <br>" + app3 + "<br> App4 <br>" + app4 + "<br> Max Borrowing: " + maxbor + "</p>");
+		ybsActive == true ? $("#YBS-aff-title").css("background-color", "rgb(0,136,57,0.8)")
+		     : cbsActive == true ? $("#YBS-aff-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		     : accActive == true ? $("#YBS-aff-title").css("background-color", "rgb(226, 90, 16,0.8)") 
+		     : $("#YBS-aff-title").css("background-color", "none") ;}
+   });
+   $("#YBS-aip-check").click(function(){
+	if($(this).is(":checked")){
+		$("#YBS-notes-extract").append("<span> AIP done </span>");
+		ybsActive == true ? $("#YBS-aip-title").css("background-color", "rgb(0,136,57,0.8)")
+		     : cbsActive == true ? $("#YBS-aip-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		     : accActive == true ? $("#YBS-aip-title").css("background-color", "rgb(226, 90, 16,0.8)") 
+		     : $("#YBS-aip-title").css("background-color", "none") ;
+	}
+   });
+   $("#YBS-end-check").click(function(){
+	var time = $("#ybs-appt-time").val();
+	var name = $("#ybs-appt-name").val();
+	var ref = $("#ybs-appt-ref").val();
+	if($(this).is(":checked")){
+		$("#YBS-notes-extract").append("<p> Appointment booked with; " + name + " at " + time + " REF: " + ref + " </p>");
+		ybsActive == true ? $("#YBS-end-title").css("background-color", "rgb(0,136,57,0.8)")
+		     : cbsActive == true ? $("#YBS-end-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		     : accActive == true ? $("#YBS-end-title").css("background-color", "rgb(226, 90, 16,0.8)")
+		     : $("#YBS-end-title").css("background-color", "none") ;
+	}
+   });
+   $("#YBS-notes-check").click(function(){
+	if($(this).is(":checked")){
+		ybsActive == true ? $("#YBS-notes-title").css("background-color", "rgb(0,136,57,0.8)")
+		     : cbsActive == true ? $("#YBS-notes-title").css("background-color", "rgb(210, 8, 39,0.8)")
+		     : accActive == true ? $("#YBS-notes-title").css("background-color", "rgb(226, 90, 16,0.8)") 
+		     : $("#YBS-notes-title").css("background-color", "none") ;
+	}
+   });
+});
+</script>
+
+<style>
+body{background-color:rgb(126,126,126,0.1);}
+.nav-link{background-color:rgb(126,126,126,0.2);}
+.main-banner{background-color:rgb(126,126,126,0.5);letter-spacing:2px; text-align:center;width:100%;color:white;}
+.broker-info{display:none;}
+
+#variation-ybs{font-weight:700;}
+.ybs-menu-1{width:100%;}
+.ybs-menu-1:hover{background-color:green;color:white;}
+.ybs-hp{display:none;}
+.ybs-rem{display:none;}
+.ybs-port{display:none;}
+.ybs-al{display:none;}
+.ybs-pt{display:none;}
+.ybs-toe{display:none;}
+.ybs-t-t{display:none;}
+
+.ybs-eli-hide{;}
+</style>
+
+
+<div class="container" style="background-color:white;min-height:1000px;">
+<div class="main-banner"> </div>
+<div class="container">
+<ul class="nav nav-tabs nav-justified" style="font-weight:600;">
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#" style="color:green;margin:5px;margin-bottom:0px;" id="ybs-main-button">Yorkshire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#" style="color:red;margin:5px;margin-bottom:0px;" id="cbs-main-button"> Chelsea</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#" style="color:orange;margin:5px;margin-bottom:0px;" id="acc-main-button">Accord</a>
+  </li>
+</ul>
+</div>
+
+<div class="container" style="text-align:center;padding-top:15px;">
+<textarea placeholder="Customers main aim for the conversation..." cols="800" rows="3"  style="max-width:90%;background-color:rgb(126,126,126,0.05);"></textarea>
+</div>
+
+
+
+<div class="tab-content">
+
+
+<div class="tab-pane container active">
+
+<div class="row">
+
+<div class="btn-group col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+ 	<div class="btn-group" style="margin-left:auto;margin-right:auto;">
+  	<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"> New Customer </button>
+  	<div class="dropdown-menu ">
+   		<button type="button" class="btn ybs-hp-btn ybs-menu-1" data-toggle="collapse">House Purchase</button>
+   		<button type="button" class="btn ybs-rem-btn ybs-menu-1" data-toggle="collapse">Remortgage</button>
+  	</div>
+	</div>
+</div>
+
+<div class="btn-group col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+ 	<div class="btn-group" style="margin-left:auto;margin-right:auto;">
+  	<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"> Existing Customer </button>
+  	<div class="dropdown-menu">
+   		<button type="button" class="btn ybs-port-btn ybs-menu-1" data-toggle="collapse">Portability</button>
+   		<button type="button" class="btn ybs-al-btn ybs-menu-1" data-toggle="collapse" "style="white-space:nowrap;">Additional Borrowing</button>
+   		<button type="button" class="btn ybs-pt-btn ybs-menu-1" data-toggle="collapse">Product Transfer</button>
+   		<button type="button" class="btn ybs-toe-btn ybs-menu-1" data-toggle="collapse">Transfer of Equity</button>
+   		<button type="button" class="btn ybs-t-t-btn ybs-menu-1" data-toggle="collapse" style="white-space:nowrap;">Type/Term Amendment</button>
+  	</div>
+ 	</div>
+</div>
+
+<div id="variation-ybs" class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-6"> </div>
+
+
+</div>
+
+<!-- ROW START -->
+<div class="row">
+
+
+<!-- Customer Information Card -->
+	<div id="YBS-customer" class="card col-12 col-sm-12 col-md-6 col-lg-8 col-xl-7 " style="padding:4px;">
+	<p id="YBS-customer-title" class="card-header" data-toggle="collapse" data-target="#YBS-customer-info">Customer Information</p>
+
+	<div id="YBS-customer-info" class="card-body collapse"> 
+<!-- Customer Information Main Text -->
+
+<!-- Navigation Pills -->
+	<ul class="nav nav-pill nav-justified">
+	<li class="nav-item">
+	<a class="nav-link active" data-toggle="tab" href="#app1"> App 1 </a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" data-toggle="tab" href="#app2"> App 2 </a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" data-toggle="tab" href="#app3"> App 3 </a>
+	</li>
+	<li class="nav-item">
+	<a class="nav-link" data-toggle="tab" href="#app4"> App 4 </a>
+	</li>
+	</ul>
+	
+<!-- Navigation Pills Tabs -->
+	<div class="tab-content">
+	<table class="table tab-pane container active" id="app1">
+	<tr> <th> Applicant 1 </th> </tr>
+	<tr> <td>Name :</td> <td> <input type="text" id="customerName1"> </td> </tr>
+	<tr> <td>Date of Birth :</td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Mobile :</td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Email : </td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Address : </td> 
+		<td> 
+		<input type="text" placeholder="1st line..."> <br>
+		<input type="text" placeholder="2nd line..."> <br>
+		<input type="text" placeholder="3rd line..."> <br>
+		<input type="text" placeholder="Postcode..."> 
+		</td> 
+	</tr>
+	<tr> <td>Verified :</td> <td> <input type="checkbox" id="customerVerif1"> </td> </tr>
+	<tr> <td>Contact details checked :</td> <td> <input type="checkbox"> </td> </tr>
+	<tr> <td>Paperless consent</td> 
+		<td> 
+		<input type="checkbox" id="paperless-auth1"> Gained <br>
+		<input type="checkbox"> Scheduled <br>
+		<input type="checkbox"> N/A 
+		</td> 
+	</tr>
+	</table>
+
+	<table class="table tab-pane container" id="app2">
+	<tr> <th> Applicant 2 </th> </tr>
+	<tr> <td>Name :</td> <td> <input type="text" id="customerName2"> </td> </tr>
+	<tr> <td>Date of Birth :</td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Mobile :</td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Email : </td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Address : </td> 
+		<td> 
+		<input type="text" placeholder="1st line..."> <br>
+		<input type="text" placeholder="2nd line..."> <br>
+		<input type="text" placeholder="3rd line..."> <br>
+		<input type="text" placeholder="Postcode..."> 
+		</td> 
+	</tr>
+	<tr> <td>Verified :</td> <td> <input type="checkbox" id="customerVerif2"> </td> </tr>
+	<tr> <td>Contact details checked :</td> <td> <input type="checkbox"> </td> </tr>
+	<tr> <td>Paperless consent</td> 
+		<td> 
+		<input type="checkbox" id="paperless-auth2"> Gained <br>
+		<input type="checkbox"> Scheduled <br>
+		<input type="checkbox"> N/A 
+		</td> 
+	</tr>
+	</table>
+
+	<table class="table tab-pane container" id="app3">
+	<tr> <th> Applicant 3 </th> </tr>
+	<tr> <td>Name :</td> <td> <input type="text" id="customerName3"> </td> </tr>
+	<tr> <td>Date of Birth :</td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Mobile :</td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Email : </td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Address : </td> 
+		<td> 
+		<input type="text" placeholder="1st line..."> <br>
+		<input type="text" placeholder="2nd line..."> <br>
+		<input type="text" placeholder="3rd line..."> <br>
+		<input type="text" placeholder="Postcode..."> 
+		</td> 
+	</tr>
+	<tr> <td>Verified :</td> <td> <input type="checkbox" id="customerVerif3"> </td> </tr>
+	<tr> <td>Contact details checked :</td> <td> <input type="checkbox"> </td> </tr>
+	<tr> <td>Paperless consent</td> 
+		<td> 
+		<input type="checkbox" id="paperless-auth3"> Gained <br>
+		<input type="checkbox"> Scheduled <br>
+		<input type="checkbox"> N/A 
+		</td> 
+	</tr>
+	</table>
+
+	<table class="table tab-pane container" id="app4">
+	<tr> <th> Applicant 4 </th> </tr>
+	<tr> <td>Name :</td> <td> <input type="text" id="customerName4"> </td> </tr>
+	<tr> <td>Date of Birth :</td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Mobile :</td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Email : </td> <td> <input type="text"> </td> </tr>
+	<tr> <td>Address : </td> 
+		<td> 
+		<input type="text" placeholder="1st line..."> <br>
+		<input type="text" placeholder="2nd line..."> <br>
+		<input type="text" placeholder="3rd line..."> <br>
+		<input type="text" placeholder="Postcode..."> 
+		</td> 
+	</tr>
+	<tr> <td>Verified :</td> <td> <input type="checkbox" id="customerVerif4"> </td> </tr>
+	<tr> <td>Contact details checked :</td> <td> <input type="checkbox"> </td> </tr>
+	<tr> <td>Paperless consent</td> 
+		<td> 
+		<input type="checkbox" id="paperless-auth4"> Gained <br>
+		<input type="checkbox"> Scheduled <br>
+		<input type="checkbox"> N/A 
+		</td> 
+	</tr>
+	</table>
+	</div>
+<!-- Navigation Pills Tabs Finish -->
+
+	</div>
+<!-- Customer Information Main Text Finish-->
+
+	</div>
+<!-- Customer Information Card Finish-->
+
+
+  <div id="YBS-new" class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-5" style="padding:4px;">
+   <p id="YBS-new-title" class="card-header" data-toggle="collapse" data-target="#YBS-new-info">Account Number/Mandatories</p>
+   <div id="YBS-new-info" class="card-body collapse"> 
+	<input type="checkbox"> <span> Set an appropriate agenda </span> <br>
+	<input type="checkbox"> <span> "I will not provide any advice" </span> <br>
+	<input type="checkbox"> <span title="Any personal information captured today will not be shared without your permission unless we are legally required to do so, or for any genuine business interest"> DPA Statement </span> <br>
+	<input type="checkbox"> <span title="You will receive more information about how your data will be processed in any application forms or welcome emails, alternatively, visit our website www.ybs/cbs/accord.co.uk/privacy for further information"> Data Processing Statement </span> <br>
+	<input type="checkbox"> <span title="Do you have the other applicants authority to act on their behalf? This includes the authority to GIVE us their information, to allow us to USE that information, and perform a CREDIT CHECK where appropriate"> Joint Authority Statement </span> <br>
+	<p class="collapse ybs-hp ybs-rem ybs-port">
+		<input type="checkbox"> <span title="The first named applicant will have membership rights for our Annual General Meeting, this is also based on owing at least £100 at the time of the meeting and at the end of the previous financial year, who will be first named?"> AGM Statement </span> <br>
+		<input type="checkbox" id="paperless"> <span> Explain Paperless Application <span> <br>
+		<span style="padding-left:40px;"> <input type="checkbox" id="offer-accepted"> <span> Have you had an offer accepted? </span> </span> <br>
+		<span style="padding-left:40px;"> <input type="checkbox"> <span> [If joint] Do you live together? </span> </span> <br>
+	</p>
+	<hr>
+	<table>
+	<tr><td> Account number: </td> <td><input type="text" id="accountNumber"></td> <td><button id="acNumUpdate" style="float:right;background-color:none;"> <i class="fa fa-check" aria-hidden="true"></i> </button> <br></td></tr>
+	<tr><td class="ybs-port"> New Reference:  </td><td class="ybs-port"><input type="text" id="portingNumber"></td></tr>
+	</table>
+	<hr>
+	<p class="broker-info"> 
+		<input type="checkbox"> <span> Is there an active broker relationship? <br> </span>
+		<input type="checkbox"> <span> Does the customer plan to use their broker or Accord directly? <br> </span>
+		<input type="checkbox"> <span> Make it really clear on your notes (box below) that you have asked your customer and what their decision was regarding broker authority <br> </span>
+		<textarea cols="600" class ="broker-comment" style="height:40px; max-width:100%;" placeholder="Write here..."></textarea>
+		<button data-toggle="collapse" data-target=".broker" class="broker-button"> Broker </button> <button data-toggle="collapse" data-target=".accord" class="broker-button"> Accord </button>
+		<p class="broker collapse"> You will need to contact your mortgage broker to continue this application.</p>
+		<p class="accord collapse"> 
+			<input type="checkbox"> The broker will still have access to personal data unless the relationship is terminated. <br><br>
+			Do you want to end this relationship? <br>
+			<button data-toggle="collapse" data-target=".broker-yes"> Yes </button> <button data-toggle="collapse" data-target=".broker-no"> No </button>
+				<p class="broker-yes collapse"> <input type="checkbox"> End this on 'Activity Players' in Live </p>
+				<p class="broker-no collapse"> 
+				<input type="checkbox"> Check the relationship remains active in Live <br>
+				<input type="checkbox"> If this is not the case, then request authority to be re-established via 'Accord_Sales@accordmortgages.com'
+				</p>
+		</p>
+	</p>
+   </div>
+  </div>
+
+  <div id="YBS-recap" class="card col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 collapse ybs-port ybs-al ybs-pt ybs-toe ybs-t-t" style="padding:4px;">
+   <p id="YBS-recap-title" class="card-header" data-toggle="collapse" data-target="#YBS-recap-info">Account Recap</p>
+   <div id="YBS-recap-info" class="card-body collapse"> 
+	<span> <input type="checkbox"> <b> Repayment history </b> </span> <br>
+	<span> <input type="checkbox"> <b> Loan to value  </b> <input type="text"> </span> <br>
+	<span> <input type="checkbox"> <b> Existing arrears </b> </span> <br>
+	<span> <input type="checkbox"> <i> Number of parts</i> </span> <br>
+	<span> <input type="checkbox"> <i> Interest rate</i> </span> <br>
+	<span> <input type="checkbox"> <i> Product expiry date</i> </span> <br>
+	<span> <input type="checkbox"> <i> Remaining term</i> </span> <br>
+	<span> <input type="checkbox"> <i> Repayment type</i> </span> <br>
+	<span> <input type="checkbox" id="YBS-recap-check"> <i> Balance</i> </span> <br>
+   </div>
+  </div>
+
+  <div id="YBS-eli" class="card col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 collapse ybs-hp ybs-rem ybs-port ybs-al ybs-pt ybs-toe ybs-t-t " style="padding:4px;">
+   <p id="YBS-eli-title" class="card-header" data-toggle="collapse" data-target="#YBS-eli-info">Eligibility</p>
+   <div id="YBS-eli-info" class="card-body collapse"> 
+	<table>
+	<tr class="ybs-eli-hide ybs-port ybs-al"> <td> Current property value: </td> <td><input type="text"> </td>  </tr>
+	<tr class="ybs-eli-hide ybs-port"> <td> Remaining balance:</td> <td><input type="text"> </td>  </tr>
+	<tr class="ybs-eli-hide ybs-port"> <td> Equity: </td> <td><input type="text"> </td>  </tr>
+	<tr class="ybs-eli-hide ybs-port"> <td> Will all of the equity be used?</td> <td><input type="text" placeholder="Yes/No"> </td>  </tr>
+	<tr class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-al ybs-t-t"> <td> Term : </td> <td><input type="text"> </td>  </tr>
+	<tr class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-al ybs-t-t"> <td> Type : </td> <td><input type="text"> </td> </tr>
+	<tr class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-al "> <td> Loan : </td> <td><input type="text" id="borrowing-amount"> </td> </tr>
+	<tr class="ybs-eli-hide ybs-hp ybs-rem ybs-port "> <td> Deposit : </td> <td><input type="text"> </td> </tr>
+	<tr class="ybs-eli-hide ybs-hp ybs-rem ybs-port "> <td> Deposit source : </td> <td><textarea cols="40" rows="2" placeholder="Savings, gift, investments etc..." style="max-width:100%";></textarea> </td> </tr>
+	<tr class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-al ybs-t-t"> <td> Value : </td> <td><input type="text"> </td> </tr>
+	<tr class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-al ybs-t-t"> <td> Borrowing purpose </td> <td> <input type="text" id="borrowing-purpose"></td> </tr>
+	</table>
+	<span class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-al ybs-pt ybs-toe ybs-t-t"> <input type="checkbox"> LTV within criteria? <br> </span> 
+	<span class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-al ybs-pt ybs-toe ybs-t-t"> <input type="checkbox"> Main residence <br> </span> 
+	<span class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-toe"> <input type="checkbox"> UK Resident <br> </span> 
+	<span class="ybs-eli-hide ybs-hp ybs-rem ybs-port "> <input type="checkbox"> Concessionary purchase <br> </span> 
+	<span class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-toe"> <input type="checkbox"> First time buyers <br> </span>
+	<span class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-toe"> <input type="checkbox"> Borrowing more than needed for property purchase? <br> </span> 
+	<span class="ybs-eli-hide ybs-rem ybs-al"> <input type="checkbox"> Owned and lived in the property for 6 months minimum <br> </span> 
+	<span class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-al ybs-toe ybs-t-t"> <input type="checkbox"> Income in UK Sterling to UK bank <br> </span>
+	<span class="ybs-eli-hide ybs-pt"> <input type="checkbox"> Any other changes? <br> </span>
+	<span class="ybs-eli-hide ybs-pt" style="margin-left:35px;font-style:italic;"> - Additional Borrowing/ Type Term Amendments <br> </span>
+	<span class="ybs-eli-hide ybs-pt"> <input type="checkbox"> Have you chosen a new product?  <br> </span>
+	<span class="ybs-eli-hide ybs-al ybs-toe"> <input type="checkbox"> Open for 6 months <br> </span>
+	<span class="ybs-eli-hide ybs-al ybs-toe"> <input type="checkbox"> £70 Revaluation fee <br> </span>
+	<span class="ybs-eli-hide ybs-al ybs-toe"> <input type="checkbox"> 85% LTV cap <br> </span>
+	<span class="ybs-eli-hide ybs-toe"> <input type="checkbox"> All parties need independent legal representation <br> </span>
+	<span class="ybs-eli-hide ybs-toe"> <input type="checkbox"> All parties need to sign the application form <br> </span>
+	<span class="ybs-eli-hide ybs-toe"> <input type="checkbox"> Only the applicant can check progress <br> </span>
+	<span class="ybs-eli-hide ybs-toe"> <input type="checkbox"> £180 non-refundable application fee <br> </span>
+	<span class="ybs-eli-hide ybs-toe"> <input type="checkbox"> Are things amicable? <br> </span>
+	<span class="ybs-eli-hide ybs-hp ybs-rem ybs-port ybs-al ybs-toe ybs-t-t"> <hr>
+	Residents: <br>
+	<input type="number" style="margin-right:10%;width:45px;"> <span> Adults </span> <br>
+	<input type="number" style="margin-right:10%;width:45px;"> <span> Children </span> <br>
+	<span> Comments: <br> <textarea cols="45" rows="3" placeholder="Childrens ages, financially independent adults, relations etc..." style="max-width:100%;"></textarea> </span>
+	</span> 
+	<span class="ybs-eli-hide ybs-hp ybs-rem ybs-port"> <hr>
+	Property : <br>
+	<table>
+	<tr> <td>Type:</td><td><input type="text" placeholder="Semi-detached, Bungalow etc."></td></tr>
+	<tr> <td>Tenure:</td><td><input type="text" placeholder="Freehold/Leasehold"></td></tr>
+	<tr> <td>Age:</td><td><input type="text" placeholder="New build/ Prev. owned"></td></tr>
+	<tr> <td>Size:</td><td><input type="text" placeholder="Bedroom count"></td></tr>
+	</table>
+	</span>
+	<p id="YBS-eli-check" data-toggle="collapse" data-target="#YBS-eli-info" style="text-align:center;"><b>Close tab</b></p>
+   </div>
+  </div>
+
+  <div id="YBS-aff" class="card col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 collapse ybs-hp ybs-rem ybs-port ybs-al ybs-toe ybs-t-t" style="padding:4px;">
+   <p id="YBS-aff-title" class="card-header" data-toggle="collapse" data-target="#YBS-aff-info">Affordability</p>
+   <div id="YBS-aff-info" class="card-body collapse"> 
+	<span> <input type="checkbox"> Are either of you currently financially impacted by Covid-19? <br> <input type="text" style="width:90%;" placeholder="What impact is suffered?..."> </span> <br>
+	
+	<ul class="nav nav-pills nav-justified" style="padding-top:15px;">
+	  <li class="nav-item">    <a class="nav-link active" data-toggle="pill" href="#app1aff">App 1</a>  </li>
+	  <li class="nav-item">    <a class="nav-link" data-toggle="pill" href="#app2aff">App 2</a>  </li>
+	  <li class="nav-item">    <a class="nav-link" data-toggle="pill" href="#app3aff">App 3</a>  </li>
+	  <li class="nav-item">    <a class="nav-link" data-toggle="pill" href="#app4aff">App 4</a>  </li>
+	</ul>
+
+	<div class="tab-content">
+	  <div class="tab-pane container active" id="app1aff" style="text-align:center;padding-top:15px;"> <textarea cols="45" rows="4" placeholder="Income/outgoings..." id="app1aff-info" style="max-width:100%;"></textarea></div>
+	  <div class="tab-pane container fade" id="app2aff" style="text-align:center;padding-top:15px;"> <textarea cols="45" rows="4" placeholder="Income/outgoings for the 2nd applicant..." id="app2aff-info" style="max-width:100%;"></textarea></div>
+	  <div class="tab-pane container fade" id="app3aff" style="text-align:center;padding-top:15px;"> <textarea cols="45" rows="4" placeholder="Income/outgoings for the 3rd applicant..." id="app3aff-info" style="max-width:100%;"></textarea></div>
+	  <div class="tab-pane container fade" id="app4aff" style="text-align:center;padding-top:15px;"> <textarea cols="45" rows="4" placeholder="Income/outgoings for the 4th applicant..." id="app4aff-info" style="max-width:100%;"></textarea></div>
+	</div>
+
+	<table style="margin-top:25px;">
+	<tr> <th> Maximum borrowing - </th> <th><input type="text" id="max-borrow"> </th> </tr>
+	</table>
+	<p style="text-align:center;padding-top:25px;"> <input type="checkbox" id="YBS-aff-check"> The amount you are looking to borrow [IS / ISNT] affordable based on the available information, however, this is subject to further lending criteria, a successful credit check and an appropriate valuation </p>
+   </div>
+  </div>
+
+  <div id="YBS-aip" class="card col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 collapse ybs-hp ybs-rem ybs-port" style="padding:4px;">
+   <p id="YBS-aip-title" class="card-header" data-toggle="collapse" data-target="#YBS-aip-info">Approval In Principle</p>
+   <div id="YBS-aip-info" class="card-body collapse"> 
+	<span> <input type="checkbox"> Run through the credit check script </span> <br>
+	<span> <input type="checkbox"> Confirm decline rationale (where applicable) </span> <br>
+	<span> <input type="checkbox" id="YBS-aip-check"> Send the AIP email </span> <br>
+	<span> <b> Paperless applications will include the following;</b> </span> <br>
+	<span> <input type="checkbox"> A guide to arranging your mortgage booklet </span> <br>
+	<span> <input type="checkbox"> Income documentation guidance </span> <br>
+	<span> <input type="checkbox"> A link to some data privacy information </span> <br>
+	<span> <input type="checkbox" id="YBS-aip-check"> <i> It is important that you read these documents before your appointment, the MA will confirm your understanding when they carry out their recommendation </i></span> <br>
+   </div>
+  </div>
+
+  <div id="YBS-end" class="card col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 collapse ybs-hp ybs-rem ybs-port ybs-al ybs-pt ybs-toe ybs-t-t " style="padding:4px;">
+   <p id="YBS-end-title" class="card-header" data-toggle="collapse" data-target="#YBS-end-info">Handover/Close</p>
+   <div id="YBS-end-info" class="card-body collapse"> 
+	<p style="text-align:center;">The next steps are to get you an appointment booked in, do I have your <input type="checkbox"> <u>authority</u> to use your contact details to set up an appointment? </p> <br>
+	<table>
+	<tr> <td><input type="checkbox"> Appointment time</td> <td> <input type="text" id="ybs-appt-time"> </td> </tr>
+	<tr> <td><input type="checkbox"> MA Name: </td> <td> <input type="text" id="ybs-appt-name"> </td> </tr>
+	<tr> <td><input type="checkbox"> Q-Flow Ref : </td> <td> <input type="text" id="ybs-appt-ref"> </td> </tr>
+	</table>
+	<table>
+	<tr> <td><input type="checkbox"> Purpose: To run through advice, can cover costings and discuss eligible products </td> </tr>
+	<tr> <td><input type="checkbox"> Expect a text and/or email to confirm the appointment details </td> </tr>
+	<tr> <td><input type="checkbox"> Courtesy/Pre-assessment phone call may be delivered </td> </tr>
+	<tr> <td><input type="checkbox"> Recap the call <i>"You called for X, CSR has done Y, now Z will happen"</i></td> </tr>
+	<tr> <td><input type="checkbox" id="YBS-end-check"> Is there anything else I can help with? </td> </tr>
+	</table>
+   </div>
+  </div>
+
+  <div id="YBS-notes" class="card col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 collapse ybs-hp ybs-rem ybs-port ybs-al ybs-pt ybs-toe ybs-t-t " style="padding:4px;">
+   <p id="YBS-notes-title" class="card-header" data-toggle="collapse" data-target="#YBS-notes-info">Notes</p>
+   <div id="YBS-notes-info" class="card-body collapse"> 
+	<table>
+	<tr> <td> <input type="checkbox"> Live </td> <td> <input type="checkbox" id="YBS-notes-check"> ISIS</td> </tr>
+	<tr> <td> <input type="checkbox"> Customer Request </td> <td> <input type="checkbox"> Tracker</td> </tr>
+	<tr> <td> <input type="checkbox"> Appointment </td> <td> <input type="checkbox"> Email</td> </tr>
+	<tr> <td> <input type="checkbox"> Other post call work </td></tr>
+	</table>
+	<div id="YBS-notes-extract" class="container"><hr>
+	<p id="YBS-notes-extract"> </p>
+	<p id="YBS-notes-extract-1"> </p>
+	<p id="YBS-notes-extract-2"> </p>
+	<p id="YBS-notes-extract-3"> </p>
+	<p id="YBS-notes-extract-4"> </p>
+	</div> 
+	<p> Mark 82981 </p>
+   </div>
+  </div>
+
+</div>
+<!-- ROW END -->
+
+</div>
+
+</div>
+
+
+</body>
