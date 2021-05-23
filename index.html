@@ -28,7 +28,7 @@ COLOUR SCHEME
 /* Large devices (laptops/desktops, 992px and up) media only screen and (min-width: 992px) {...} */
 /* Extra large devices (large laptops and desktops, 1200px and up) media only screen and (min-width: 1200px) {...} */
 
-body {color:#347B98;font-family: Spectral, serif;}
+body {color:#347B98;font-family: Spectral, serif;background-color:rgb(52,123,152,0.04);}
 h1 h2 h3 h4 h5 h6 {font-family: Rubik, sans-serif;}
 .mw-bg-1 {background-color:rgb(228,222,142,0.8);}
 .mw-bg-2 {background-color:rgb(128,128,128,0.8);}
@@ -74,7 +74,7 @@ h1 h2 h3 h4 h5 h6 {font-family: Rubik, sans-serif;}
 }
 
 /*CV tab timeline*/
-.mw-cv-timeline{position:relative;max-width:1200px;margin: 0 auto;background-color:rgb(228,222,142);} 
+.mw-cv-timeline{position:relative;max-width:1200px;margin: 0 auto;background-image: linear-gradient(rgb(228,222,142), rgb(52,  123,152));} 
 .mw-cv-timeline::after{content: '';position:absolute;width:6px;background-color:grey;top:0;bottom:0;left:50%;margin-left:3px;}
 .mw-cv-container{padding:10px 40px;position:relative;background-color:inherit;width:50%;}
 .mw-cv-container::after{content:'';position:absolute;width:25px;height:25px;right:-18px;background-color:white;border:5px solid black;top:25px;border-radius:50%;z-index:1;}
@@ -83,7 +83,7 @@ h1 h2 h3 h4 h5 h6 {font-family: Rubik, sans-serif;}
 .mw-cv-left::before{content:" ";height:0;position:absolute;top:27px;width:0;z-index:1;right:30px;border:medium solid white;border-width:10px 0 10px 10px;border-color: transparent transparent transparent white;}
 .mw-cv-right::before{content:" ";height:0;position:absolute;top:27px;width:0;z-index:1;left:30px;border:medium solid white;border-width:10px 10px 10px 0;border-color:transparent white transparent transparent;}
 .mw-cv-right::after{left:-7px;}
-.mw-cv-experience{padding:20px 30px;background-color:white;position:relative;border-radius:6px;text-align:center;box-shadow:5px 5px 5px grey;}
+.mw-cv-experience{padding:20px 30px;background-color:white;position:relative;border-radius:6px;text-align:center;box-shadow:5px 5px 15px black;}
 
 @media screen and (max-width: 600px){
 .mw-cv-timeline::after{left:17px;}
@@ -100,7 +100,7 @@ h1 h2 h3 h4 h5 h6 {font-family: Rubik, sans-serif;}
 
 .mw-skills-container{max-width:100%;margin-bottom:3%;}
 
-.mw-skills-bg1{position:absolute;height:50px;top:50px;left:0;width:100%;background-color: rgb(128,128,128,0.2);z-index:-1;}
+.mw-skills-bg1{position:absolute;height:50px;top:75px;left:0;width:100%;background-color: rgb(128,128,128,0.1);z-index:-1;}
 .mw-skills-introtext{font-size:22px;padding:10px;text-align:center;}
 
 .mw-skills-bar{width:90%;background-color:rgb(228,222,142,0.4);margin-left:auto;margin-right:auto;padding:2px;border-radius:25px 10px 25px 10px;}
@@ -134,7 +134,7 @@ input[type=submit]:hover {  background-color: black;}
 .mw-contact-container {  border-radius: 5px;  padding: 20px;}
 .mw-contact-title { font-size:40px;padding-left:10%;padding-top:180px;padding-bottom:20px;color:black;}
 
-.mw-contact-bg { height:300px; width:100%; position:absolute; top:50px;left:0;background-color:rgb(52,123,152,0.7);z-index:-1;}
+.mw-contact-bg { height:300px; width:100%; position:absolute; top:75px;left:0;background-color:rgb(52,123,152,0.7);z-index:-1;}
 
 @media only screen and (max-width:600px) {
 .mw-contact-form{ background-color:inherit;width:100%; padding:0px;}
@@ -151,7 +151,7 @@ input[type=submit]:hover {  background-color: black;}
 <body>
 
 <!-- WHOLE SCREEN -->
-<div class="container">
+<div class="container" style="padding-top:25px;">
 
 <!-- NAVIGATION -->
 <!-- COLLAPSED NAV BAR (SMALL SCREEN) -->
@@ -160,12 +160,12 @@ input[type=submit]:hover {  background-color: black;}
 			<span class="glyphicon glyphicon-option-horizontal" style="display:none;"></span>
 		</button>
 <!-- COLLAPSED NAV BAR ICONS -->
-		<p class="mx-auto">
-			<button type="button" class="navbar-toggle" data-toggle="tab" href="#contact">	<span class="glyphicon glyphicon-phone"> </span>	</button>
-			<button type="button" class="navbar-toggle" data-toggle="tab" href="#skills">		<span class="glyphicon glyphicon-stats"> </span>	</button>
-			<button type="button" class="navbar-toggle" data-toggle="tab" href="#home">	<span class="glyphicon glyphicon-user"> </span>	</button>
-			<button type="button" class="navbar-toggle" data-toggle="tab" href="#portfolio">	<span class="glyphicon glyphicon-book"> </span>	</button>
-			<button type="button" class="navbar-toggle" data-toggle="tab" href="#CV">		<span class="glyphicon glyphicon-file"> </span>		</button>
+		<p class="mx-auto" style="text-align:center;">
+			<button type="button" class="navbar-toggle" data-toggle="tab" href="#contact">	<span class="glyphicon glyphicon-phone" style="font-size:18px;"> </span>	</button>
+			<button type="button" class="navbar-toggle" data-toggle="tab" href="#skills">		<span class="glyphicon glyphicon-stats" style="font-size:18px;"> </span>	</button>
+			<button type="button" class="navbar-toggle" data-toggle="tab" href="#home">	<span class="glyphicon glyphicon-user" style="font-size:18px;"> </span>	</button>
+			<button type="button" class="navbar-toggle" data-toggle="tab" href="#portfolio">	<span class="glyphicon glyphicon-book" style="font-size:18px;"> </span>	</button>
+			<button type="button" class="navbar-toggle" data-toggle="tab" href="#CV">		<span class="glyphicon glyphicon-file" style="font-size:18px;"> </span>		</button>
 		</p>
 	</div>
 
@@ -215,10 +215,8 @@ input[type=submit]:hover {  background-color: black;}
 <!-- CV PERSONAL PROFILE -->
 <h3 class="mw-cv-title">Personal Profile</h3>
  <p class="mw-cv-profile-text"> 
-  Confident, hard-working and direct accurately encompass my work ethic, 
-  I as a person demonstrate understanding, patience, a positive influence, impartiality and efficiency. <br> <br>
-  I have a strong administrative background from a variety of positions with each role focusing on the many elements
-  that form a capable administrator, my versatility makes me a suitable option for roles both supporting and building teams. 
+  	Confident, hard-working and direct accurately encompass my work ethic, I as a person demonstrate understanding, patience, a positive influence, impartiality and efficiency. <br> <br>
+ 	I have a been involved in a variety of roles where soft skills are often crucial for success, combining those with the technical skills I have recently acquired over the past few years I believe makes me a worthy candidate for consideration, my versatility makes me a suitable option for roles both supporting and building teams. 
 </p> 
 
 
@@ -274,7 +272,17 @@ input[type=submit]:hover {  background-color: black;}
   <h4> <strong>Yorkshire Building Society [YBS] </strong></h4>
   <h5 title="3 years +"> [Mar 2018 – To date]  </h5> 
   <button data-toggle="collapse" data-target="#YBS-role" class="mw-cv-button-style"> Customer Service Representative </button>
-  <p id="YBS-role" class="collapse"> <i>  Working within a regulated financial environment, my responsibilities are to ensure potential customers met YBS criteria when looking to begin their mortgage journey or to adjust their mortgage with ourselves. </i> </p>
+  <div id="YBS-role" class="collapse" style="padding-top:10px;"> <i>  
+	Helping customers manage their mortgage, this often requires explaining difficult financial concepts in layman’s terms to ensure applicants are able to make an informed decision, this can be challenging when customers have different mortgage terms with other providers and as such it requires patience and flexibility on my part to meet customer expectations 
+	</i> <hr>
+	<b> Essential Skills </b> <br>
+	<ul>
+	<li> Communication </li>
+	<li> Adaptability/Open-mindedness</li>
+	<li> Collaboration</li> 
+	<li> Approachability/Helpfulness</li> 
+	</ul>
+  </div>
  </div>
 </div>
 
@@ -283,7 +291,10 @@ input[type=submit]:hover {  background-color: black;}
   <h4> <strong>Asda </strong> </h4>
   <h5 title="3 months"> [Dec 2017 – Feb 2018] </h5> 
   <button data-toggle="collapse" data-target="#Asda-role-2" class="mw-cv-button-style"> HR Administrator </button>
-  <p id="Asda-role-2" class="collapse"> <i> (Temporary contract)  The key elements of this role were administrative. </i> </p>
+  <div id="Asda-role-2" class="collapse" style="padding-top:10px;"> <i> 
+	Providing support for Asda staff across the country dealing with holidays, sickness, absence and arranging new contracts, this was a temporary role  
+	</i> 
+  </div>
  </div>
 </div>
 
@@ -292,7 +303,18 @@ input[type=submit]:hover {  background-color: black;}
   <h4> <strong>Marble4Life </strong> </h4>
   <h5 title="10 months"> [Jan 2017 – Oct 2017] </h5> 
   <button data-toggle="collapse" data-target="#M4L-role" class="mw-cv-button-style"> Administrator </button>
-  <p id="M4L-role" class="collapse">  <i>  My role comprised primarily of creating monthly reports, managing inbound calls, working directly with three directors in the successful operation of the company, reputation management and recording all HR concerns.In order to meet these goals, I was also responsible for personally managing each directors' diaries, calculating staff wages, tracking the sales teams' activity, monitoring public interest in the company and to fulfil any additional tasks as and when necessary. </i> </p>
+  <div id="M4L-role" class="collapse" style="padding-top:10px;">  <i>  
+	Supporting successful operation of the company, liaising directly with the managing directors, sales team, support staff and delivery/production staff, I frequently had to prioritise conflicting interests through compromise from different sections of the company on various matters such as working patterns, delivery routes and sourcing materials for production 
+	</i> <hr>
+	<b> Essential Skills </b> <br>
+	<ul>
+	<li> Project Management </li>
+	<li> Communication </li>
+	<li> Flexibility/Adaptability </li> 
+	<li> Patience/Understanding </li> 
+	<li> Accountability </li> 
+	</ul>
+   </div>
  </div>
 </div>
 
@@ -301,7 +323,10 @@ input[type=submit]:hover {  background-color: black;}
   <h4> <strong>Plexus Law </strong> </h4>
   <h5 title="3 months"> [Sep 2016 – Dec 2016] </h5> 
   <button data-toggle="collapse" data-target="#Plexus-role" class="mw-cv-button-style"> Administrator </button>
-  <p id="Plexus-role" class="collapse">  <i> As part of the industrial disease team, my specific duties were to set up claims and to deal with non co-ordinated arrangements between firms, I further developed my ability to handle multiple claims simultaneously and to be able to provide suitable tailored feedback to corporate clientele. </i> </p>
+  <div id="Plexus-role" class="collapse" style="padding-top:10px;">  <i> 
+	Providing support for solicitors dealing with industrial disease claims, this was a temporary role and primarily administrative 
+	</i> 
+  </div>
  </div>
 </div>
 
@@ -310,7 +335,10 @@ input[type=submit]:hover {  background-color: black;}
   <h4> <strong>CallCredit Information Group </strong> </h4>
   <h5 title="1 month"> [Aug 2016 – Sep 2016] </h5> 
   <button data-toggle="collapse" data-target="#CCIG-role" class="mw-cv-button-style"> Customer Advisor </button>
-  <p id="CCIG-role" class="collapse">  <i> (Temporary contract) My duties here were primarily administrative. </i> </p> 
+  <div id="CCIG-role" class="collapse" style="padding-top:10px;">  <i> 
+	Providing online support for users of the CallCredit app ‘Noddle’, this was a temporary role and primarily administrative 
+	</i> 
+  </div> 
  </div>
 </div>
 
@@ -319,7 +347,16 @@ input[type=submit]:hover {  background-color: black;}
   <h4> <strong>Capita </strong> </h4>
   <h5 title="10 months"> [Sep 2015 – June 2016] </h5> 
   <button data-toggle="collapse" data-target="#Capita-role" class="mw-cv-button-style"> Case Handler </button>
-  <p id="Capita-role" class="collapse">  <i> Duties included administrative work, data gathering and reviewing of cases on their individual merits, the extent to which is highlighted below through my case worker skills description. This was based in the financial sector, my interpersonal skills were developed further through the telephony side of engagements and my ability to micromanage many cases simultaneously under time restrained conditions had improved significantly during my time at Capita.</i> </p> 
+  <div id="Capita-role" class="collapse" style="padding-top:10px;">  <i> 
+	Arranging PPI compensation payments for Lloyds Banking Group, a lot of customer contact involved, this required tact in approaching the matter as many people hear PPI on a phone call and simply disconnect 
+	</i> <hr>
+	<b> Essential Skills </b> <br>
+	<ul>
+	<li> Empathy </li>
+	<li> Communication </li>
+	<li> Patience </li> 
+	</ul>
+  </div> 
  </div>
 </div>
 
@@ -327,8 +364,17 @@ input[type=submit]:hover {  background-color: black;}
  <div class="mw-cv-experience">
   <h4> <strong>Asda </strong></h4>
   <h5 title="3 years, 10 months"> [Oct 2011 – August 2015] </h5> 
-  <button data-toggle="collapse" data-target="#Asda-role" class="mw-cv-button-style"> Store Assistant </button>
-  <p id="Asda-role" class="collapse"> <i>  I was trained to use an electronic stock management system and became proficient at recording details and changing values accordingly with the relevant checks, along with this I have developed excellent time keeping skills with regards to the increased workload and shortened timescales that working within a fast paced customer oriented role demands. Nominated for Colleague of the Month three times </i> </p>
+  <button data-toggle="collapse" data-target="#Asda-role" class="mw-cv-button-style" > Store Assistant </button>
+  <div id="Asda-role" class="collapse" style="padding-top:10px;"> <i>  
+	Maintaining shelf stock, managing a section of the store to ensure it meets set standards, this would often require me to prioritise sets of tasks and relay decision making back to senior staff <br>
+	 </i> <hr>
+	<b> Essential Skills </b> <br>
+	<ul>
+	<li> Communcation </li>
+	<li> Adaptability/Flexibility </li>
+	<li> Accountability </li> 
+	</ul>
+ </div>
  </div>
 </div>
 
@@ -385,13 +431,46 @@ input[type=submit]:hover {  background-color: black;}
 
 
 
-<div class="container " style="background-color:none;margin:15px;">
+<div class="container " style="background-color:none;">
 
-<picture>
+<!-- First Application Card -->
+
+<div class="row" style="border:5px groove lightgrey;margin:15px;padding:10px;background-color: rgb(228,222,142,0.25);">
+
+<picture class="col-xs-12 col-sm-6 col-md-4 col-xl-1" style="float:left;">
 <a href="https://github.com/TheGreatWesty/TheGreatWesty">
-<img src="portfolio_image_1.jpg" class="img-responsive thumbnail" style="box-shadow:5px 5px 5px grey;margin-right:auto;margin-left:auto;">
+<img src="https://thegreatwesty.github.io/demoImageYBSGKit.jpg" class="img-responsive thumbnail" style="max-height:250px;box-shadow:5px 5px 5px grey;margin-right:auto;margin-left:auto;">
 </a>
 </picture>
+
+<p class="col-xs-12 col-sm-6 col-md-8 col-xl-1" style="text-align:center;"> 
+<span style="font-size:4vw;">YBSG Qualifier Kit </span> <br>
+This is an application developed to support my current job, I can now record conversation details electronically, this allows me to reduce post call activity from an average of around 20 minutes to roughly 4 or 5 minutes
+</p>
+
+</div>
+
+<!-- Second Application Card -->
+
+<div class="row" style="border:5px groove lightgrey;margin:15px;padding:10px;background-color: rgb(228,222,142,0.25);">
+
+<picture class="col-xs-12 col-sm-6 col-md-4 col-xl-1" style="float:left;">
+<a href="https://thegreatwesty.github.io/project1/mealplanner">
+<img src="https://thegreatwesty.github.io/demoImageMealPlanner.jpg" class="img-responsive thumbnail" style="max-height:250px;box-shadow:5px 5px 5px grey;margin-right:auto;margin-left:auto;">
+</a>
+</picture>
+
+<p class="col-xs-12 col-sm-6 col-md-8 col-xl-1" style="text-align:center;"> 
+<span style="font-size:4vw;">Meal Planner </span> <br>
+An application developed for my personal benefit, I can now view a visual representation of my expected meals and view a small library of options to help make deciding meals simpler
+</p>
+
+</div>
+
+<!-- Next Application Card -->
+<div style="background-color:red;color:white;">
+YOU NEED TO WORK ON THIS SECTION<br> - Include a new section now to link to meal planner <br> - Consider a new section as well for the budgeting manager<br> - Complete the YBSG Kit
+</div>
 
 </div>
 
@@ -415,8 +494,7 @@ input[type=submit]:hover {  background-color: black;}
 <!-- SKILLS TAB -->
 <div id="skills" class="tab-pane fade">
 
-<p class="mw-skills-introtext"> Confidence chart instead of an actual subjective assessment of my skill </p>
-<div class="mw-skills-bg1"> </div>
+<p class="mw-skills-introtext" style="background-color:lightgrey;padding:3px;margin:4px;"> Confidence chart as opposed to a subjective assessment of my skill </p>
 
 <!-- RELEVANT SKILLS -->
 
