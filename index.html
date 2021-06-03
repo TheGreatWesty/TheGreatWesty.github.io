@@ -1,520 +1,183 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 
 <head>
-
-<title>Mark West - Home </title>
-
+<title> UPDATED Website CV</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
-<link rel="stylesheet" href="https://thegreatwesty.github.io/homepage.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://thegreatwesty.github.io/website-css.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script>
+
+$(document).ready(function(){
+//Header - Menu - Modal
+	$(".menu-button-close").click(function(){
+		$("#myMenu").modal("hide");
+	});
+	$(".menu-button").click(function(){
+		$("#myMenu").modal("show");
+	});
+//Header - Menu - Hover effect
+	$(".full-size-1").hover(function(){		$(".full-size-a").css("visibility", "visible");},		function(){		$(".full-size-a").css("visibility", "hidden");	});
+	$(".full-size-2").hover(function(){		$(".full-size-b").css("visibility", "visible");},		function(){		$(".full-size-b").css("visibility", "hidden");	});
+	$(".full-size-3").hover(function(){		$(".full-size-c").css("visibility", "visible");},		function(){		$(".full-size-c").css("visibility", "hidden");	});
+	$(".full-size-4").hover(function(){		$(".full-size-d").css("visibility", "visible");},		function(){		$(".full-size-d").css("visibility", "hidden");	});
+	$(".full-size-5").hover(function(){		$(".full-size-e").css("visibility", "visible");},		function(){		$(".full-size-e").css("visibility", "hidden");	});
+});
+
+</script>
+
 
 </head>
 
 
-
 <body>
+<!-- HEADER -->
+<header class="head-display"> 
 
-<!-- WHOLE SCREEN -->
-<div class="container" style="padding-top:25px;">
+	<a style="margin-left:50px;"> <img src="https://thegreatwesty.github.io/images/Signature.png" style="height:65px;"> </a>
 
-<!-- NAVIGATION -->
-<!-- COLLAPSED NAV BAR (SMALL SCREEN) -->
-	<div class="navbar-header" style="color:#E4DE8E;">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" disabled>
-			<span class="glyphicon glyphicon-option-horizontal" style="display:none;"></span>
-		</button>
-<!-- COLLAPSED NAV BAR ICONS -->
-		<p class="mx-auto" style="text-align:center;">
-			<button type="button" class="navbar-toggle" data-toggle="tab" href="#contact">	<span class="glyphicon glyphicon-phone" style="font-size:18px;"> </span>	</button>
-			<button type="button" class="navbar-toggle" data-toggle="tab" href="#skills">		<span class="glyphicon glyphicon-stats" style="font-size:18px;"> </span>	</button>
-			<button type="button" class="navbar-toggle" data-toggle="tab" href="#home">	<span class="glyphicon glyphicon-user" style="font-size:18px;"> </span>	</button>
-			<button type="button" class="navbar-toggle" data-toggle="tab" href="#portfolio">	<span class="glyphicon glyphicon-book" style="font-size:18px;"> </span>	</button>
-			<button type="button" class="navbar-toggle" data-toggle="tab" href="#CV">		<span class="glyphicon glyphicon-file" style="font-size:18px;"> </span>		</button>
-		</p>
+<!-- Full size menu -->
+	<ul class="full-size-menu-icons">
+		<li class="full-size-a"> &#5130;</li>
+		<li class="full-size-b"> &#5130; </li>
+		<li class="full-size-c"> &#5130; </li>
+		<li class="full-size-d"> &#5130; </li>
+		<li class="full-size-e"> &#5130; </li>
+	</ul>
+	<ul class="full-size-menu-options">
+		<li class="full-size-1"> <a href="https://thegreatwesty.github.io/index.html" style="color:white;"> Home </a> </li>
+		<li class="full-size-2"> <a href="https://thegreatwesty.github.io/website-cv-page.html" style="color:white;"> CV </a>  </li>
+		<li class="full-size-3"> <a href="https://thegreatwesty.github.io/website-portfolio-page.html" style="color:white;"> Portfolio </a>  </li>
+		<li class="full-size-4"> <a href="https://thegreatwesty.github.io/website-skills-page.html" style="color:white;"> Skills </a>  </li>
+		<li class="full-size-5"> <a href="https://thegreatwesty.github.io/website-contact-page.html" style="color:white;"> Contact </a> </li>
+		<li> <hr style="width:100px;"> </li>
+		<li class="full-size-6"> <a href="https://github.com/TheGreatWesty" style="color:white;"> GitHub  </a> </li>
+		<li class="full-size-7"> <a href="https://www.linkedin.com/in/mark-west-b4058b103/" style="color:white;"> LinkedIn </a> </li>
+	</ul>
+<!-- Reduced menu icon -->
+	<a class="menu-button">
+		<img src="https://thegreatwesty.github.io/images/menu-icon.png" style="max-height:55px;max-width:55px;"> 
+	</a>
+<!-- Expandable menu -->
+	<div  id="myMenu" class="modal" style="padding-top: 50px;">	
+	    <div class="modal-dialog" >
+ 	       <div class="modal-content menu-content-area">
+
+		<a href="https://thegreatwesty.github.io/index.html" style="margin:50px;"> <img src="https://thegreatwesty.github.io/images/SignatureGrey.png" style="height:65px;"> </a>
+
+		<div class="menu-button-close"> &times </div> 
+
+		<ol class="menu-list">
+			<li> <a href="https://thegreatwesty.github.io/index.html" style="color:black;"> Home </a> </li>
+			<li> <a href="https://thegreatwesty.github.io/website-cv-page.html" style="color:black;"> CV </a>  </li>
+			<li> <a href="https://thegreatwesty.github.io/website-portfolio-page.html" style="color:black;"> Portfolio </a>  </li>
+			<li> <a href="https://thegreatwesty.github.io/website-skills-page.html" style="color:black;"> Skills </a>  </li>
+			<li> <a href="https://thegreatwesty.github.io/website-contact-page.html" style="color:black;"> Contact </a> </li>
+			<li> <hr style="width:200px;"> </li>
+			<li> <a href="https://github.com/TheGreatWesty" style="color:black;"> GitHub  </a>  </li>
+			<li> <a href="https://www.linkedin.com/in/mark-west-b4058b103/" style="color:black;"> LinkedIn </a> </li>
+		</ol>
+
+		<div class="menu-footer"> Contact me - mark-west@hotmail.co.uk </div>
+	        </div>
+	    </div>
 	</div>
+</header>
 
-<!-- FULL SIZE NAV BAR -->
-	<div class="collapse navbar-collapse" id="myNavbar">
-		<ul class="nav nav-tabs nav-justified" style="color:#E4DE8E;">
-  			<li ><a data-toggle="tab" href="#CV">CV</a></li>
- 			<li ><a data-toggle="tab" href="#portfolio">Portfolio</a></li>
- 			<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-  			<li ><a data-toggle="tab" href="#skills">Skills</a></li>
-  			<li><a data-toggle="tab" href="#contact">Contact</a></li>
-		</ul>
-	</div>
-<!-- NAVIGATION END -->
+<!-- INTRODUCTION -->
+<div class="bg-5 row" style="min-height:650px;padding-top:140px;"> 
 
-	<div class="tab-content">
+<picture class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 " style=" text-align: center;">
+	<img src="https://thegreatwesty.github.io/M.jpg" class="img-thumbnail intro-img"> 
+	<figcaption class="intro-pic-caption"> Web Developer </figcaption>
+	<figcaption class="intro-pic-caption-alt"> Web Developer </figcaption>
+</picture>
 
-
-<!-- HOME TAB -->
-<div id="home" class="tab-pane fade container in active">
-
-<div class="container-fluid" style="background-color:rgb(228,222,142) ;width:100%;min-height:600px;">
-	<div class="row">
-		<h1 style="margin-left:-20px;font-weight:600;"> Mark West </h1>
-		<picture class="col-12 col-xs-12 col-sm-7 col-md-6 col-lg-6 col-xl-6">
-			<img src="M.jpg" style="max-width:97%;max-height:500px;padding:20px;float:left;">
-			<figcaption class="mw-home-image-caption"> Web Developer </figcaption>
-		</picture>
-		<div class="col-12 col-xs-12 col-sm-5 col-md-4 col-lg-4 col-xl-6" style="text-align:center;padding-top:auto;padding-bottom:auto;">
-			<p class="mw-home-describe">
-			Hi! <br>
-			I'm a self taught developer based in Bradford, check out my recent work <a data-toggle="tab" href="#portfolio" style="color:black;font-weight:600;">here</a>
-			</p>
-		</div>
-	</div>
-</div>
-
-</div>
-<!-- HOME TAB END -->
-
-
-<!-- CV TAB -->
-<div id="CV" class="tab-pane fade">
-
-<h1 style="text-align:center;"> Curriculum Vitae </h1>
-<h2 style="text-align:center;"> Mark West </h2>
-
-
-<!-- CV PERSONAL PROFILE -->
-<h3 class="mw-cv-title">Personal Profile</h3>
- <p class="mw-cv-profile-text"> 
-  	Confident, hard-working and direct accurately encompass my work ethic, I as a person demonstrate understanding, patience, a positive influence, impartiality and efficiency. <br> <br>
- 	I have a been involved in a variety of roles where soft skills are often crucial for success, combining those with the technical skills I have recently acquired over the past few years I believe makes me a worthy candidate for consideration, my versatility makes me a suitable option for roles both supporting and building teams. 
-</p> 
-
-
-<!-- CV EDUCATION -->
-<h3 class="mw-cv-title"> Education </h3>
-
-<div class="container">
-
-<p class="col-sm-3" style="text-align:center;font-weight:600;font-size:25px;"> My achievements;</p>
-				
-<div class="card-columns">
-
-<div class="col-sm-9">
-
-<div class="card mw-bg-1" style="border-radius: 0px 0px 30px 30px;box-shadow:5px 5px 5px grey;">
- <div class="card-body text-center" style="color:black;">  						
-  <p class="card-title mw-cv-card-title"><b>BA Hons in Politics and Law</b></p>
-  <p class="card-text mw-cv-card-text">University of Bradford <br> [Years 2010 – 2014]</p>
-  <p class="card-footer" style="padding:8px;">2:1 [Second Class Honours, Upper Division] </p>
- </div>
-</div>
-
-<div class="card mw-bg-1" style="border-radius: 0px 0px 30px 30px;box-shadow:5px 5px 5px grey;">
- <div class="card-body text-center" style="color:black;">
-  <p class="card-text mw-cv-card-title"><b>A Level Qualification</b></p>
-  <p class="card-text mw-cv-card-text">Huddersfield New College <br> [Years 2008 – 2010]</p>
-  <p class="card-text"  style="padding:8px;">3 passes in Law, English and Psychology </p>
- </div>
-</div>
-
-<div class="card mw-bg-1" style="border-radius: 0px 0px 30px 30px;box-shadow:5px 5px 5px grey;">
- <div class="card-body text-center" style="color:black;">
-  <p class="card-text mw-cv-card-title"><b>GCSE</b></p>
-  <p class="card-text mw-cv-card-text">Wyke Manor School, Bradford <br>[Years 2003 – 2008]</p>
-  <p class="card-text" style="padding:8px;">8 passes in English, Maths, Sciences, Art, Geography and I.T.</p>
- </div>
-</div>
+<h3 class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 intro-description" > 
+Hi, I'm Mark, <br> Self taught web designer, check out my recent work <a href="https://thegreatwesty.github.io/website-portfolio-page.html" style="color:grey;"> here </a> <br> (Bradford, West Yorkshire)
+</h3>
 
 </div>
 
+<div class="row no-gutters">
+
+<!-- CV -->
+<div class="bg-1 col-lg-4" style="min-height:250px;" onclick="location.href='https://thegreatwesty.github.io/website-cv-page.html';"> 
+<p class="box-title-text"> Understanding my professional experience </p>
+<img class="box-image" src="https://thegreatwesty.github.io/images/cv-image-4.png" style="background-color:rgb(22,93,122);">
+<h1 class="box-text"> CV &#10132; </h1>
 </div>
 
+<!-- PORTFOLIO -->
+<div class="bg-2 col-lg-4" style="min-height:250px; color: grey;" onclick="location.href='https://thegreatwesty.github.io/website-portfolio-page.html';">
+<p class="box-title-text"> Seeing the projects I've worked on </p>
+<img class="box-image" src="https://thegreatwesty.github.io/images/portfolio-image.png" style="background-color:rgb(198,192,112);">
+<h1 class="box-text"> Portfolio &#10132;  </h1>
 </div>
 
-
-<!-- CV EXPERIENCE -->
-<h3 class="mw-cv-title"> Experience </h3>
-
-<div class="mw-cv-timeline">
-
-<div class="mw-cv-container mw-cv-left">
- <div class="mw-cv-experience">
-  <h4> <strong>Yorkshire Building Society [YBS] </strong></h4>
-  <h5 title="3 years +"> [Mar 2018 – To date]  </h5> 
-  <button data-toggle="collapse" data-target="#YBS-role" class="mw-cv-button-style"> Customer Service Representative </button>
-  <div id="YBS-role" class="collapse" style="padding-top:10px;"> <i>  
-	Helping customers manage their mortgage, this often requires explaining difficult financial concepts in layman’s terms to ensure applicants are able to make an informed decision, this can be challenging when customers have different mortgage terms with other providers and as such it requires patience and flexibility on my part to meet customer expectations 
-	</i> <hr>
-	<b> Essential Skills </b> <br>
-	<ul>
-	<li> Communication </li>
-	<li> Adaptability/Open-mindedness</li>
-	<li> Collaboration</li> 
-	<li> Approachability/Helpfulness</li> 
-	</ul>
-  </div>
- </div>
+<!-- SKILLS -->
+<div class="bg-3 col-lg-4" style="min-height:250px;" onclick="location.href='https://thegreatwesty.github.io/website-skills-page.html';">
+<p class="box-title-text"> Looking at my evolving tech stack </p>
+<img class="box-image" src="https://thegreatwesty.github.io/images/skills-image-3.png" style="background-color:rgb(139,50,55);">
+<h1 class="box-text"> Skills &#10132;  </h1>
 </div>
 
-<div class="mw-cv-container mw-cv-right">
- <div class="mw-cv-experience">
-  <h4> <strong>Asda </strong> </h4>
-  <h5 title="3 months"> [Dec 2017 – Feb 2018] </h5> 
-  <button data-toggle="collapse" data-target="#Asda-role-2" class="mw-cv-button-style"> HR Administrator </button>
-  <div id="Asda-role-2" class="collapse" style="padding-top:10px;"> <i> 
-	Providing support for Asda staff across the country dealing with holidays, sickness, absence and arranging new contracts, this was a temporary role  
-	</i> 
-  </div>
- </div>
-</div>
+<!-- CONTACT -->
+<div class="bg-4 col-lg-12"> 
+<h1 style="color:white; text-align: center;padding:15px;" data-toggle="collapse" data-target="#target"> Feel free to get in touch &#8681; </h1> 
 
-<div class="mw-cv-container mw-cv-left">
- <div class="mw-cv-experience">
-  <h4> <strong>Marble4Life </strong> </h4>
-  <h5 title="10 months"> [Jan 2017 – Oct 2017] </h5> 
-  <button data-toggle="collapse" data-target="#M4L-role" class="mw-cv-button-style"> Administrator </button>
-  <div id="M4L-role" class="collapse" style="padding-top:10px;">  <i>  
-	Supporting successful operation of the company, liaising directly with the managing directors, sales team, support staff and delivery/production staff, I frequently had to prioritise conflicting interests through compromise from different sections of the company on various matters such as working patterns, delivery routes and sourcing materials for production 
-	</i> <hr>
-	<b> Essential Skills </b> <br>
-	<ul>
-	<li> Project Management </li>
-	<li> Communication </li>
-	<li> Flexibility/Adaptability </li> 
-	<li> Patience/Understanding </li> 
-	<li> Accountability </li> 
-	</ul>
-   </div>
- </div>
-</div>
+<div id="target" class="collapse" style="background-color:rgb(84,128,111);">
 
-<div class="mw-cv-container mw-cv-right">
- <div class="mw-cv-experience">
-  <h4> <strong>Plexus Law </strong> </h4>
-  <h5 title="3 months"> [Sep 2016 – Dec 2016] </h5> 
-  <button data-toggle="collapse" data-target="#Plexus-role" class="mw-cv-button-style"> Administrator </button>
-  <div id="Plexus-role" class="collapse" style="padding-top:10px;">  <i> 
-	Providing support for solicitors dealing with industrial disease claims, this was a temporary role and primarily administrative 
-	</i> 
-  </div>
- </div>
-</div>
-
-<div class="mw-cv-container mw-cv-left">
- <div class="mw-cv-experience">
-  <h4> <strong>CallCredit Information Group </strong> </h4>
-  <h5 title="1 month"> [Aug 2016 – Sep 2016] </h5> 
-  <button data-toggle="collapse" data-target="#CCIG-role" class="mw-cv-button-style"> Customer Advisor </button>
-  <div id="CCIG-role" class="collapse" style="padding-top:10px;">  <i> 
-	Providing online support for users of the CallCredit app ‘Noddle’, this was a temporary role and primarily administrative 
-	</i> 
-  </div> 
- </div>
-</div>
-
-<div class="mw-cv-container mw-cv-right">
- <div class="mw-cv-experience">
-  <h4> <strong>Capita </strong> </h4>
-  <h5 title="10 months"> [Sep 2015 – June 2016] </h5> 
-  <button data-toggle="collapse" data-target="#Capita-role" class="mw-cv-button-style"> Case Handler </button>
-  <div id="Capita-role" class="collapse" style="padding-top:10px;">  <i> 
-	Arranging PPI compensation payments for Lloyds Banking Group, a lot of customer contact involved, this required tact in approaching the matter as many people hear PPI on a phone call and simply disconnect 
-	</i> <hr>
-	<b> Essential Skills </b> <br>
-	<ul>
-	<li> Empathy </li>
-	<li> Communication </li>
-	<li> Patience </li> 
-	</ul>
-  </div> 
- </div>
-</div>
-
-<div class="mw-cv-container mw-cv-left">
- <div class="mw-cv-experience">
-  <h4> <strong>Asda </strong></h4>
-  <h5 title="3 years, 10 months"> [Oct 2011 – August 2015] </h5> 
-  <button data-toggle="collapse" data-target="#Asda-role" class="mw-cv-button-style" > Store Assistant </button>
-  <div id="Asda-role" class="collapse" style="padding-top:10px;"> <i>  
-	Maintaining shelf stock, managing a section of the store to ensure it meets set standards, this would often require me to prioritise sets of tasks and relay decision making back to senior staff <br>
-	 </i> <hr>
-	<b> Essential Skills </b> <br>
-	<ul>
-	<li> Communcation </li>
-	<li> Adaptability/Flexibility </li>
-	<li> Accountability </li> 
-	</ul>
- </div>
- </div>
-</div>
-
-</div>
-
-<!-- CV ATTRIBUTES -->
-<article> 
-
-<h3 class="mw-cv-title"> Attributes/Traits</h3>
-
-<div class="row mw-cv-attribute-style">
-
- <div class="panel panel-default col-sm-4">   <div class="panel-body">Methodical</div>  </div>
- <div class="panel panel-default col-sm-4">  <div class="panel-body">Organised</div> </div>
- <div class="panel panel-default col-sm-4">  <div class="panel-body">Transparent</div> </div>
-
-</div>
-
-<div class="row mw-cv-attribute-style">
+<form action="mailto:markw2992@gmail.co.uk" method="post" enctype="text/plain">
  
- <div class="panel panel-default col-sm-4">  <div class="panel-body">Collaborative</div> </div>
- <div class="panel panel-default col-sm-4">  <div class="panel-body">Honest</div> </div>
- <div class="panel panel-default col-sm-4">  <div class="panel-body">Confident</div> </div>
-
-</div>
-
-<div class="row mw-cv-attribute-style">
-
-  <div class="panel panel-default col-sm-4"><div class="panel-body">Ethical</div></div>
-  <div class="panel panel-default col-sm-4"><div class="panel-body">Punctual</div></div>
-  <div class="panel panel-default col-sm-4"><div class="panel-body">Compulsive</div>
-
-</div>
-
-</div>
-				
-</article>
-
-<!-- CV REFERENCES -->
-			<article> 
-				<h3 class="mw-cv-title"> References </h3>
-				<p style="font-size:40px;text-align:center;height:250px;"> 
-					Available upon request. <br>
-<button type="button" data-toggle="tab" href="#home" style="border:none;background-color:inherit;">	<span class="glyphicon glyphicon-home"> </span>	</button>
-
-				</p>
-			</article>
-
-		</div>
-<!-- CV TAB END -->
-
-<!-- PORTFOLIO TAB -->
-		<div id="portfolio" class="tab-pane fade">
-
-
-
-<div class="container " style="background-color:none;">
-
-<!-- First Application Card -->
-
-<div class="row" style="margin:15px;padding:10px;background-color: rgb(228,222,142,0.45);">
-
-<picture class="col-xs-12 col-sm-6 col-md-4 col-xl-1" style="float:left;">
-<a href="https://thegreatwesty.github.io/project2/ybsgkit">
-<img src="https://thegreatwesty.github.io/demoImageYBSGKit.jpg" class="img-responsive thumbnail" style="max-height:250px;box-shadow:5px 5px 5px grey;margin-right:auto;margin-left:auto;">
-</a>
-</picture>
-
-<p class="col-xs-12 col-sm-6 col-md-8 col-xl-1" style="text-align:center;"> 
-<h1>YBSG Qualifier Kit </h1>
-This is an application developed to support my current job, I can now record conversation details electronically, this allows me to reduce post call activity from an average of around 20 minutes to roughly 4 or 5 minutes
-</p>
-
-</div>
-
-<!-- Second Application Card -->
-
-<div class="row" style="margin:15px;padding:10px;background-color: rgb(228,222,142,0.35);">
-
-<picture class="col-xs-12 col-sm-6 col-md-4 col-xl-1" style="float:left;">
-<a href="https://thegreatwesty.github.io/project1/mealplanner">
-<img src="https://thegreatwesty.github.io/demoImageMealPlanner.jpg" class="img-responsive thumbnail" style="max-height:250px;box-shadow:5px 5px 5px grey;margin-right:auto;margin-left:auto;">
-</a>
-</picture>
-
-<p class="col-xs-12 col-sm-6 col-md-8 col-xl-1" style="text-align:center;"> 
-<h1>Meal Planner </h1>
-An application developed for my personal benefit, I can now view a visual representation of my expected meals and view a small library of options to help make deciding meals simpler
-</p>
-
-</div>
-
-<!-- Third Application Card -->
-
-<div class="row" style="margin:15px;padding:10px;background-color: rgb(228,222,142,0.25);">
-
-<picture class="col-xs-12 col-sm-6 col-md-4 col-xl-1" style="float:left;">
-<a href="https://thegreatwesty.github.io/project3/budgetmanager">
-<img src="https://thegreatwesty.github.io/demoImageBudgetManager.jpg" class="img-responsive thumbnail" style="max-height:250px;box-shadow:5px 5px 5px grey;margin-right:auto;margin-left:auto;">
-</a>
-</picture>
-
-<p class="col-xs-12 col-sm-6 col-md-8 col-xl-1" style="text-align:center;"> 
-<h1>Budget Manager </h1>
-<i>- NOTE: Only basic functionality established at this point, once further options are included, this will be listed on my github. </i>
-<hr> An application again developed for my personal benefit, I can quickly use a basic form to enter values and get a visualisation of my spending
-</p>
-
-</div>
-
-</div>
-
-		</div>
-<!-- PORTFOLIO TAB END -->
-
-
-
-
-<!-- SKILLS TAB -->
-<div id="skills" class="tab-pane fade">
-
-<p class="mw-skills-introtext" style="background-color:lightgrey;padding:3px;margin:4px;"> Confidence chart as opposed to a subjective assessment of my skill </p>
-
-<!-- RELEVANT SKILLS -->
-
-<div class="container">
-
-<h3 class="mw-skills-title"> General Skills </h3>
-
-<table style="width:100%;">
-
-<tr> <td style="width:200px;"> <button data-toggle="collapse" data-target="#skill1" class="mw-skills-bar-button"> Responsive Web Design  </button> </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-70"> 70% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <p id="skill1" class="collapse mw-skills-bar-description">A good understanding of the core concept with the ability to implement the design idea with my technical skills</p> </td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill2" class="mw-skills-bar-button" > GitHub </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-40"> 40% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <div id="skill2" class="collapse mw-skills-bar-description">A decent understanding of the foundations</div></td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill3" class="mw-skills-bar-button"> Word Press</button>    </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <div id="skill3" class="collapse mw-skills-bar-description">A basic understanding of how WordPress sites operate</div> </td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill4" class="mw-skills-bar-button">  Search Engine Optimization</button> </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-10"> 10% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <div id="skill4" class="collapse mw-skills-bar-description">A basic understanding of the core concept</div> </td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill5" class="mw-skills-bar-button">  Microsoft Office Applications </button>  </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-50"> 50% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <div id="skill5" class="collapse mw-skills-bar-description">Relatively good understanding of basic concepts in popular MSOffice applications [Word, Excel, Powerpoint]</div> </td> </tr>
-
-</table>
-
-</div>
-
-<!-- RELEVANT SKILLS END -->
-
-<!-- TECHNICAL/LANGUAGE SKILLS -->
-
-<div class="container mw-skills-container">
-
-<h3 class="mw-skills-title"> Technical Skills </h3>
-<h4> <b> Front end </b> </h4>
-
-<table style="width:100%;">
-
-<tr> <td style="width:200px;"> <button data-toggle="collapse" data-target="#skill6" class="mw-skills-bar-button">  HTML </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-90"> 90% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <div id="skill6" class="collapse mw-skills-bar-description">Very familiar with standard/common concepts in HTML</div></td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill7" class="mw-skills-bar-button"> Bootstrap </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-70"> 70% </div> </div> </td> </tr>
-<tr> <td colspan="2"><div id="skill7" class="collapse mw-skills-bar-description">Familiar with large parts of Bootstrap3 and Bootstrap4's ability [good knowledge of BS4 spacing shorthand, and BS3/BS4 grid system]</div> </td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill8" class="mw-skills-bar-button"> CSS </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-70"> 70% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <div id="skill8" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, good understanding of popular concepts in CSS [CSS grid, positioning, inheritance, media queries, naming conventions]</div></td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill9" class="mw-skills-bar-button">  w3.CSS </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-50"> 50% </div> </div> </td> </tr>
-<tr> <td colspan="2"><div id="skill9" class="collapse mw-skills-bar-description">I feel familiar with most of the common concepts in W3.css</div> </td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill10" class="mw-skills-bar-button"> Javascript </button>    </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-60"> 60% </div> </div> </td> </tr>
-<tr> <td colspan="2"><div id="skill10" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, I have read more about advanced concepts in JS [Recursion, Prototyping, Class inheritance etc.] but wouldn't feel comfortable working with these concepts without support</div> </td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill11" class="mw-skills-bar-button"> JQuery </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-60"> 60% </div> </div> </td> </tr>
-<tr> <td colspan="2"><div id="skill11" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, I am familiar with the syntax and have a good appreciation for what can be achieved with JQuery</div></td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill12" class="mw-skills-bar-button"> React </button>  </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-20"> 20% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <div id="skill12" class="collapse mw-skills-bar-description">Completed a React tutorial, I have a basic understanding of the fundamentals</div> </td> </tr>
-
-</table>
-
-<h4><b>Back end </b></h4>
-
-<table style="width:100%;">
-
-<tr> <td style="width:200px;"> <button data-toggle="collapse" data-target="#skill13" class="mw-skills-bar-button">  PHP </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <div id="skill13" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, understand core concepts</div> </td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill14" class="mw-skills-bar-button"> C </button>  </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <div id="skill14" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, understand core concepts</div></td> </tr>
-
-<tr> <td> <button data-toggle="collapse" data-target="#skill15" class="mw-skills-bar-button"> C# </button>   </td> <td> <div class="mw-skills-bar"> <div class="mw-skills-bar-text mw-skills-30"> 30% </div> </div> </td> </tr>
-<tr> <td colspan="2"> <div id="skill15" class="collapse mw-skills-bar-description">Completed a SoloLearn fundamentals course, understand core concepts</div></td> </tr>
-
-</table>
-
-</div>
-
-<!-- TECHNICAL/LANGUAGE SKILLS END -->
-
-</div>
-<!-- SKILLS TAB END -->
-
-
-
-
-<!-- CONTACT TAB -->
-<div id="contact" class="tab-pane fade">
-
-<div class="mw-contact-bg"> </div>
-<h2 class="mw-contact-title">Contact</h2>
-
-<div class="mw-contact-container">
-<form action="mailto:markw2992@gmail.co.uk" method="post" enctype="text/plain" class="mw-contact-form">
-
-<div class="row">
- <div class="col-sm-3">
-    <label for="name">Your Name</label>
+ <div class="form-group">
+    <label for="email">Name:</label>
+    <input type="text" class="form-control" placeholder="Your name" id="name">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" placeholder="Enter email" id="email">
+  </div>
+
+ <div class="form-group">
+   <label for="comment">Message:</label>
+   <textarea class="form-control" rows="6" placeholder="Enter message" id="message"></textarea>
  </div>
- <div class="col-sm-9">
-    <input type="text" id="name" name="name" placeholder="">
- </div>
-</div>
 
-<div class="row">
- <div class="col-sm-3">
-    <label for="email">Your E-mail</label>
- </div>
- <div class="col-sm-9">
-    <input type="email" id="email" name="email" placeholder="">
- </div>
-</div>
-
-<label for="subject" class="col-3">Message</label>
-<textarea id="subject" name="subject" placeholder="Enter your message..."  class="col-9" style="height:200px"></textarea>
-
- <input type="submit" value="Send">
+ <button type="submit" class="btn bg-4" style="color:white;font-size:27px;">Submit</button>
 
 </form>
 
 </div>
-
 </div>
-<!-- CONTACT TAB END -->
 
-
-
-	</div>
-
-</div>
-	<footer style=""> 
-		<div style="padding:15px;"> 
+<!-- FOOTER -->
+<div class="bg-5 container-fluid" style="width:100%;font-size:25px;"> 
+	<footer style="">
+		<div style="padding:15px;">
 			<div class="row" style="width:250px;margin-left:20%;">
-				<p class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"> 
-					<a data-toggle="tab" href="#home" style="color:black;font-weight:300;display:block;">Home</a>
-					<a data-toggle="tab" href="#contact" style="color:black;font-weight:300;display:block;">Contact</a> 
-					<a data-toggle="tab" href="#CV" style="color:black;font-weight:300;display:block;">CV</a> 
-					<a data-toggle="tab" href="#portfolio" style="color:black;font-weight:300;display:block;">Portfolio</a> 
-					<a data-toggle="tab" href="#skills" style="color:black;font-weight:300;display:block;">Skills</a> 
+				<p class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+					<a href="https://thegreatwesty.github.io/index.html" style="color:white;"> Home </a> </li>
+					<a href="https://thegreatwesty.github.io/website-cv-page.html" style="color:white;"> CV </a>  </li>
+					<a href="https://thegreatwesty.github.io/website-portfolio-page.html" style="color:white;"> Portfolio </a>  </li>
+					<a href="https://thegreatwesty.github.io/website-skills-page.html" style="color:white;"> Skills </a>  </li>
+					<a href="https://thegreatwesty.github.io/website-contact-page.html" style="color:white;">Contact</a>
 				</p>
 				<p class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-					<a href="https://github.com/TheGreatWesty" style="color:black;font-weight:300;display:block;"> GitHub </a>
-					<a href="https://www.linkedin.com/in/mark-west-b4058b103/" style="color:black;font-weight:300;display:block;"> LinkedIn </a>
+					<a class="full-size-6" href="https://github.com/TheGreatWesty" style="color:white;"> GitHub </a>
+					<a class="full-size-7" href="https://www.linkedin.com/in/mark-west-b4058b103/" style="color:white;"> LinkedIn </a>
 				</p>
 			</div>
 		</div>
-		<a href="mailto:mark-west@hotmail.co.uk" style="padding:15px;">mark-west@hotmail.co.uk</a> 
 	</footer>
+</div>
+
 </body>
