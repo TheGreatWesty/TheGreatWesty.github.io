@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="shopping.js"></script>
+
+    <title> My list - My week </title>
+
+    <style>
+        .navbar {
+            background-color: #393D3F;
+            color: wheat;
+            padding: 15px;
+            padding-left: 15%;
+            letter-spacing: 3px;
+            height: 100px;
+            font-size: x-large;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .accordion {
+            margin-top: 25px;
+            font-weight: 500;
+        }
+
+        .accordion-item {
+            border: none;
+        }
+
+        .accordion-header {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .accordion-header button {
+            background: rgba(255, 255, 255, 0);
+            font-weight: bolder;
+            text-indent: 2em;
+            border-bottom: 1px solid goldenrod;
+        }
+
+        .accordion-header button:not(.collapsed) { 
+            background: rgba(255, 255, 255, 0);
+            font-weight: 700;
+            text-indent: 3em;
+            box-shadow: none;
+            color: goldenrod;
+            text-transform: uppercase;
+        }
+
+        .accordion-body div {
+            columns: 3;
+            white-space: nowrap;
+        }
+
+        .list-tip {
+            white-space: pre-line;
+            padding-left: 5%;
+            padding-right: 5%;
+            text-align: center;
+            font-size: small;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        #collapsefibre {
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0),
+                    #9CC4B2 10%,
+                    #9CC4B2 90%,
+                    rgba(255, 255, 255, 0) 100%);
+        }
+
+        #collapseprotein {
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0),
+                    #E76D83 5%,
+                    #E76D83 95%,
+                    rgba(255, 255, 255, 0) 100%);
+        }
+
+        #collapsecarbohydrates {
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0),
+                    #D5BBB1 5%,
+                    #D5BBB1 95%,
+                    rgba(255, 255, 255, 0) 100%);
+        }
+
+        #collapsefat {
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0),
+                    #F5E2C8 5%,
+                    #F5E2C8 95%,
+                    rgba(255, 255, 255, 0) 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        Shopping Lists made easy
+    </nav>
+    <div class="container-fluid">
+        <div class="accordion" id="mwAccordion">
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+
+</body>
