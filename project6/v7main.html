@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/mwstyle.css">
+
+    <!-- ANGULAR / BOOTSTRAP -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- ANGULAR ROUTING MODULE -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Fonts [https://fonts.google.com/]-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+
+    <title> Research Notes V7 Kit </title>
+</head>
+
+<body class="bg-1">
+
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            font-size: medium;
+            border: 8px solid white;
+        }
+
+        .bg-1 {
+            background: rgb(248, 248, 248);
+        }
+
+        .bg-2 {
+            background: rgb(171, 181, 199);
+        }
+
+        .bg-3 {
+            background: rgb(42, 45, 52);
+        }
+
+        .bg-3-pale {
+            background: rgb(42, 45, 52, 0.2);
+        }
+
+        .bg-4 {
+            background: rgb(248, 51, 60);
+        }
+
+        .bg-5 {
+            background: rgb(85, 134, 140);
+        }
+
+        .t-col-1 {
+            color: rgb(248, 248, 248);
+        }
+
+        .t-col-2 {
+            color: rgb(125, 132, 145);
+        }
+
+        .t-col-3 {
+            color: rgb(45, 45, 45);
+        }
+
+        .t-col-4 {
+            color: rgb(253, 56, 56);
+        }
+
+        .t-col-5 {
+            color: rgb(25, 93, 116);
+        }
+
+        .text1 {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .text2 {
+            font-family: 'EB Garamond', serif;
+        }
+
+        .text3 {
+            font-family: monospace;
+        }
+
+        #enquiry-page .text3::before {
+            content: "»";
+        }
+
+        #admin-page .text3::before {
+            content: "»";
+        }
+
+        input[type="text"] {
+            font-family: monospace;
+        }
+    </style>
+
+    <!-- PREFACE NOT VISIBLE -->
+    <div style="background: rgb(237, 237, 237); display: none;">
+
+        <main class="container" style="padding: 40px; ">
+            <h5>Preface:</h5> <b>Mortgage Sales - Qualifying Kit</b>, is designed to be used by CSR's as a conversation
+            assistant <br>
+            <i>- To provide prompts for <b class="t-col-4">mandatory</b> call requirements</i> <br>
+            <i>- To have an accessible notes system </i> <br>
+            <i>- To reduce the cognitive burden from the user (information retention) </i> <br>
+            <i>- To reduce the administrative burden (notes system) </i>
+        </main>
+
+        <div class="container" style="padding: 40px; display: flex;">
+            <h5>Colour scheme:</h5>
+            <div class="box bg-1 t-col-3"> Cultured </div>
+            <div class="box bg-2 t-col-2"> Roman Silver </div>
+            <div class="box bg-3 t-col-1"> Gunmetal </div>
+            <div class="box bg-4 t-col-5"> Red Salsa </div>
+            <div class="box bg-5 t-col-4"> Steel Teal </div>
+        </div>
+
+        <div class="container" style="padding: 40px;">
+
+            <div style="display: flex; justify-content: space-around;">
+
+                <ul class="bg-1" style="padding: 35px;">
+                    <h5>Fonts:</h5>
+                    <li class="text1" style="font-size: large;"><b>Headings: </b> Nunito </li>
+                    <li class="text2" style="font-size: large;"><b>Body text: </b> EB Garamond </li>
+                    <li class="text3" style="font-size: large;"><b>Captions: </b> <i>monospace italics</i> </li>
+                </ul>
+
+                <ul class="bg-1" style="padding: 35px;">
+                    <h5>Imagery:</h5>
+                    <li> Vectors, geometry based, simple (rounded squares)</li>
+                </ul>
+
+                <ul class="bg-1" style="padding: 35px;">
+                    <h5>Logo:</h5>
+                    <li>(None selected)</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MAIN VIEW -->
+    <main ng-app="kit7" ng-controller="mainview" style="height: 100vh;">
+
+        <!-- NOTE BOX -->
+        <div id="draggable" style="display: non;">
+
+            <!-- DRAGGABLE ELEMENT -->
+            <div id="draggableItem" class="bg-3-pale" style="padding: 10px;">
+
+                <button data-toggle="collapse" data-target="#notepad" class="notepad-button bg-1">
+
+                    <span
+                        ng-hide="variation.HP || variation.REM || variation.PORT || variation.PT || variation.AL || variation.TOE || variation.TT"
+                        class="text1">
+                        <i class="text1"> {Click to close notepad} </i>
+                    </span>
+
+                    <span style="float: right; padding-right: 10px;"> &#10649; </span>
+
+                    <div ng-if="variation.HP || variation.REM || variation.PORT || variation.PT || variation.AL || variation.TOE || variation.TT"
+                        class="text1">
+                        <b>Application: </b>
+                        <i>
+                            <div ng-if="variation.HP">House Purchase</div>
+                            <div ng-if="variation.REM">Remortgage</div>
+                            <div ng-if="variation.PORT">Portability</div>
+                            <div ng-if="variation.PT">Product Transfer</div>
+                            <div ng-if="variation.AL">Additional Lending</div>
+                            <div ng-if="variation.TOE">Transfer of Equity</div>
+                            <div ng-if="variation.TT">Type/Term change</div>
+                        </i>
+                    </div>
+
+                </button>
+
+            </div>
+
+            <!-- EXPANDABLE ELEMENT -->
+            <div id="notepad" class="collapse">
+                <textarea class="text3" ng-model="notePad" cols="30" rows="7" placeholder="Type here..."></textarea>
+            </div>
+
+        </div>
+
+        <style>
+            /* NOTE PAD */
+
+            /* DRAGGABLE */
+            /* pulled from a tutorial at w3schools.com | https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_draggable */
+            #draggable {
+                position: absolute;
+                top: 50%;
+                left: 65%;
+                z-index: 9;
+                text-align: center;
+            }
+
+            @media only screen and (max-width: 850px) {
+                #draggable {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 30%;
+                }
+            }
+
+            #draggableItem {
+                cursor: move;
+                z-index: 10;
+                padding: 10px;
+                border-radius: 10px;
+                width: 300px;
+            }
+
+            #notepad textarea {
+                width: 300px;
+                background: wheat;
+                border-radius: 10px;
+                margin-top: 5px;
+                padding: 5px;
+            }
+
+            .notepad-button {
+                width: 280px;
+                border: 1px solid rgb(171, 181, 199);
+                border-radius: 10px;
+            }
+        </style>
+
+        <script>
+            //Draggable javascript
+
+            //Make the DIV element draggagle:
+
+            //pulled from a tutorial @ w3schools.com | https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_draggable
+            dragElement(document.getElementById("draggable"));
+
+            function dragElement(elmnt) {
+
+                var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                if (document.getElementById(elmnt.id + "Item")) {
+                    /* if present, the header is where you move the DIV from:*/
+                    document.getElementById(elmnt.id + "Item").onmousedown = dragMouseDown;
+                } else {
+                    /* otherwise, move the DIV from anywhere inside the DIV:*/
+                    elmnt.onmousedown = dragMouseDown;
+                }
+
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // get the mouse cursor position at startup:
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    // call a function whenever the cursor moves:
+                    document.onmousemove = elementDrag;
+                }
+
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // calculate the new cursor position:
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    // set the element's new position:
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                }
+
+                function closeDragElement() {
+                    /* stop moving when mouse button is released:*/
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+
+            }
+
+        </script>
+
+        <!-- Header, UNIVERSAL -->
+        <header class="container-fluid bg-3 t-col-1 text1"
+            style="display: flex; align-items: baseline; box-shadow: 0px 5px 5px rgb(125, 132, 145);">
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home-page"> Home </a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#enquiry-page"> Enquiry </a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#admin-page"> Admin </a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tool-page"> Tools </a> </li>
+            </ul>
+
+            <div>
+                <p ng-if="brand.YBSactive" style="color: rgb(6, 125, 6);">YBS</p>
+                <p ng-if="brand.CBSactive" style="color: rgb(177, 0, 0);">CBS</p>
+                <p ng-if="brand.ACCactive" style="color: rgb(218, 145, 12);">Accord</p>
+            </div>
+
+        </header>
+
+        <style>
+            header {
+                height: 52px;
+            }
+
+            header li,
+            header div {
+                margin-left: 5px;
+                padding: 5px;
+            }
+
+            header li:hover {
+                color: rgb(85, 134, 140);
+            }
+
+            header li a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            header li .active {
+                background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(255, 255, 255, 0.1)) !important;
+                color: rgb(125, 132, 145) !important;
+                text-transform: uppercase;
+            }
+
+            header li a:hover {
+                text-decoration: none;
+                color: inherit;
+            }
+        </style>
+
+        <script>
+            var app = angular.module('kit7', []);
+            app.controller('mainview', function ($scope) {
+
+                //used to decide which information to present
+                class Brand {
+                    constructor() {
+                        this.YBSactive = false;
+                        this.CBSactive = false;
+                        this.ACCactive = false;
+                    }
+                }
+
+                $scope.brand = new Brand;
+                //toggles the brand between YBS/CBS/ACCORD
+                $scope.toggleYbs = function () {
+                    $scope.brand.YBSactive = !$scope.brand.YBSactive;
+                    $scope.brand.CBSactive = false;
+                    $scope.brand.ACCactive = false;
+                }
+                $scope.toggleCbs = function () {
+                    $scope.brand.CBSactive = !$scope.brand.CBSactive;
+                    $scope.brand.YBSactive = false;
+                    $scope.brand.ACCactive = false;
+                }
+                $scope.toggleAcc = function () {
+                    $scope.brand.ACCactive = !$scope.brand.ACCactive;
+                    $scope.brand.CBSactive = false;
+                    $scope.brand.YBSactive = false;
+                }
+
+
+                //used to decide which information to present
+                class Variation {
+                    constructor() {
+                        this.HP = false;
+                        this.REM = false;
+                        this.PORT = false;
+                        this.PT = false;
+                        this.AL = false;
+                        this.TOE = false;
+                        this.TT = false;
+                    }
+                }
+
+                $scope.variation = new Variation;
+                //toggles the variations on or off
+                $scope.toggleHP = function () { $scope.variation.HP = !$scope.variation.HP; }
+                $scope.toggleREM = function () { $scope.variation.REM = !$scope.variation.REM; }
+                $scope.togglePORT = function () { $scope.variation.PORT = !$scope.variation.PORT; }
+                $scope.togglePT = function () { $scope.variation.PT = !$scope.variation.PT; }
+                $scope.toggleAL = function () { $scope.variation.AL = !$scope.variation.AL; }
+                $scope.toggleTOE = function () { $scope.variation.TOE = !$scope.variation.TOE; }
+                $scope.toggleTT = function () { $scope.variation.TT = !$scope.variation.TT; }
+
+                $scope.today = new Date();
+
+                $scope.calcA1age = function () {
+                    let years = ($scope.today - $scope.a1dob) / (1000 * 3600 * 24 * 365.2425);
+                    let months = (years - Math.floor(years)) / 0.083;
+                    $scope.a1agenum = years;
+                    $scope.a1age = "Age: " + Math.floor(years.toFixed(3)) + "y " + Math.floor(months.toFixed(3)) + "m";
+                    let a1maxyears = 80 - $scope.a1agenum;
+                    let a1maxmonths = (a1maxyears - Math.floor(a1maxyears)) / 0.083;
+                    $scope.a1maxterm = " " + Math.floor(a1maxyears.toFixed(3)) + "Y " + Math.floor(a1maxmonths.toFixed(3)) + "m";
+                }
+                $scope.calcA2age = function () {
+                    let years = ($scope.today - $scope.a2dob) / (1000 * 3600 * 24 * 365.2425);
+                    let months = (years - Math.floor(years)) / 0.083;
+                    $scope.a2agenum = years;
+                    $scope.a2age = "Age: " + Math.floor(years.toFixed(3)) + "y " + Math.floor(months.toFixed(3)) + "m";
+                    let a2maxyears = 80 - $scope.a2agenum;
+                    let a2maxmonths = (a2maxyears - Math.floor(a2maxyears)) / 0.083;
+                    $scope.a2maxterm = " " + Math.floor(a2maxyears.toFixed(3)) + "Y " + Math.floor(a2maxmonths.toFixed(3)) + "m";
+                }
+            });
+
+        </script>
+
+        <div class="tab-content" style="height: 94vh;">
+
+            <!-- Home page -->
+            <div id="home-page" class="tab-pane active container t-col-3" style="padding: 25px; height: 100%;">
+
+                <!-- Home page > title -->
+                <section class="text2" style="height: 50%; padding-top: 50px;text-align: center;">
+                    <h1> <b> Mortgage Sales </b> </h1>
+                    <h2> Qualifying Tool </h2>
+                </section>
+
+                <!-- Home page > brief/preface -->
+                <section class="text1" style="height: 25%;">
+                    <p>- To provide prompts for <b class="t-col-4">mandatory</b> call requirements</p>
+                    <p>- To have an accessible notes system</p>
+                    <p>- To support post call activity <i>(Admin tab)</i></p>
+                    <p> <b>Filling out more sections of the form gives better results</b></p>
+                </section>
+
+                <!-- Home page > information -->
+                <section class="bg-3-pale text3" style="height: 25%; width:fit-content; padding: 10px; display: none;">
+                    <div>
+                        <i>Select <b>'Enquiry'</b> to begin an application </i> <br>
+                        <i>Select <b>'Admin'</b> to view the post call info </i> <br>
+                        <i>Select <b>'Tools'</b> to access handy tools </i> <br>
+                    </div>
+                    <div>
+                        <ul>
+                            <i>
+                                <li><b class="t-col-4">Required</b> information will be coloured red</li>
+                                <li><b>Relevant</b> information will be written in bold</li>
+                                <li><span class="bg-3-pale">Tips/guidance</span> will be placed in shaded boxes</li>
+                            </i>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Enquiry page -->
+            <div id="enquiry-page" class="tab-pane fade container-fluid t-col-3" style="height: 100%;">
+
+                <div class="row" style="height: 100%;">
+
+                    <style>
+                        .enquiry-menu {
+                            padding-right: 0px;
+                        }
+
+                        .enquiry-menu li {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .enquiry-menu li a:hover {
+                            box-shadow: 2px 2px 4px grey;
+                        }
+
+                        .enquiry-menu img {
+                            width: 40px;
+                            height: 40px;
+                        }
+
+                        .enquiry-menu .nav-link {
+                            padding: 8px;
+                            margin: 2px;
+                        }
+
+                        .enquiry-menu .active {
+                            background: rgb(85, 134, 140) !important;
+                        }
+                    </style>
+
+                    <!-- Enquiry screen menu -->
+                    <ul
+                        class="col-12 col-sm-2 col-lg-1 align-top nav nav-pills nav-fill flex-row flex-md-column enquiry-menu">
+                        <li class="nav-item" title="Home"> <a class="nav-link active" data-toggle="tab"
+                                href="#enquiry-home"> <img src="images/home_icon.png"> </a> </li>
+                        <li class="nav-item" title="Customer"> <a class="nav-link" data-toggle="tab"
+                                href="#enquiry-cust"> <img src="images/cust_icon.png"> </a> </li>
+                        <li class="nav-item" title="Mandatories"> <a class="nav-link" data-toggle="tab"
+                                href="#enquiry-manda"> <img src="images/manda_icon.png"> </a> </li>
+                        <li ng-hide="variation.HP || variation.REM" class="nav-item" title="Account Recap"> <a
+                                class="nav-link" data-toggle="tab" href="#enquiry-recap"> <img
+                                    src="images/recap_icon.png"> </a> </li>
+                        <li class="nav-item" title="Eligibility"> <a class="nav-link" data-toggle="tab"
+                                href="#enquiry-eligi"> <img src="images/eligi_icon.png"> </a> </li>
+                        <li ng-show="variation.HP || variation.REM || variation.PORT || variation.AL || variation.TOE || variation.TT"
+                            class="nav-item" title="Affordability"> <a class="nav-link" data-toggle="tab"
+                                href="#enquiry-afford"> <img src="images/money_icon.png"> </a> </li>
+                        <li ng-show="variation.HP || variation.REM || variation.PORT" class="nav-item" title="AIP"> <a
+                                class="nav-link" data-toggle="tab" href="#enquiry-aip"> <img src="images/aip_icon.png">
+                            </a> </li>
+                        <li class="nav-item" title="Appointment"> <a class="nav-link" data-toggle="tab"
+                                href="#enquiry-appt"> <img src="images/appoint_icon.png"> </a> </li>
+                    </ul>
+
+                    <!-- ENQUIRY screen content -->
+                    <div class="tab-content col-12 col-sm-10 col-lg-11" style="height: 90%;">
+
+                        <!-- Enquiry home screen -->
+                        <div id="enquiry-home" class="container t-col-3 tab-pane active "
+                            style="padding: 25px; height: 100%;">
+
+                            <!-- SEPARATE FILE: enquiry_home.php -->
+                            <style>
+                                .enquiry-home button:hover {
+                                    box-shadow: 2px 3px 7px rgb(42, 45, 52);
+                                    border-radius: 5px;
+                                }
+
+                                .enquiry-home p {
+                                    padding: 5px;
+                                    border-radius: 7px;
+                                    text-align: center;
+                                }
+
+                                .enquiry-home p:hover {
+                                    color: rgb(25, 93, 116);
+                                    cursor: pointer;
+                                }
+
+                                .enquiry-home p:hover::after {
+                                    content: "⇦"
+                                }
+
+                                .enquiry-home p:hover::before {
+                                    content: "⇨"
+                                }
+                            </style>
+
+                            <div class="col-12 col-md-7 enquiry-home text2" style="height: 100%;">
+
+                                <div style="height: 33%;">
+
+                                    <h3 style="font-weight: bold; padding: 5px; text-align: center;">Choose your brand;
+                                    </h3>
+
+                                    <div class="text1"
+                                        style="display: flex; flex-direction: column; justify-content: space-between;">
+                                        <button
+                                            style="color: rgb(0, 90, 0); border:none; background: inherit; padding: 10px; font-size: x-large;"
+                                            ng-click="toggleYbs()"> Yorkshire </button>
+                                        <button
+                                            style="color: rgb(177, 0, 0); border:none; background: inherit; padding: 10px; font-size: x-large; "
+                                            ng-click="toggleCbs()"> Chelsea </button>
+                                        <button
+                                            style="color: rgb(218, 145, 12); border:none; background: inherit; padding: 10px; font-size: x-large; "
+                                            ng-click="toggleAcc()"> Accord </button>
+                                    </div>
+
+                                </div>
+
+                                <div style="height: 66%; width: 100%; display: flex; flex-direction: column;">
+
+                                    <h3 style="font-weight: bold; padding: 5px; text-align: center;">Choose your
+                                        variation;</h3>
+
+                                    <div class="text1">
+                                        <p ng-style="{'background': variation.HP ? 'rgb(42, 45, 52, 0.2)' : 'inherit'}"
+                                            ng-if="!brand.ACCactive" ng-click="toggleHP();"> House Purchase </p>
+                                        <p ng-style="{'background': variation.REM ? 'rgb(42, 45, 52, 0.2)' : 'inherit'}"
+                                            ng-if="!brand.ACCactive" ng-click="toggleREM();"> Remortgage </p>
+                                        <p ng-style="{'background': variation.PORT ? 'rgb(42, 45, 52, 0.2)' : 'inherit'}"
+                                            ng-click="togglePORT();"> Portability </p>
+                                        <p ng-style="{'background': variation.PT ? 'rgb(42, 45, 52, 0.2)' : 'inherit'}"
+                                            ng-click="togglePT();"> Product Transfer </p>
+                                        <p ng-style="{'background': variation.AL ? 'rgb(42, 45, 52, 0.2)' : 'inherit'}"
+                                            ng-click="toggleAL();"> Additional Lending </p>
+                                        <p ng-style="{'background': variation.TOE ? 'rgb(42, 45, 52, 0.2)' : 'inherit'}"
+                                            ng-click="toggleTOE();"> Transfer of Equity </p>
+                                        <p ng-style="{'background': variation.TT ? 'rgb(42, 45, 52, 0.2)' : 'inherit'}"
+                                            ng-click="toggleTT();"> Type / Term change </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Enquiry customer screen -->
+                        <div id="enquiry-cust" class="container t-col-3 tab-pane fade "
+                            style="padding: 25px; height: 100%;">
+
+                            <!-- SEPARATE FILE: enquiry_cust.php -->
+                            <style>
+                                #enquiry-cust input[type=text] {
+                                    border-bottom: 1px solid rgb(42, 45, 52);
+                                    border-top: none;
+                                    border-left: none;
+                                    border-right: none;
+                                    background: inherit;
+                                }
+
+                                #enquiry-cust input[type=date] {
+                                    text-align: center;
+                                }
+
+                                #enquiry-cust input {
+                                    width: 200px;
+                                }
+                            </style>
+
+                            <div class="col-12 col-md-7 col-lg-5 col-xl-4 text1" style="height: 100%;">
+
+                                <!-- ACCOUNT NUMBERS-->
+                                <div class="text2"
+                                    style="height: 20%; display: flex; justify-content: space-around; align-items: center;">
+
+                                    <div ng-hide="variation.HP || variation.REM"
+                                        style="display: flex; flex-direction: column; align-items: center; ">
+                                        <h5 style="font-weight: bold; padding: 5px; text-align: center;">Account Number:
+                                        </h5>
+                                        <input class="text2" type="text" ng-model="$parent.accountnum"
+                                            style="width: 150px;">
+                                    </div>
+
+                                    <div ng-if="variation.PORT || variation.HP || variation.REM"
+                                        style="display: flex; flex-direction: column; align-items: center; ">
+                                        <h5 style="font-weight: bold; padding: 5px; text-align: center;">Registration
+                                            Number:</h5>
+                                        <input class="text1" type="text" ng-model="$parent.portnum"
+                                            style="width: 150px;">
+                                    </div>
+
+                                </div>
+
+                                <!-- APPLICANT 1 -->
+                                <div style="height: 40%;">
+
+                                    <h4 class="text2" style="font-weight: bold; padding: 5px; text-align: center;">
+                                        Applicant 1 - <span style="font-weight: 300;"> {{a1age}} </span></h4>
+
+                                    <div
+                                        style=" display: flex; justify-content: center; justify-content: center; align-items: center;">
+                                        <p style="width: 100px;">Name: </p>
+                                        <p><input type="text" autocomplete="off" ng-model="a1name"></p>
+                                    </div>
+
+                                    <div style=" display: flex; justify-content: center; align-items: center;">
+                                        <p style="width: 100px;">Date of birth: </p>
+                                        <p><input type="date" autocomplete="off" ng-model="a1dob"
+                                                ng-change="calcA1age()"></p>
+                                    </div>
+
+                                    <div style=" display: flex; justify-content: center; align-items: center;">
+                                        <p style="width: 100px;">Postcode: </p>
+                                        <p><input type="text" autocomplete="off" ng-model="a1post"></p>
+                                    </div>
+
+                                    <div style=" display: flex; justify-content: center; align-items: center;">
+                                        <p style="width: 100px;">Mobile: </p>
+                                        <p><input type="text" autocomplete="off" ng-model="a1mob"></p>
+                                    </div>
+
+                                    <div style=" display: flex; justify-content: center; align-items: center;">
+                                        <p style="width: 100px;">Email: </p>
+                                        <p><input type="text" autocomplete="off" ng-model="a1mail"></p>
+                                    </div>
+
+                                </div>
+
+                                <!-- APPLICANT 2-->
+                                <div style="height: 40%;">
+                                    <h4 class="text2" style="font-weight: bold; padding: 5px; text-align: center;">
+                                        Applicant 2 - <span style="font-weight: 300;"> {{a2age}} </span></h4>
+
+                                    <div
+                                        style=" display: flex; justify-content: center; justify-content: center; align-items: center;">
+                                        <p style="width: 100px;">Name: </p>
+                                        <p><input type="text" autocomplete="off" ng-model="a2name"></p>
+                                    </div>
+
+                                    <div style=" display: flex; justify-content: center; align-items: center;">
+                                        <p style="width: 100px;">Date of birth: </p>
+                                        <p><input type="date" autocomplete="off" ng-model="a2dob"
+                                                ng-change="calcA2age()"></p>
+                                    </div>
+
+                                    <div style=" display: flex; justify-content: center; align-items: center;">
+                                        <p style="width: 100px;">Postcode: </p>
+                                        <p><input type="text" autocomplete="off" ng-model="a2post"></p>
+                                    </div>
+
+                                    <div style=" display: flex; justify-content: center; align-items: center;">
+                                        <p style="width: 100px;">Mobile: </p>
+                                        <p><input type="text" autocomplete="off" ng-model="a2mob"></p>
+                                    </div>
+
+                                    <div style=" display: flex; justify-content: center; align-items: center;">
+                                        <p style="width: 100px;">Email: </p>
+                                        <p><input type="text" autocomplete="off" ng-model="a2mail"></p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <!-- Enquiry mandatories screen -->
+                        <div id="enquiry-manda" class="container t-col-3 tab-pane fade"
+                            style="padding: 25px; height: 100%;">
+
+                            <!-- SEPARATE FILE: enquiry_manda.php -->
+                            <style>
+                                .enquiry-manda p {
+                                    cursor: pointer;
+                                }
+
+                                .strike {
+                                    text-decoration: line-through;
+                                    color: rgb(125, 132, 145);
+                                }
+                            </style>
+
+                            <div class="col-12 col-lg-5 enquiry-manda text1" style="height: 100%;">
+
+                                <div>
+                                    <h5 class="text2" style="padding: 10px; font-weight: bold;"> Standard Mandatories
+                                    </h5>
+                                    <p ng-click="marked1 = !marked1" ng-class="marked1 ? 'strike' : '!strike'"
+                                        class="text3"> Agenda: What I can do to meet the objective </p>
+                                    <p ng-click="marked2 = !marked2" ng-class="marked2 ? 'strike' : '!strike'"
+                                        class="text3"> Confirm advice is not provided </p>
+                                    <p ng-click="marked3 = !marked3" ng-class="marked3 ? 'strike' : '!strike'"
+                                        class="text3"> Data processing statement </p>
+                                    <p ng-click="marked4 = !marked4" ng-class="marked4 ? 'strike' : '!strike'"
+                                        class="text3"> Joint authority statement </p>
+                                </div>
+
+                                <div ng-if="variation.HP || variation.REM || variation.PORT">
+                                    <h5 class="text2" style="padding: 10px; font-weight: bold;"> House Purchase </h5>
+                                    <p ng-click="marked5 = !marked5" ng-class="marked5 ? 'strike' : '!strike'"
+                                        class="text3" ng-if="variation.HP || variation.REM"> Annual General Meeting
+                                        statements</p>
+                                    <p ng-click="marked6 = !marked6" ng-class="marked6 ? 'strike' : '!strike'"
+                                        class="text3"> Explain paperless process</p>
+                                    <p ng-click="marked7 = !marked7" ng-class="marked7 ? 'strike' : '!strike'"
+                                        class="text3" ng-if="!variation.REM"> Will this be a concessionary purchase?</p>
+                                    <p ng-click="marked8 = !marked8" ng-class="marked8 ? 'strike' : '!strike'"
+                                        class="text3" ng-if="!variation.REM"> Have you had an offer accepted for new
+                                        property?</p>
+                                    <p ng-click="marked9 = !marked9" ng-class="marked9 ? 'strike' : '!strike'"
+                                        class="text3" ng-if="a2name"> Living together? </p>
+                                </div>
+
+                                <div
+                                    ng-if="variation.HP || variation.REM || variation.PORT || variation.PT || variation.AL || variation.TT || variation.TOE">
+                                    <h5 class="text2" style="padding: 10px; font-weight: bold;">Paperless </h5>
+                                    <p ng-click="marked9a = !marked9a" ng-class="marked9a ? 'strike' : '!strike'"
+                                        class="text3"> Explain the benefits of the paperless process</p>
+                                    <p ng-click="marked9b = !marked9b" ng-class="marked9b ? 'strike' : '!strike'"
+                                        class="text3"> If both applicants are available then gain verbal consent from
+                                        both</p>
+                                    <p ng-click="marked9c = !marked9c" ng-class="marked9c ? 'strike' : '!strike'"
+                                        class="text3"> Note on the account whether whether consent is gained for either
+                                        applicant</p>
+                                </div>
+
+                                <div ng-if="brand.ACCactive">
+                                    <h5 class="text2" style="padding: 10px; font-weight: bold;"> Accord Only </h5>
+                                    <p ng-click="marked10 = !marked10" ng-class="marked10 ? 'strike' : '!strike'"
+                                        class="text3"> Active broker relationship?</p>
+                                    <div style="display: flex; justify-content: space-around;">
+                                        <p ng-click="accordyes = true;" class="bg-3-pale"
+                                            style="padding: 5px; border-radius: 5px; width: 40px; text-align: center;">
+                                            Yes</p>
+                                        <p ng-click="accordyes = false;" class="bg-3-pale"
+                                            style="padding: 5px; border-radius: 5px; width: 40px; text-align: center;">
+                                            No</p>
+                                    </div>
+                                    <div ng-show="accordyes">
+                                        <p ng-click="marked12 = !marked12" ng-class="marked12 ? 'strike' : '!strike'"
+                                            class="text3"> Did you know you can use your broker?</p>
+                                        <p ng-click="marked13 = !marked13" ng-class="marked13 ? 'strike' : '!strike'"
+                                            class="text3"> Broker can access personal data unless you end the
+                                            relationship</p>
+                                        <p ng-click="marked14 = !marked14" ng-class="marked14 ? 'strike' : '!strike'"
+                                            class="text3"> Do you want to end the relationship? <br><i class="bg-3-pale"
+                                                style="padding: 4px;"> Take note</i></p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Enquiry account recap screen -->
+                        <div id="enquiry-recap" class="container t-col-3 tab-pane fade "
+                            ng-hide="variation.HP || variation.REM" style="padding: 25px; height: 100%;">
+
+                            <!-- SEPARATE FILE: enquiry_recap.php -->
+                            <div class="col-12 col-lg-5 text1" style="height: 100%;">
+
+                                <div style="height: 50%;">
+                                    <h5 class="text2" style="padding: 10px; font-weight: bold;"> Internal Checks </h5>
+                                    <p ng-click="marked15 = !marked15" ng-class="marked15 ? 'strike' : '!strike'"
+                                        class="text3"> Suitable repayment history</p>
+                                    <p ng-click="marked16 = !marked16" ng-class="marked16 ? 'strike' : '!strike'"
+                                        class="text3"> Are there any existing arrears?</p>
+                                    <p ng-click="marked17 = !marked17" ng-class="marked17 ? 'strike' : '!strike'"
+                                        class="text3"> What is the LTV? <i class="bg-3-pale" style="padding: 4px;"> Take
+                                            note</i></p>
+                                    <div ng-if="variation.AL">
+                                        <p ng-click="marked18 = !marked18" ng-class="marked18 ? 'strike' : '!strike'"
+                                            class="text3"> Behavioural Score </p>
+                                        <input type="text" ng-model="$parent.behavioural">
+                                    </div>
+
+                                </div>
+
+                                <div style="height: 50%;">
+                                    <h5 class="text2" style="padding: 10px; font-weight: bold;"> Confirm the following;
+                                    </h5>
+                                    <p ng-click="marked19 = !marked19" ng-class="marked19 ? 'strike' : '!strike'"
+                                        class="text3"> Number of parts </p>
+                                    <p ng-click="marked20 = !marked20" ng-class="marked20 ? 'strike' : '!strike'"
+                                        class="text3"> Interest rate </p>
+                                    <p ng-click="marked21 = !marked21" ng-class="marked21 ? 'strike' : '!strike'"
+                                        class="text3"> Product expiry date </p>
+                                    <p ng-click="marked22 = !marked22" ng-class="marked22 ? 'strike' : '!strike'"
+                                        class="text3"> Mortgage term </p>
+                                    <p ng-click="marked23 = !marked23" ng-class="marked23 ? 'strike' : '!strike'"
+                                        class="text3"> Repayment type </p>
+                                    <p ng-click="marked24 = !marked24" ng-class="marked24 ? 'strike' : '!strike'"
+                                        class="text3"> Remaining balance </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Enquiry eligibility screen -->
+                        <div id="enquiry-eligi" class="container t-col-3 tab-pane fade "
+                            style="padding: 25px; height: 100%;">
+
+                            <!-- SEPARATE FILE: enquiry_eligi.php -->
+
+                            <style>
+                                #enquiry-eligi div ul li a {
+                                    color: inherit;
+                                    background: inherit !important;
+                                    text-transform: capitalize;
+                                    font-weight: bold;
+                                }
+
+                                #enquiry-eligi div ul li .active {
+                                    text-decoration: underline;
+                                    text-transform: uppercase;
+                                    color: rgb(42, 45, 52);
+                                }
+
+                                .dist {
+                                    color: lightgrey !important;
+                                    cursor: not-allowed;
+                                }
+                            </style>
+
+                            <div class="col-12 col-lg-8 col-xl-7 text1" style="height: 100%;">
+
+                                <ul class="nav nav-pills justify-content-around t-col-5">
+                                    <li class="nav-item active"><a class="nav-link" data-toggle="tab"
+                                            href="#eligi-general">General Criteria</a></li>
+                                    <li class="nav-item"><a
+                                            ng-class="variation.HP || variation.REM || variation.PORT ? '!dist' : 'dist' "
+                                            class="nav-link" data-toggle="tab" href="#eligi-prop">Property Purchase</a>
+                                    </li>
+                                    <li class="nav-item"><a ng-class="variation.AL || variation.TOE ? '!dist' : 'dist' "
+                                            class="nav-link" data-toggle="tab" href="#eligi-specific">Specific
+                                            Criteria</a></li>
+                                </ul>
+
+
+                                <div class="tab-content" style="height: 90%;">
+
+                                    <!-- Standard Criteria -->
+                                    <div id="eligi-general" class="tab-pane active" style="height: 100%;">
+
+                                        <div style="height: 20%;">
+                                            <h5 class="text2" style="padding: 5px; font-weight: bold;">Standard Criteria
+                                            </h5>
+                                            <p ng-click="marked25 = !marked25"
+                                                ng-class="marked25 ? 'strike' : '!strike'" class="text3"> LTV within
+                                                criteria? </p>
+                                            <p ng-click="marked26 = !marked26"
+                                                ng-class="marked26 ? 'strike' : '!strike'" class="text3"> Main
+                                                residence? </p>
+                                        </div>
+
+                                        <!-- Product Transfer Criteria -->
+                                        <div style="height: 30%;" ng-if="variation.PT">
+                                            <h5 class="text2" style="padding: 5px; font-weight: bold;"> Product Transfer
+                                                Criteria </h5>
+                                            <p ng-click="marked47 = !marked47"
+                                                ng-class="marked47 ? 'strike' : '!strike'" class="text3"> Do they
+                                                qualify for execution only? </p>
+                                            <p ng-click="marked48 = !marked48"
+                                                ng-class="marked48 ? 'strike' : '!strike'" class="text3"> Have they
+                                                chosen a new product? </p>
+                                            <p ng-click="marked49 = !marked49"
+                                                ng-class="marked49 ? 'strike' : '!strike'" class="text3"> Do they want
+                                                to make any further changes? <i>(A.L / Type / Term changes)</i> </p>
+                                        </div>
+
+                                        <!-- Extended/Affordability Criteria -->
+                                        <div style="height: 50%;"
+                                            ng-if="variation.HP || variation.REM || variation.PORT || variation.AL || variation.TOE || variation.TT">
+
+                                            <h5 class="text2" style="padding: 5px; font-weight: bold;">Extended Criteria
+                                            </h5>
+
+                                            <p ng-click="marked27 = !marked27"
+                                                ng-class="marked27 ? 'strike' : '!strike'" class="text3"> Income paid in
+                                                UK Sterling to a UK bank account? </p>
+                                            <p ng-click="marked28 = !marked28"
+                                                ng-class="marked28 ? 'strike' : '!strike'" class="text3"> Repayment
+                                                Term: </p>
+                                            <p ng-click="marked29 = !marked29"
+                                                ng-class="marked29 ? 'strike' : '!strike'" class="text3"> Repayment
+                                                Type: <br>
+
+                                            <div class="justify-content-around" style="display: flex;">
+                                                <p> <input type="checkbox" ng-click="$parent.io = !$parent.io"> Interest
+                                                    Only </p>
+                                                <p> <input type="checkbox"> Capital and Interest </p>
+                                            </div>
+
+                                            <input style="width: 100%; border-radius: 5px; font-family: monospace;"
+                                                ng-show="io" ng-model="$parent.ioinfo"
+                                                placeholder="Repayment vehicle...">
+
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="eligi-prop" class="tab-pane fade"
+                                        ng-if="variation.HP || variation.REM || variation.PORT" style="height: 100%;">
+
+                                        <h5 class="text2" style="padding: 5px; font-weight: bold;"> Property Purchase
+                                            Criteria</h5>
+                                        <p ng-if="variation.HP || variation.PORT" ng-hide="variation.PORT && !a2name"
+                                            ng-click="marked30 = !marked30" ng-class="marked30 ? 'strike' : '!strike'"
+                                            class="text3"> Are <span ng-if="a2name">either of you</span> <span
+                                                ng-if="!a2name"> you a </span> first time buyer<span
+                                                ng-if="a2name">s</span> ? </p>
+                                        <p ng-click="marked31 = !marked31" ng-class="marked31 ? 'strike' : '!strike'"
+                                            class="text3"> Paperless consent gained </p>
+                                        <p ng-click="marked32 = !marked32" ng-class="marked32 ? 'strike' : '!strike'"
+                                            class="text3"> Will all applicants reside in the UK at the time of
+                                            application? </p>
+                                        <p ng-if="!variation.HP" ng-click="marked33 = !marked33"
+                                            ng-class="marked33 ? 'strike' : '!strike'" class="text3"> Is the new loan
+                                            amount higher than the existing mortgage? </p>
+                                        <p ng-click="marked34 = !marked34" ng-class="marked34 ? 'strike' : '!strike'"
+                                            class="text3"> Has an offer been accepted? </p>
+                                        <p ng-if="variation.REM" ng-click="marked35 = !marked35"
+                                            ng-class="marked35 ? 'strike' : '!strike'" class="text3"> Have the
+                                            applicants lived in and owned the property for 6 months? </p>
+
+                                        <div>
+                                            *** INCLUDE A PROPERTY CALCULATOR HERE ***
+                                        </div>
+                                    </div>
+
+                                    <div id="eligi-specific" class="tab-pane fade" ng-if="variation.AL || variation.TOE"
+                                        style="height: 100%;">
+
+                                        <div style="height: 50%;" ng-if="variation.AL">
+                                            <h5 class="text2" style="padding: 5px; font-weight: bold;"> Additional
+                                                Lending </h5>
+                                            <p ng-click="marked36 = !marked36"
+                                                ng-class="marked36 ? 'strike' : '!strike'" class="text3"> Has the
+                                                account been open for 6 months? </p>
+                                            <p ng-click="marked37 = !marked37"
+                                                ng-class="marked37 ? 'strike' : '!strike'" class="text3"> £70
+                                                Revaluation fee </p>
+                                            <p ng-click="marked38 = !marked38"
+                                                ng-class="marked38 ? 'strike' : '!strike'" class="text3"> 85% LTV
+                                                threshold </p>
+                                            <p ng-click="marked39 = !marked39"
+                                                ng-class="marked39 ? 'strike' : '!strike'" class="text3"> Borrowing
+                                                purpose </p>
+                                            <p ng-click="marked40 = !marked40"
+                                                ng-class="marked40 ? 'strike' : '!strike'" class="text3"> Loan amount:
+                                            </p>
+                                        </div>
+
+                                        <div style="height: 50%;" ng-if="variation.TOE">
+                                            <h5 class="text2" style="padding: 5px; font-weight: bold;"> Transfer Of
+                                                Equity </h5>
+                                            <p ng-click="marked41 = !marked41"
+                                                ng-class="marked41 ? 'strike' : '!strike'" class="text3"> All parties
+                                                need independent legal representation </p>
+                                            <p ng-click="marked42 = !marked42"
+                                                ng-class="marked42 ? 'strike' : '!strike'" class="text3"> All parties
+                                                need to sign the application form </p>
+                                            <p ng-click="marked43 = !marked43"
+                                                ng-class="marked43 ? 'strike' : '!strike'" class="text3"> Only the
+                                                remaining applicant can check progress </p>
+                                            <p ng-click="marked44 = !marked44"
+                                                ng-class="marked44 ? 'strike' : '!strike'" class="text3"> £180
+                                                non-refundable application fee </p>
+                                            <p ng-click="marked45 = !marked45"
+                                                ng-class="marked45 ? 'strike' : '!strike'" class="text3"> Are things
+                                                amicable? </p>
+                                            <p ng-if="variation.AL" ng-click="marked46 = !marked46"
+                                                ng-class="marked46 ? 'strike' : '!strike'" class="text3"> Is the
+                                                borrowed money used for the Transfer Of Equity? </p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Enquiry affordability screen -->
+                        <div id="enquiry-afford" class="container t-col-3 tab-pane fade"
+                            ng-show="variation.HP || variation.REM || variation.PORT || variation.AL || variation.TOE || variation.TT"
+                            style="padding: 25px; height: 100%;">
+
+                            <!-- SEPARATE FILE: enquiry_afford.php -->
+
+                            <style>
+                                #enquiry-afford textarea {
+                                    border-radius: 10px;
+                                }
+
+                                #enquiry-afford div div div p {
+                                    font-style: italic;
+                                }
+                            </style>
+
+                            <div class="col-12 col-md-8 text1" style="height: 100%;">
+                                <h5 class="text2" style="padding: 5px; font-weight: bold;"> Affordability Assessment
+                                </h5>
+                                <p ng-click="marked50 = !marked50" ng-class="marked50 ? 'strike' : '!strike'"
+                                    class="text3"> Are <span ng-if="a2name">either of</span> you affected financially by
+                                    COVID-19? </p>
+
+                                <div style="display: flex; flex-direction: column; align-items: center;">
+                                    <div ng-if="a1name">
+                                        <p> Enter any relevant soft facts for <span
+                                                style="text-transform: capitalize; font-weight: bold;">{{a1name |
+                                                lowercase}}</span> </p>
+                                        <textarea ng-model="$parent.a1afford" cols="30" rows="5"
+                                            placeholder="Employed, Permanent, Full time, Police Officer..."></textarea>
+                                    </div>
+
+                                    <div ng-if="a2name">
+                                        <p> Enter any relevant soft facts for <span
+                                                style="text-transform: capitalize; font-weight: bold;">{{a2name |
+                                                lowercase}}</span> </p>
+                                        <textarea ng-model="$parent.a2afford" cols="30" rows="5"
+                                            placeholder="Self-Employed, Part time, Graphic Designer..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div>
+
+                                    <p style="text-align: center;">
+                                        Maximum Borrowing: <br>
+                                        <input type="text" ng-model="maxborrow">
+                                    </p>
+
+                                    <div ng-click="marked51 = !marked51" ng-class="marked51 ? 'strike' : '!strike'"
+                                        class="text3">
+                                        <p>The amount you are looking to borrow [IS / ISNT] affordable based on the
+                                            available information.</p>
+                                        <p>
+                                            However, this is subject to <b>further lending criteria</b>
+                                            a <b>successful credit check</b>
+                                            and an <b>appropriate valuation</b>
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Enquiry approval in principle screen -->
+                        <div id="enquiry-aip" class="container t-col-3 tab-pane fade"
+                            ng-shw="variation.HP || variation.REM || variation.PORT"
+                            style="padding: 25px; height: 100%;">
+
+                            <!-- SEPARATE FILE: enquiry_aip.php -->
+
+                            <style>
+
+                            </style>
+
+                            <div class="col-12 col-md-9 col-lg-7 text1" style="height: 100%;">
+                                <h5 class="text2" style="padding: 5px; font-weight: bold;">Approval In Principle</h5>
+                                <p ng-click="marked52 = !marked52" ng-class="marked52 ? 'strike' : '!strike'"
+                                    class="text3"> Confirm the AIP statements </p>
+                                <p ng-click="marked53 = !marked53" ng-class="marked53 ? 'strike' : '!strike'"
+                                    class="text3"> (If a decline) confirm the decline rationale </p>
+                                <p ng-click="marked54 = !marked54" ng-class="marked54 ? 'strike' : '!strike'"
+                                    class="text3"> Send the AIP email </p>
+                                <h5 class="text2" style="padding: 5px; font-weight: bold;">Paperless Application</h5>
+                                <p>An email will be sent with the following information attached or included;</p>
+                                <p ng-click="marked55 = !marked55" ng-class="marked55 ? 'strike' : '!strike'"
+                                    class="text3"> A guide to arranging your mortgage booklet </p>
+                                <p ng-click="marked56 = !marked56" ng-class="marked56 ? 'strike' : '!strike'"
+                                    class="text3"> Income documentation guidance </p>
+                                <p ng-click="marked57 = !marked57" ng-class="marked57 ? 'strike' : '!strike'"
+                                    class="text3"> A link to data privacy information </p>
+                                <p ng-click="marked58 = !marked58" ng-class="marked58 ? 'strike' : '!strike'"
+                                    class="text3">
+                                    It is important that you read these documents before your appointment, the Mortgage
+                                    Advisor will confirm your understanding when they carry out their recommendation
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+                        <!-- Enquiry appointment screen -->
+                        <div id="enquiry-appt" class="container t-col-3 tab-pane fade "
+                            style="padding: 25px; height: 100%;">
+
+                            <!-- SEPARATE FILE: enquiry_aip.php -->
+
+                            <style>
+
+                            </style>
+
+                            <div class="col-12 col-lg-7 text1" style="height: 100%;">
+                                <h5 class="text2" style="padding: 5px; font-weight: bold;"> Appointment Booking </h5>
+                                <p ng-click="marked59 = !marked59" ng-class="marked59 ? 'strike' : '!strike'"
+                                    class="text3"> Do I have your authority to use your contact details to set up the
+                                    appointment? </p>
+
+                                <div style="display: flex; justify-content: space-evenly; align-items: center;">
+
+                                    <div ng-if="a1name" class="bg-3-pale" style="padding: 20px;">
+                                        <button data-toggle="collapse" data-target="#a1info"
+                                            style="margin-right: auto; margin-left: auto;">{{a1name}}'s
+                                            Information</button>
+                                        <div id="a1info" class="collapse">
+                                            <p>&#10148; {{a1name}} </p>
+                                            <p>&#10148; {{a1mob}} </p>
+                                            <p>&#10148; {{a1mail}}</p>
+                                            <p>&#10148; {{a1post}}</p>
+                                            <p ng-hide="variation.HP || variation.REM">Account Number: {{accountnum}}
+                                            </p>
+                                            <p ng-if="variation.PORT || variation.HP || variation.REM">Registration
+                                                Number: {{portnum}}</p>
+                                        </div>
+                                    </div>
+
+                                    <div ng-if="a2name" class="bg-3-pale" style="padding: 20px;">
+                                        <button data-toggle="collapse" data-target="#a2info">{{a2name}}'s
+                                            Information</button>
+                                        <div id="a2info" class="collapse">
+                                            <p>&#10148; {{a2name}} </p>
+                                            <p>&#10148; {{a2mob}} </p>
+                                            <p>&#10148; {{a2mail}}</p>
+                                            <p>&#10148; {{a2post}}</p>
+                                            <p ng-hide="variation.HP || variation.REM">Account Number: {{accountnum}}
+                                            </p>
+                                            <p ng-if="variation.PORT || variation.HP || variation.REM">Registration
+                                                Number: {{portnum}}</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div style="padding-top: 30px; padding-bottom: 30px;">
+
+                                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                        <p style="margin-left: 20px;"> Appointment Time: </p>
+                                        <input type="text" ng-model="apptime" style="margin: 3px;">
+                                    </div>
+
+                                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                        <p style="margin-left: 20px;"> Mortgage Advisor: </p>
+                                        <input type="text" ng-model="maName" style="margin: 3px;">
+                                    </div>
+
+                                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                        <p style="margin-left: 20px;"> Booking Reference: </p>
+                                        <input type="text" ng-model="appref" style="margin: 3px;">
+                                    </div>
+
+                                </div>
+                                <p ng-click="marked60 = !marked60" ng-class="marked60 ? 'strike' : '!strike'"
+                                    class="text3"> Expect a message confirming the appointment details </p>
+                                <p ng-click="marked61 = !marked61" ng-class="marked61 ? 'strike' : '!strike'"
+                                    class="text3"> The MA will go through the next steps which can include
+                                    advice/recommendation </p>
+                                <p ng-click="marked62 = !marked62" ng-class="marked62 ? 'strike' : '!strike'"
+                                    class="text3"> You should receive a courtesy call prior to your appointment </p>
+                                <p ng-click="marked63 = !marked63" ng-class="marked63 ? 'strike' : '!strike'"
+                                    class="text3"> RECAP: You called for (something), I have done (another thing), now
+                                    we will do (something else) </p>
+                                <p ng-click="marked64 = !marked64" ng-class="marked64 ? 'strike' : '!strike'"
+                                    class="text3"> Have I covered everything today? </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Admin page -->
+            <div id="admin-page" class="tab-pane fade container t-col-3" style="padding: 25px; height: 100%;">
+
+                <div style="margin: 50px;">
+                    <h3 class="text2" style="font-weight: bold;">Post call activity</h3>
+                    <p ng-click="marked65 = !marked65" ng-class="marked65 ? 'strike' : '!strike'" class="text3"> Note in
+                        LIVE </p>
+                    <p ng-click="marked66 = !marked66" ng-class="marked66 ? 'strike' : '!strike'" class="text3"> Note in
+                        ISIS </p>
+                    <p ng-click="marked67 = !marked67" ng-class="marked67 ? 'strike' : '!strike'" class="text3"
+                        ng-if="variation.HP || variation.REM || variation.PORT"> AIP email sent </p>
+                    <p ng-click="marked68 = !marked68" ng-class="marked68 ? 'strike' : '!strike'" class="text3"
+                        ng-if="variation.PT"> Product Factsheet sent (where applicable) </p>
+                    <p ng-click="marked69 = !marked69" ng-class="marked69 ? 'strike' : '!strike'" class="text3"
+                        ng-if="brand.ACCactive"> Broker relationship update </p>
+                </div>
+
+                <div style="padding: 15px; background: rgb(25, 93, 116, 0.4); border-radius: 15px;">
+
+                    <h5 class="text1 t-col-3" style="font-weight: bold;text-align: center; padding: 15px;">Copy this
+                        note below</h5>
+
+                    <div class="text1 t-col-1" style="margin: 15px; padding: 15px; background: rgb(42, 45, 52, 0.8);">
+
+                        <p>
+                            <span ng-if="!a1name">X</span>
+                            <span ng-if="a1name">{{a1name}}</span>
+                            <span ng-if="a2name"> and {{a2name}}</span>
+                            called to complete an application for
+                            <span ng-if="variation.HP">a House Purchase</span>
+                            <span ng-if="variation.REM"> Remortgaging </span>
+                            <span ng-if="variation.PORT"> Portability</span>
+                            <span ng-if="variation.PT">a Product Transfer</span>
+                            <span ng-if="variation.AL"><span ng-if="variation.PT"> and </span> Additional Lending</span>
+                            <span ng-if="variation.TOE"><span ng-if="variation.PT || variation.AL"> and </span>a
+                                Transfer of Equity</span>
+                            <span ng-if="variation.TT"><span ng-if="variation.PT || variation.AL || variation.TOE">and
+                                </span>a Type | Term amendment</span>
+                        </p>
+
+                        <p>
+                            Verified, Mandatories checked, Eligibility done
+                            <span
+                                ng-if="variation.HP || variation.REM || variation.PORT || variation.AL || variation.TOE || variation.TT">,
+                                Affordability done</span>
+                            <span ng-if="variation.HP || variation.REM || variation.PORT">, Approval In Principle sent
+                                out</span>
+                        </p>
+
+                        <p ng-if="maName">
+                            Appointment booked with {{maName}},
+                            at {{apptime}},
+                            REF: {{appref}}
+                        </p>
+
+                        <p ng-if="variation.PORT">
+                            Portability Reference: {{portnum}}
+                        </p>
+
+                        <p ng-if="variation.AL">
+                            Behavioural Score: {{behavioural}}
+                        </p>
+
+                        <p ng-if="io">
+                            Interest Only Repayment Vehicle: {{ioinfo}}
+                        </p>
+
+                        <div
+                            ng-if="variation.HP || variation.REM || variation.PORT || variation.AL || variation.TOE || variation.TT">
+                            <p ng-if="a1name">
+                                {{a1name}}'s I&E details: <br>
+                                {{a1afford}}
+                            </p>
+                            <p ng-if="a2name">
+                                {{a2name}}'s I&E details: <br>
+                                {{a2afford}}
+                            </p>
+                        </div>
+
+                        <div
+                            ng-if="variation.HP || variation.REM || variation.PORT || variation.PT || variation.AL || variation.TT || variation.TOE">
+                            <p ng-if="a1name"> {{a1name}}'s verbal authority [gained/not gained]</p>
+                            <p ng-if="a2name"> {{a2name}}'s verbal authority [gained/not gained]</p>
+                        </div>
+
+                        <p>
+                            CONTEXT: <br>
+                            {{notePad}}
+                        </p>
+
+                        <p> Mark 82981</p>
+
+                    </div>
+
+                </div>
+
+                <div style="display: none;">
+                    <h2 class="text2">Collected information:</h2>
+                    <h5>Brand status</h5>
+                    <div ng-repeat="x in brand"> {{x}} </div>
+                    <h5>Variation status</h5>
+                    <div ng-repeat="x in variation"> {{x}} </div>
+                    <h5>Notepad information</h5>
+                    <p>{{notePad}}</p>
+                    <h5>Account numbers:</h5>
+                    <p>Acc: {{accountnum}} - Porting: {{portnum}}</p>
+                    <h5>Applicant info [enquiry - cust]</h5>
+                    <p>A1name {{a1name}} {{a1age}} <br> A1DOB {{a1dob}} <br> A1PostCode {{a1post}} <br> A1Phone#
+                        {{a1mob}} <br> A1email {{a1mail}}</p>
+                    <p>A2name {{a2name}} {{a2age}} <br> A2DOB {{a2dob}} <br> A2PostCode {{a2post}} <br> A2Phone#
+                        {{a2mob}} <br> A2email {{a2mail}}</p>
+                    <h5>Interest Only </h5>
+                    <p>Interest only? {{io}} <br> Repayment vehicle: {{ioinfo}} </p>
+                    <h5>Eligibility stuff</h5>
+                    <p>Behavioural Score: {{behavioural}} </p>
+                    <p>A1 affordability {{a1afford}} </p>
+                    <p>A2 affordability {{a2afford}} </p>
+                    <p>Maximum Borrowing {{maxborrow}} </p>
+                    <h5> Appointment </h5>
+                    <p>App Time: {{apptime}} </p>
+                    <p>App Name: {{maName}} </p>
+                    <p>App Ref: {{appref}} </p>
+                </div>
+
+            </div>
+
+            <!-- Tools page -->
+            <div id="tool-page" class="tab-pane fade container t-col-3" ng-controller="toolkit"
+                style="padding: 25px; height: 100%;">
+
+                <script>
+                    app.controller('toolkit', function ($scope) {
+
+                        $scope.calcltv = function () {
+                            let LTV = $scope.balance / $scope.value * 100;
+                            $scope.resultLTV = LTV.toFixed(2);
+                        }
+                        $scope.calcbal = function () {
+                            $scope.resultBalance = $scope.value2 * ($scope.ltv2 / 100);
+                        }
+                        $scope.calcval = function () {
+                            $scope.resultValue = $scope.balance3 / ($scope.ltv3 / 100);
+                        }
+
+                        $scope.calcybsdate = function () {
+                            $scope.ybsgrace = $scope.ybsdate - 10281600000;
+                        }
+                        $scope.calccbsdate = function () {
+                            $scope.cbsgrace = $scope.cbsdate - 7689600000;
+                        }
+
+                        $scope.calcretire = function () {
+                            let dob = ($scope.today - $scope.retiredob) / (1000 * 3600 * 24 * 365.2425);
+                            let years = ($scope.retireage - dob);
+                            let months = (years - Math.floor(years)) / 0.083;
+                            $scope.retirement = "Age: " + Math.floor(years.toFixed(3)) + "y " + Math.floor(months.toFixed(3)) + "m";
+                        }
+
+                    });
+                </script>
+
+                <style>
+                    input[type="number"] {
+                        border: none;
+                        border-bottom: 1px solid grey;
+                        border-left: 1px solid grey;
+                        width: 100px;
+                    }
+
+                    #tool-page h5 {
+                        font-weight: bold;
+                    }
+                </style>
+
+                <div style="display: flex; flex-direction: column; justify-content: space-evenly;">
+
+                    <!-- Loan to value Calculators -->
+                    <div style="margin-bottom: 50px;">
+
+                        <h5 class="text2"> Loan to value Calculators </h5>
+
+                        <div class="row">
+
+                            <div class="t-col-2 col-12 col-md-6 col-xl-4"
+                                style="border: 1px solid lightgrey; padding: 10px;">
+                                <div style="display: flex; justify-content: space-evenly; padding: 4px;">
+                                    <p style="width: 50%;"> Balance - <input type="number"
+                                            style="float: right; margin-right: 15%;" ng-model="balance"
+                                            ng-change="calcltv()"> </p>
+                                    <p style="width: 50%;"> Value - <input type="number"
+                                            style="float: right; margin-right: 15%;" ng-model="value"
+                                            ng-change="calcltv()"> </p>
+                                </div>
+                                <p class="t-col-5" style="text-align: center;"> Loan to value: <b
+                                        class="t-col-4">{{resultLTV}}%</b></p>
+                            </div>
+
+                            <div class="t-col-2 col-12 col-md-6 col-xl-4"
+                                style="border: 1px solid lightgrey; padding: 10px;">
+                                <div style="display: flex; justify-content: space-evenly; padding: 4px;">
+                                    <p style="width: 50%;"> Value - <input type="number"
+                                            style="float: right; margin-right: 15%;" ng-model="value2"
+                                            ng-change="calcbal()"> </p>
+                                    <p style="width: 50%;"> LTV % - <input type="number"
+                                            style="float: right; margin-right: 15%;" ng-model="ltv2"
+                                            ng-change="calcbal()"> </p>
+                                </div>
+                                <p class="t-col-5" style="text-align: center;"> Balance: <b
+                                        class="t-col-4">{{resultBalance | currency:'£'}}</b></p>
+                            </div>
+
+                            <div class="t-col-2 col-12 col-md-6 col-xl-4"
+                                style="border: 1px solid lightgrey; padding: 10px;">
+                                <div style="display: flex; justify-content: space-evenly; padding: 4px;">
+                                    <p style="width: 50%;"> Balance - <input type="number"
+                                            style="float: right; margin-right: 15%;" ng-model="balance3"
+                                            ng-change="calcval()"> </p>
+                                    <p style="width: 50%;"> LTV% - <input type="number"
+                                            style="float: right; margin-right: 15%;" ng-model="ltv3"
+                                            ng-change="calcval()"> </p>
+                                </div>
+                                <p class="t-col-5" style="text-align: center;"> Value: <b class="t-col-4">{{resultValue
+                                        | currency:'£'}} </b></p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Product Maturity Calculators -->
+                    <div style="margin-bottom: 50px;">
+
+                        <h5 class="text2"> Product Maturity Calculator </h5>
+
+                        <div class="row">
+
+                            <div class="t-col-2 col-12 col-md-6 col-xl-4"
+                                style="border: 1px solid lightgrey; padding: 5px;">
+                                <div class="row" style="text-align: center;">
+                                    <p class="col-12 col-md-7"><b class="t-col-5">YBS</b> Product Expiry Date <input
+                                            type="date" ng-model="ybsdate" ng-change="calcybsdate()"></p>
+                                    <p class="col-12 col-md-5 t-col-5">120 day window: <b class="t-col-4">{{ybsgrace |
+                                            date : dd-MMM-y }}</b></p>
+                                </div>
+                            </div>
+
+                            <div class="t-col-2 col-12 col-md-6 col-xl-4"
+                                style="border: 1px solid lightgrey; padding: 5px; ">
+                                <div class="row" style="text-align: center;">
+                                    <p class="col-12 col-md-7">Product Expiry Date <input type="date" ng-model="cbsdate"
+                                            ng-change="calccbsdate()"></p>
+                                    <p class="col-12 col-md-5 t-col-5">90 day window: <b class="t-col-4">{{cbsgrace |
+                                            date : dd-MMM-y }}</b></p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Max Term Calculators -->
+                    <div>
+
+                        <h5 class="text2"> Max Term Calculator </h5>
+
+                        <div class="row">
+
+                            <div class="t-col-2 col-12 col-md-6 col-xl-4" ng-if="a1name"
+                                style="border: 1px solid lightgrey; padding: 5px;">
+                                <p>{{a1name}}'s <b style="float: right; margin-right: 15%;">{{a1age}}</b></p>
+                                <p>Max Term (Age 80): <b class="t-col-4"
+                                        style="float: right; margin-right: 15%;">{{a1maxterm}}</b></p>
+                            </div>
+
+                            <div class="t-col-2 col-12 col-md-6 col-xl-4" ng-if="a2name"
+                                style="border: 1px solid lightgrey; padding: 5px;">
+                                <p>{{a2name}}'s <b style="float: right; margin-right: 15%;">{{a2age}}</b></p>
+                                <p>Max Term (Age 80): <b class="t-col-4"
+                                        style="float: right; margin-right: 15%;">{{a2maxterm}}</b></p>
+                            </div>
+
+                            <div class="t-col-2 col-12 col-md-6 col-xl-4"
+                                style="border: 1px solid lightgrey; padding: 5px;">
+                                <p> Date of birth <input type="date" ng-model="retiredob" ng-change="calcretire()"
+                                        style="float: right; margin-right: 15%;"> </p>
+                                <p> Retirement Age: <input type="number" ng-model="retireage" ng-change="calcretire()"
+                                        style="float: right; margin-right: 15%;"> </p>
+                                <p> Max term (pre retirement): <b class="t-col-4"
+                                        style="float: right; margin-right: 15%;">{{retirement}}</b> </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
